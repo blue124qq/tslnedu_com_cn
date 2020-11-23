@@ -1,0 +1,139 @@
+/* SpaceBuilder ClubDomains Cascading Style Sheets. Copyright (c) 2008, Tunynet Inc. All rights reserved. version: 3.0 */
+
+/* Layout
+----------------------------------*/
+
+/* Theme
+----------------------------------*/
+.tn-page-bg { background:#f9e8dd; }
+.tn-doc-bg { background: url(Images/top-bg.png) no-repeat 50% 0; }
+a, a:hover { color: #974f0c; }
+
+/* Page header
+----------------------------------*/
+.spb-top-menubar .tn-wrapper-inner { width: 950px; margin: 0 auto; }
+.spb-branding-area { width: 950px; margin: 0 auto; color: #fff; padding-bottom: 100px; }
+.spb-club-name {font-size: 133.33%;margin: 55px 0 10px; padding: 0 0 0 20px; color:#461300;}
+.spb-club-intro { color: #974f0c;}
+.spb-top-menubar { background: #fefcfa; border-width: 0 0 1px; -moz-opacity: 0.75; opacity: 0.75; filter: alpha(opacity=75); }
+.spb-top-menubar .tn-search-box { border: solid #ddd 1px; }
+.spb-top-menubar .tn-search-box .tn-search-input { width: 80px; border-width: 0; padding: 1px 0 1px 2px; height: 16px; }
+.spb-top-menubar .tn-search-box .tn-search-button { background: #f5f5f5; border-left: solid #ddd 1px }
+.spb-top-menubar .tn-search-box .tn-search-button button { height: 18px; }
+
+/* Navigation
+----------------------------------*/
+.spb-nav1-area,
+.spb-nav2-area { width: 930px; margin: 0 auto; }
+.spb-nav1 a:hover,
+.spb-nav1 .tn-selected span,
+.spb-nav1 .tn-selected a,
+.spb-nav1 a:hover span,
+.spb-nav1 .tn-selected { background: url(Images/nav.png) no-repeat; }
+.spb-nav1 .spb-nav-item span {color: #b1631b; line-height: 30px; font-size: 116.67%; }
+.spb-nav1 a { background-position: 0 0; color: #900; }
+.spb-nav1 span { background-position: right -40px; }
+.spb-nav1 a:hover { background-position: 0 -80px; text-decoration: none; }
+.spb-nav1 a:hover span { background-position: right -120px; }
+.spb-nav1 .tn-selected{ background-position: 0 -160px; padding: 0 0 0 10px; }
+.spb-nav1 .tn-selected a,
+.spb-nav1 .tn-selected a:hover { background-position: right -218px; padding: 0 10px 0 0; color: #333; }
+.spb-nav1 .tn-selected span,
+.spb-nav1 .tn-selected a:hover span { color:#FFF; background-position: center -258px; padding: 0 8px 13px; }
+.spb-nav1 .spb-nav-item a:hover span{ color:#FFF;}
+
+/* Header bottom */
+.spb-header-bottom { width: 950px; margin: 0 auto; padding: 10px 0 10px; }
+.spb-header-bottom .tn-shortcut { float: right; }
+.spb-header-bottom .tn-text-note { padding: 0 20px; }
+.spb-header-bottom .tn-text-heading { display: inline; font-size: 116.67%; }
+
+/* Component containers
+----------------------------------*/
+.tn-widget-content, .ui-widget-content { border-color: #c60; }
+.tn-widget-header, .ui-widget-header { border-color: #c60; background-image: url(Images/bg-gradient-ff8800.png); }
+
+/* Interaction states
+----------------------------------*/
+.tn-state-default, .tn-widget-content .tn-state-default,
+.ui-state-default, .ui-widget-content .ui-state-default { border-color: #f9ae54; background-image: url(Images/bg-gradient-ff9900.png); }
+.tn-state-hover, .tn-widget-content .tn-state-hover,
+.ui-state-hover, .ui-widget-content .ui-state-hover { border-color: #f9ae54; background:#ffdd96; }
+.tn-state-focus, .tn-widget-content .tn-state-focus,  
+.ui-state-focus, .ui-widget-content .ui-state-focus,
+.tn-state-active, .tn-widget-content .tn-state-active,  
+.ui-state-active, .ui-widget-content .ui-state-active { border-color: #c60; background: #fff; }
+
+/* Button
+----------------------------------*/
+.tn-button-default { border-color: #ffa356; background-image: url(Images/bg-gradient-ffb87c.png); }
+.tn-button-default .tn-first-child { border-color: #ffa356; }
+.tn-button-default-hover { border-color: #ffa356; background-image: url(Images/bg-gradient-ffcf7c.png); }
+.tn-button-default-hover .tn-first-child { border-color: #ffa356; }
+.tn-button-primary { border-color: #ea8c30; background-image: url(Images/bg-gradient-009ec3.png); }
+.tn-button-primary .tn-first-child { border-color: #ea8c30; }
+.tn-button-primary-hover { border-color: #dea303; background-image: url(Images/bg-gradient-18bce2.png); }
+.tn-button-primary-hover .tn-first-child { border-color: #dea303; }
+
+/* Background 
+----------------------------------*/
+.tn-bg-light { background: #fff3df; }
+.tn-bg-deep { background: #f60; }
+
+/* Border
+----------------------------------*/
+.tn-border-light { border-color: #ffe0af; }
+.tn-border-deep { border-color: #f40; }
+
+/* Pagination
+----------------------------------*/
+.tn-pagination .tn-page-number,
+.tn-pagination .tn-page-thumb,
+.tn-pagination a:hover { border: none; }
+.tn-pagination a:hover { background: none; text-decoration: underline; }
+.tn-pagination span.tn-selected { color: #333; background: none; text-decoration: underline; }
+.spb-layout-1-2-1{ background:url(Images/content_bg.png) repeat-y;}
+
+.tn-content-bg .tn-wrapper{ background:#FFF; border:1px solid #e0e0e0;}
+.tn-widget-header, .ui-widget-header {background-image:none; border-color: #c9a198;}
+.tn-widget-content, .ui-widget-content { background: none; border:none;}
+.spb-column-left .tn-box .tn-box-content{ border:1px solid #FFF;border-width:2px 0 0; }
+.tn-box .tn-box-header h3{ color:#461300; padding:5px 0;}
+.tn-box .tn-box-header span.tn-helper-right{padding-top:8px;}
+.spb-column-center{padding-right:6px;}
+.spb-column-center .tn-box .tn-box-content, .spb-column-right .tn-box .tn-box-content{ border:1px solid #f8ecec;border-width:2px 0 0; }
+.spb-column-right .tn-box{padding:0 10px;}
+.spb-user-menu .sf-menu li ul.tn-bg-light{ background:#FEFCFA;}
+.spb-user-menu li ul { top:23px;}
+.spb-nav1-area .tn-shortcut { padding-top:10px;}
+.tn-avatar-list .tn-avatar-item { width:60px;}
+#manage{ background:#FFF; margin-top:3px;}
+.tn-list-header-row{ color:#461300;}
+#ListClubActivitiesDiv .tn-box{padding-right:10px;}
+.spb-vote-rank h3{padding:20px; text-align:center;}
+.spb-vote-rank .tn-widget-content{ border:1px solid #f9ae54;}
+.ui-tabs{ margin-top:10px;}
+.tn-grid-1-5 .tn-unit .tn-box{margin:10px;}
+.tn-form-box{padding:10px; margin:20px 10px 10px;}
+.spb-vote-form{ padding:0 10px;}
+.tn-cue-tips{ padding-left:0;}
+#ui-datepicker-div, .tn-menu{background:#FFF; border:1px solid #e0e0e0;}
+.tn-expand-select, .tn-expand-select-box, .as-list{ border:1px solid #e0e0e0; background:#FFF;}
+.spb-post .spb-post-head .tn-widget-content{ border:1px solid #e0e0e0; border-width:1px 1px 1px 0;}
+.spb-post .spb-post-head .spb-post-content{border:1px solid #e0e0e0; border-width:1px 0 1px 0;}
+.spb-post .spb-master-floor .tn-widget-content{border:1px solid #e0e0e0; border-width:0 1px 1px 0;}
+.spb-post .spb-master-floor .spb-post-space{border:1px solid #e0e0e0; border-width:1px 0 1px 0;}
+.spb-quick-reply .tn-widget-content{border:1px solid #e0e0e0; border-width:1px 0 0 0;}
+.spb-quick-reply .tn-widget-content .tn-widget-content{border:none;}
+.spb-post .spb-reply-floor{border:1px solid #e0e0e0; border-width:0 0 1px 0;}
+.spb-post .spb-reply-floor .spb-post-content{border:1px solid #e0e0e0; border-width:0 0 0 1px;}
+.spb-quick-reply .tn-widget-content .spb-post-content{border:1px solid #e0e0e0; border-width:0 0 0 1px;}
+.spb-custom-control .spb-custom-bar, .spb-custom-control .spb-custom-panel{background:#FCF7F2;} 
+.spb-custom-control .tn-widget-content .ui-tabs{background:#FFF; margin-top:0;}
+.tn-template-r-230 .tn-block{ padding:10px;}
+.tn-drop-menu .tn-menu-drop-list{ border:1px solid #e0e0e0; background:#FFF;}
+.tn-grid-1-5 .tn-form{ padding:20px 10px 10px;}
+.tn-side-menu li .tn-menu-text {padding-left:13px;}
+.tn-publish{padding:10px;} 
+.tn-grid{margin:10px;}
+.spb-club-panel .tn-side-menu li .tn-menu-text{padding-left: 20px;}

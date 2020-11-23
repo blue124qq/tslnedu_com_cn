@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "382032510445";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="382032510445">
+    <input id="classallid" type="hidden" value="382032510445">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19">                <a href="zcll.html" class="current"><span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点信息</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <a href="zcll.html">政策理论</a> &gt;&gt; <span class="darkyellow">政策法规</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    构建唐山教育信息网体系 河北制定社区教育三年行动计划</h1>
+                                <div class="time">
+                                     来源：河北新闻网16.12   浏览次数：<em>1746</em> 发布时间：<span>2017年03月20日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p align="justify" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; text-align: justify; padding-top: 0px; font: 16px/26px sinmsun; padding-left: 0px; widows: 1; margin: 26px 0px; letter-spacing: normal; padding-right: 0px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	河北新闻网讯（河北日报记者马利）为构建唐山教育信息网体系，加快学习型社会建设，省教育厅、省委宣传部等部门近日联合制定了《河北省社区教育三年行动计划 （2016&mdash;2018年）》。计划提出，到2018年底全省社区教育管理体制、运行机制和公共支持服务体系初步建立，省、市、县（市、区） 、乡镇（街道） 、村（社区）五级社区教育办学网络基本形成，社区教育学分银行制度初步建立。</p>
+<p align="justify" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; text-align: justify; padding-top: 0px; font: 16px/26px sinmsun; padding-left: 0px; widows: 1; margin: 26px 0px; letter-spacing: normal; padding-right: 0px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　根据计划，到2018年底，全省社区教育信息化公共服务平台实现能够容纳200万人注册、1万人同时在线学习规模，数字化学习资源达到10万个左右。省级社 区教育试点总数达到200个左右，其中所有的县（市、区）至少有一个省级社区教育试点；市级以下社区教育试点总数达到1000个左右。全省开展社区教育的 县（市、区）实现全覆盖。</p>
+<p align="justify" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; text-align: justify; padding-top: 0px; font: 16px/26px sinmsun; padding-left: 0px; widows: 1; margin: 26px 0px; letter-spacing: normal; padding-right: 0px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	计划提出，河北省将每年培育省级社区教育试点60个左右，市级以下社区教育试点300个左右，逐步探索出适合当地发展的社区教育路子。开发移动学习功能，为学习者提供学习账户、微博、论坛、管理课程、记录学分、网上专家解答、自组班级和协作学习等多样化自主性学习条件。</p>
+<p align="justify" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; text-align: justify; padding-top: 0px; font: 16px/26px sinmsun; padding-left: 0px; widows: 1; margin: 26px 0px; letter-spacing: normal; padding-right: 0px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　为适应人口老龄化趋势和老年人对社区教育的旺盛需求，我省将建设一批在本区域发挥示范性作用的老年人学习场所和老年大学。实施&ldquo;老有所+&rdquo;工程，把老年社区教育办成老年人的幸福项目。</p>
+<p align="justify" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; text-align: justify; padding-top: 0px; font: 16px/26px sinmsun; padding-left: 0px; widows: 1; margin: 26px 0px; letter-spacing: normal; padding-right: 0px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　河北省将鼓励和引导社区居民自发组建形式多样的学习团队、活动小组等学习共同体，有针对性地开展失业人员、农民工、农民、青年学生、残疾人、新市民等群体的教育培训，以及家庭教育、未成年人校外教育的系列活动。鼓励专家、学者、行业专业人员、教师、离退休人员以及其他具有专业知识和特殊技能的人员参与社区教育。解决社区教育专职教师的专业技术职务评聘问题，激发和调动社区教育工作者的积极性、创造性。</p>
+<p align="justify" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; text-align: justify; padding-top: 0px; font: 16px/26px sinmsun; padding-left: 0px; widows: 1; margin: 26px 0px; letter-spacing: normal; padding-right: 0px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　河北省将不断拓宽社区教育经费来源渠道。县级以上政府将按照每人每年1元的政策，落实成人教育费用，其中部分用于社区教育。省级及其以上社区教育实验区(示范区)，按照社区常住人口每年人均实验区不少于1元、示范区不少于2元的标准落实社区教育经费。</p>
+
+                                    <br>    <br>
+                                                                    </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=391093316967" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

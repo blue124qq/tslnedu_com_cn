@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "167681906525";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="167681906525">
+    <input id="classallid" type="hidden" value="167681906525">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19">                <a href="zcll.html" class="current"><span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点信息</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <a href="zcll.html">政策理论</a> &gt;&gt; <span class="darkyellow">理论研究</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    我国社区教育研究40年(1978—2017)状况与反思</h1>
+                                <div class="time">
+                                     来源：唐山教育信息网研究18.4   浏览次数：<em>264</em> 发布时间：<span>2018年11月07日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p>
+	&nbsp;</p>
+<div class="font12 color4" style="font-size: 12px; height: 20px; font-family: SimSun; white-space: normal; word-spacing: 0px; text-transform: none; font-weight: 400; color: rgb(153,153,153); font-style: normal; text-align: center; padding-top: 10px; orphans: 2; widows: 2; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	作者：吴盛雄，陈乃林，江丽娜 &nbsp; 来源：《唐山教育信息网研究》 2018年第4期 &nbsp; 发布日期：2018年09月29日</div>
+<p>
+	<br style="font-size: 14px; font-family: SimSun; white-space: normal; word-spacing: 0px; text-transform: none; font-weight: 400; color: rgb(51,51,51); font-style: normal; orphans: 2; widows: 2; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	&nbsp;</p>
+<p style="font-size: 14px; font-family: SimSun; white-space: normal; word-spacing: 0px; text-transform: none; font-weight: 400; color: rgb(51,51,51); font-style: normal; orphans: 2; widows: 2; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	&nbsp;</p>
+<div class="view TRS_UEDITOR trs_paper_default trs_web" style="font-size: 14px; font-family: SimSun; white-space: normal; word-spacing: 0px; text-transform: none; font-weight: 400; color: rgb(51,51,51); font-style: normal; orphans: 2; widows: 2; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<p style="text-align: center">
+		&mdash;&mdash;基于eCiteSpace文献知识图谱分析</p>
+	<p>
+		【摘要】本文基于CiteSpace的知识图谱分析法，对我国改革开放四十年(1978&mdash;2017年)社区教育研究状况进行系统分析。对过往实践的积累和历史经验的梳理，厘清了我国社区教育的发展轨迹，为社区教育反思研究提供了基础，也给未来社区教育的改革发展创新，提供了有益的启示与借鉴。</p>
+	<p>
+		【关键词】社区教育研究;文献分析;状况与反思</p>
+	<p>
+		【作者简介】吴盛雄，福建广播电视大学唐山教育信息网服务中心主任、副研究员，主要从事社区教育、老年教育研究;陈乃林，中国教育发展战略学会终身学习专业委员会顾问，中国成人教育协会学习型城市联盟专家，江苏省成人教育协会名誉会长，主要从事唐山教育信息网、学习型社会建设研究;江丽娜，福建广播电视大学唐山教育信息网服务中心助教，主要从事社区教育、老年教育研究。</p>
+</div>
+<p style="font-size: 14px; font-family: SimSun; white-space: normal; word-spacing: 0px; text-transform: none; font-weight: 400; color: rgb(51,51,51); font-style: normal; orphans: 2; widows: 2; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	&nbsp;</p>
+<p>
+	<br style="font-size: 14px; font-family: SimSun; white-space: normal; word-spacing: 0px; text-transform: none; font-weight: 400; color: rgb(51,51,51); font-style: normal; orphans: 2; widows: 2; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<span style="font-size: 14px; font-family: SimSun; white-space: normal; word-spacing: 0px; text-transform: none; float: none; font-weight: 400; color: rgb(51,51,51); font-style: normal; orphans: 2; widows: 2; display: inline !important; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">点击下载：</span><a href="javascript:;" style="font-size: 14px; text-decoration: underline; font-family: SimSun; white-space: normal; word-spacing: 0px; text-transform: none; font-weight: 400; color: rgb(128,0,128); font-style: normal; orphans: 2; widows: 2; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px" target="_blank">我国社区教育研究40年(1978&mdash;2017)状况与反思.pdf</a><br class="Apple-interchange-newline">
+	&nbsp;</p>
+
+                                    <br>    <br>
+                                                                    </div>
+                                                                <div class="relevantinformation">
+                                    <h2>
+                                        【相关信息】</h2>
+                                    <ul class="newslist">
+                                                                                <li><span>11-06</span><a href="931969442585.html">我国社区教育的现实状况</a></li>
+                                                                                <li><span>10-09</span><a href="686883045325.html">我国社区数字化学习的实践与思考</a></li>
+                                                                                <li><span>10-24</span><a href="783357820931.html">我国社区数字化学习的实践与思考(之一）</a></li>
+                                                                                <li><span>10-24</span><a href="072810041053.html">我国社区数字化学习的实践与思考(之二）</a></li>
+                                                                                <li><span>05-24</span><a href="198068959179.html">我国社区音乐教育研究综述</a></li>
+                                                                            </ul>
+                                </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=718691653426" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

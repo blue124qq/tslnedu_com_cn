@@ -1,0 +1,64 @@
+
+
+
+<div class="spb-report">
+  <form id="editor" action="/Channel.aspx/CreateImpeachReport" method="post" class="nyroModal">
+    <div class="tn-form tn-label-right">
+      <h4 class="tn-text-heading tn-border-gray tn-border-bottom"> 我要举报 </h4>
+      
+      <div class="tn-form-row">
+        <label class="tn-form-label"> Email： </label>
+        <input type="text" class="tn-textbox tn-input-medium tn-border-gray" id="userEmail" name="userEmail">
+        <span class="tn-form-required"> (必填)</span> </div>
+      
+      <div class="tn-form-row">
+        <label class="tn-form-label"> 举报原因： </label>
+        <select id="impeachReason" name="impeachReason" class="tn-dropdownlist">
+          <option value="">-请选择-</option>
+          <option value="1"> 内容反动</option>
+          <option value="2"> 内容色情</option>
+          <option value="3"> 内容侵权</option>
+          <option value="4"> 垃圾广告</option>
+          <option value="99"> 其他</option>
+        </select>
+        <span class="tn-form-required"> (必填)</span> </div>
+      <div class="tn-form-row tn-textarea-wrap">
+        <label class="tn-form-label"> 附加说明： </label>
+        <textarea class="tn-textarea tn-input-long tn-border-gray" id="remark" name="remark" cols="35" rows="7"></textarea>
+        <span style="display:none"></span>
+      </div>
+      <div class="tn-tip-area">
+      
+      </div>
+      <div class="tn-form-row tn-form-row-button tn-bg-gray tn-border-gray tn-border-top">
+        <label class="tn-form-label"> </label>
+        <span class="tn-button-primary tn-button"><span class="tn-first-child"><button class="tn-button-text" id="SaveButton" onclick="if($(this).parents('form:first').valid()) {$(this).hide().next('button:last').show();}" type="submit">确定</button><button class="tn-button-text" id="SaveButton_ForHide" onclick="" style="display:none;" type="button">处理中..</button></span></span> <span class="tn-button-default tn-button"><span class="tn-first-child"><button class="nyroModalClose tn-button-text" id="cancelButton" type="button">取消</button></span></span> </div>
+    </div>
+  </form>
+</div>
+<script type="text/javascript" rel="forceLoad">
+        $(document).ready(function() {
+            $("#editor").validate({
+                rules: {
+                 
+                    userEmail: { required: true, email: true },
+                    
+                    impeachReason: "required",
+                    remark: { maxBlength: 3000 }
+                },
+                messages: {
+                
+                    userEmail: { required: "请输入邮箱地址", email: "邮箱地址不正确" },
+                  
+                    impeachReason: "请选择举报原因",
+                    remark: { maxBlength: "最多不能超过3000字" }
+                }
+            });
+
+            $("#SaveButton").click(function() {
+                if (!$("#editor").valid()) {
+                    return false;
+                }
+            });
+        }); 
+</script>

@@ -1,0 +1,60 @@
+/* SpaceBuilder Channels Cascading Style Sheets. Copyright (c) 2010, NERC. All rights reserved. version: 3.0 */
+
+/* Layout
+----------------------------------*/
+#tn-header, #tn-footer { width: 950px; margin: 0 auto; }
+#tn-content { padding: 10px 0; }
+
+/* Theme
+----------------------------------*/
+.spb-nav1 .spb-nav-item .tn-icon { background-image: url(http://space.tssqjy.com/Themes/Channels/Default/appearances/default/Icons/tn-icons-sprite-0065a2.png); }
+.tn-footer-bg { border-color: #cce0ec; border-style: solid; border-width: 1px 0 0; }
+
+/* Top menubar */
+.spb-top-menubar { position: absolute; z-index: 20; left: 300px; right: 0; }
+
+/* Logo */
+#spb-logo { padding: 10px 0; }
+
+/* Search box */
+.spb-branding-area .spb-search-box { padding: 26px 0 10px 0; _height: 25px; _overflow: hidden; }
+.spb-branding-area .tn-button { background: none; border-width: 0; margin: 0; }
+.spb-branding-area .tn-first-child { border-width: 0; margin: 0; }
+.spb-branding-area .tn-button-text { padding: 0 20px 0 5px; }
+.spb-branding-area .tn-search-button button { font-weight: bold; }
+
+/* Navigation */
+.spb-nav1-area, 
+.spb-nav1-area .tn-wrapper-inner, 
+.spb-nav1,
+.spb-nav2 { background: url(Images/spb-nav.png); background-repeat: no-repeat; }
+.spb-nav1-area { padding-left: 10px; background-position: 0 0; }
+.spb-nav1-area .tn-wrapper-inner { padding-right: 10px; background-position: right -100px; zoom:1; height: 30px; overflow: hidden; }
+.spb-nav1 { background-position: 0 -50px; background-repeat: repeat-x; }
+.spb-nav1 .spb-nav-item { margin-right: 2px; }
+.spb-nav1 .spb-nav-item a { color: #fff; }
+.spb-nav1 .spb-nav-item a:hover,
+.spb-nav1 .spb-nav-item a:hover span,
+.spb-nav1 .tn-selected a,
+.spb-nav1 .tn-selected span { background: url(Images/spb-nav-item.png); }
+.spb-nav1 .spb-nav-item a:hover { background-position: 0 0; text-decoration: none; color: #fff; }
+.spb-nav1 .spb-nav-item a:hover span { background-position: right -50px; cursor: pointer; }
+.spb-nav1 .tn-selected a,
+.spb-nav1 .tn-selected a:hover { background-position: 0 -100px; color: #0065A2; }
+.spb-nav1 .tn-selected span,
+.spb-nav1 .tn-selected a:hover span { background-position: right -150px; background-repeat: repeat-x; }
+.spb-nav2 { background-repeat: repeat-x; background-position: 0 -150px; padding: 0 10px; border: solid #cce0ec 1px; border-width: 0 1px 1px; -moz-border-radius: 0 0 3px 3px; -webkit-border-radius: 0 0 3px 3px; border-radius: 0 0 3px 3px; }
+.spb-nav2 .spb-nav-submenu { border: solid #cce0ec 1px; background: #eff5f8; }
+
+/* Simple Pages
+----------------------------------*/
+.spb-simple-page .tn-header-bg { border-bottom: solid #0065a2 1px; }
+
+
+
+.tn-header-bg {background: url(Images/top-bg.jpg) no-repeat left top;}
+.spb-branding-area {height:91px;}
+.spb-top-menubar{ padding-right:20px; margin-top:10px;}
+.spb-branding-area{ padding:10px;}
+
+

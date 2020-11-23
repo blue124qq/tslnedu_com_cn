@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "250846114252";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="250846114252">
+    <input id="classallid" type="hidden" value="250846114252">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zcll.html">
+                    <span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点新闻</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <span class="darkyellow">通知公告</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    关于举办唐山市迎世园“拓天伟业杯”老年广场舞交流活动的通知</h1>
+                                <div class="time">
+                                      浏览次数：<em>2691</em> 发布时间：<span>2016年04月11日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p>
+	各县（市）区分院：</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 为迎接2016年世界园艺博览会在我市举行，活跃全市老年人文化体育生活，经研究决定，唐山社区教育学院承办全市老年广场舞交流活动。请各县（市）区分院按照活动方案的要求，积极组织好本县（市）区的预赛报名组织工作。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 附件：舞动生命 多彩生活---唐山市迎世园&ldquo;拓天伟业杯&rdquo;老年广场舞交流活动实施方案</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p style="text-align: center">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;唐山社区教育学院</p>
+<p style="text-align: center">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016年3月30日</p>
+<p align="center">
+	<strong>舞动生命&nbsp;&nbsp; 多彩生活</strong></p>
+<p align="center">
+	<strong>---</strong><strong>唐山市迎世园&ldquo;拓天伟业杯&rdquo;老年广场舞</strong></p>
+<p align="center">
+	<strong>交流活动实施方案</strong></p>
+<p>
+	<strong>　</strong></p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 老年人是社会的宝贵财富,他们的生活需求和幸福指数一直为全社会所关注。实现伟大的中国梦，是每个中国人的梦想，当然也包涵老年人的期盼与追求，同时老年人更是树立梦想榜样、引领青年一代的力量源泉。适逢2016唐山世界园艺博览会开幕之际，为展现唐山老年群体风采，促进社会和谐发展，特举办此次广场舞大赛。</p>
+<p>
+	　<strong>　一、活动名称</strong></p>
+<p>
+	　　舞动生命，多彩生活--唐山市迎世园&ldquo;拓天伟业杯&rdquo;老年广场舞交流活动</p>
+<p>
+	　　<strong>二、活动宗旨</strong></p>
+<p>
+	　　关爱老年一族，感召青年一代</p>
+<p>
+	　<strong>　三、活动时间</strong></p>
+<p>
+	　　2016年4月21日 &mdash;2016年5月21日</p>
+<p>
+	　　<strong>四、主办单位</strong></p>
+<p>
+	　　唐山市老年体协</p>
+<p>
+	　<strong>　五、承办单位</strong></p>
+<p style="margin-left: 10.5pt">
+	&nbsp;&nbsp; 唐山社区教育学院&nbsp;&nbsp;&nbsp; 华之夏传媒有限公司</p>
+<ul>
+	<li>
+		<strong>协办单位</strong></li>
+</ul>
+<p style="margin-left: 21pt">
+	&nbsp; 拓天伟业（北京）资产管理有限公司唐山分公司&nbsp;&nbsp;</p>
+<p style="margin-left: 21pt">
+	&nbsp; 唐山中国国际旅行社</p>
+<p>
+	　　<strong>七、参加办法</strong></p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.每单位可报领队1人，参赛人数12-30人（年龄45周岁至70周岁，参赛时验身份证。要求各参赛队上报队员姓名及联系电话)。　</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.参赛作品以公众可以广泛参与的广场舞为主导，不分舞种，可从各种广场舞中自行选定并加以改编。</p>
+<p>
+	　　3.参赛服装统一、美观大方，符合参赛广场舞特点。</p>
+<p>
+	　　4.参赛的轻器械，要求安全、美观，不允许使用锋利、具有伤害性器械。</p>
+<p>
+	　　<strong>八、形式内容要求</strong></p>
+<p>
+	　　1.题材不限、内容健康、积极向上；</p>
+<p>
+	　　2.作品的创作或表演形式具有新意和创意;</p>
+<p>
+	　　3.充满活力，具有流畅的过渡动作，丰富的队形变化;</p>
+<p>
+	　　4.必须显示身体全面的协调能力，成套动作中的舞蹈、技巧、造型和队形变化应始终保持完整性；</p>
+<p>
+	　　5.广场舞蹈的动作设计要遵循健康和安全的原则，并体现项目特点。不提倡做高难度、危险性动作(如出现选手不遵循健康、安全原则，出现意外伤害情况，组委会不承担责任)。</p>
+<p>
+	　<strong>　九、比赛办法及报名时间</strong></p>
+<p>
+	　　1.比赛分预赛、决赛;</p>
+<p>
+	　　2. 预赛出场顺序以赛前抽签确定（市区各队现场参赛，其它各队[路途较远的外县（市、区）]可上传视频资料参赛）;</p>
+<p>
+	　　3.决赛出场顺序以预赛比赛成绩确定，按成绩由低到高顺序出场;</p>
+<p>
+	　　4.每个参赛曲目时间要求在4-5分钟内;</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.参赛队自备比赛舞CD伴奏带两盘(备用一盘)；</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.评委由市老年体协和唐山社区教育学院共同选派；</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7.报名截止时间：2016年4月15日；</p>
+<p>
+	　　<strong>十、 参赛地点</strong></p>
+<p>
+	　&nbsp; 唐山市国际会展中心南广场（唐百集团人民购物广场对面）</p>
+<p>
+	　&nbsp; <strong>十一、评分细则：</strong></p>
+<p>
+	　　本次比赛分为预赛、决赛两个阶段，每个阶段评分标准都划分为仪表、舞蹈姿态和场内气氛三部分，具体评分标准在各个阶段会略有不同，比赛层次越高，要求越严格。决赛分数由评委现场打分和微信公众号投票组成。</p>
+<p>
+	<strong>十二、奖项设置：</strong></p>
+<p>
+	冠军：广场明星队1名&nbsp;&nbsp;&nbsp; 奖金2000元+旅游</p>
+<p>
+	亚军：最具魅力队2名&nbsp;&nbsp;&nbsp; 奖金1000元+旅游</p>
+<p>
+	季军：最具活力队3名&nbsp;&nbsp;&nbsp; 奖金 500元+旅游</p>
+<p>
+	纪念奖：最具人气队3名 &nbsp;奖金500元</p>
+<p>
+	<strong>十三、活动宣传</strong></p>
+<p>
+	1、分别以唐山市老年体协和唐山社区教育学院的名义向各县区老年体协和乡街社区下发大赛邀请函，由县区组织社会团体及社区文艺队报名。</p>
+<p>
+	2、借助唐山电视台、兰若传媒车载电视等媒介对大赛进行宣传，扩大群众的知晓面。</p>
+<p>
+	<strong>十四、报名联系方式</strong></p>
+<p>
+	1.请各县（市）区分院积极组织预赛报名，确定并公布本县（市）区分院报名地址、联系人和联系电话；</p>
+<p>
+	2.唐山社区教育学院联系人：韩荔馨</p>
+<p>
+	联系电话：2059260</p>
+<p>
+	邮　　箱：1109449825@qq.com</p>
+<p>
+	　　</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;唐山社区教育学院&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2016年3月30日</p>
+
+                                    <br>    <br>
+                                                                    </div>
+                                                                <div class="relevantinformation">
+                                    <h2>
+                                        【相关信息】</h2>
+                                    <ul class="newslist">
+                                                                                <li><span>06-05</span><a href="940892330306.html">关于举办唐山市社区居民书画、摄影、手工制作、歌舞、曲艺作品展评活动的通知</a></li>
+                                                                            </ul>
+                                </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=799530087275" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

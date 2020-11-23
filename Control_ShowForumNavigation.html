@@ -1,0 +1,84 @@
+
+<div class="spb-forum-nav">
+    <div class="tn-list-header">
+        <div class="tn-list-header-row tn-helper-clearfix tn-border-gray tn-border-bottom">
+            <span class="tn-helper-right">
+                <span class="tn-button tn-button-default">
+                    <span class="tn-first-child">
+                        <a href="javascript:;" class="tn-button-text" id="EnterSelectModule">
+                            进入所选版块</a>
+                    </span>
+                </span>
+                <span class="tn-button tn-button-text-icon tn-button-primary">
+                    <span class="tn-first-child">
+                        <span class="tn-icon tn-icon-topic"></span>
+                        <a href="javascript:;" class="tn-button-text" id="sendPosts">
+                            直接发帖</a>
+                    </span>
+                </span>
+            </span>
+            <strong>
+                版块导航</strong></div>
+    </div>
+    <div class="spb-forum-nav-wrap">
+        <ul id="ForumNavigation">
+            
+            <li data="{'gid':'97','url':'http://space.tslnedu.com.cn/Forum.aspx/g-97'}" ondblclick="window.location.href='http://space.tslnedu.com.cn/Forum.aspx/g-97'">
+                <span class="tn-state-default"><strong>
+                    论坛公告</strong>
+                    
+                </span>
+                <ul style="display: none">
+                    
+                </ul>
+                
+            <li data="{'gid':'98','url':'http://space.tslnedu.com.cn/Forum.aspx/g-98'}" ondblclick="window.location.href='http://space.tslnedu.com.cn/Forum.aspx/g-98'">
+                <span class="tn-state-default"><strong>
+                    学习交流</strong>
+                    
+                </span>
+                <ul style="display: none">
+                    
+                </ul>
+                
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $("#ForumNavigation li").click(function() {
+            $("#ForumNavigation span.tn-state-active").removeClass("tn-state-active");
+            $(this).children("span.tn-state-default").addClass("tn-state-active").end().parent().find("ul").hide().end().end().children("ul").show();
+            return false;
+        });
+
+        $("#EnterSelectModule").click(function() {
+            var $activeGroupItem = $("#ForumNavigation span.tn-state-active").parent();
+            if ($activeGroupItem.length > 0) {
+                var data = eval("(" + $activeGroupItem.attr("data") + ")");
+                window.location.href = data.url;
+            }
+            else
+                alert('请先选择一个版块！');
+            return false;
+        });
+
+        $("#sendPosts").click(function() {
+            var $activeSectionItem = $("#ForumNavigation span.tn-state-active").parent();
+            var sectiondata = eval("(" + $activeSectionItem.attr("data") + ")");
+            if ($activeSectionItem.length > 0 && sectiondata.sid > 0) {
+                window.location.href = 'http://space.tslnedu.com.cn/Forum.aspx/NewForumThread?sectionID=' + sectiondata.sid;
+            }
+            else
+                alert('请先选择一个子版块！');
+            return false;
+        });
+    });
+
+
+
+</script>
+

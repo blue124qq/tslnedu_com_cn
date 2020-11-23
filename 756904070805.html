@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "060057025098";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="060057025098">
+    <input id="classallid" type="hidden" value="060057025098-940210697471-745661973727">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19">                <a href="xwkd.html" class="current"><span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zcll.html">
+                    <span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            <option value="940210697471">本地资讯</option><option value="745661973727">资讯焦点</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                            <div class="blueborder">
+            <div class="titlebg01">
+              <h2>新闻速递</h2>
+            </div>
+            <div class="newsKD_list">
+              <ul>
+                  <li><a href="javascript:void(0)" onclick="initNewsData('940210697471','本地资讯')"><b>本地资讯</b></a></li> <li><a href="javascript:void(0)" onclick="initNewsData('745661973727','资讯焦点')"><b>资讯焦点</b></a></li>              </ul>
+            </div>
+          </div>
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点新闻</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <span class="darkyellow">新闻速递</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    唐山市教育局召开全市省级社区教育实验基地和实验项目建设汇报会</h1>
+                                <div class="time">
+                                      浏览次数：<em>238</em> 发布时间：<span>2016年10月26日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 为进一步推进我市省级社区教育实验基地和实验项目建设，部署2017年实验基地（项目）建设工作，10月25日上午，市教育局在唐山社区教育学院召开了&ldquo;全市省级社区教育实验基地和实验项目建设工作汇报会&rdquo;。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 市教育局副局长李连斌，职成处处长张相奎，唐山广播电视大学党委书记、校长朱全友出席会议。全市14个县（市）区教育局成职科科长、19个省级社区教育实验基地和实验项目负责人以及唐山社区教育学院有关部门负责人参加了会议。</p>
+<p style="text-align: center">
+	<img border="0" src="files/Content/基地汇报会21.jpg"></p>
+<p style="text-align: center">
+	<img border="0" src="files/Content/基地汇报会31.jpg"></p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 会上，各省级社区教育实验基地和实验项目负责人分别介绍了本实验基地（项目）的基本情况、省级专项支持经费使用情况、2016年社区教育工作开展情况及2017年经费投入及建设工作计划。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 朱全友校长对各实验基地（项目）提出要求：各单位要把省级实验基地和实验项目当作义不容辞的责任来抓实抓好，要为全省社区教育工作提供可参考、可复制、可推广的经验，要形成特色，树立品牌；要加强过程性管理，把工作过程认真记录下来；要加强专项资金管理，保证支出帐目清晰可查。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 张相奎处长对实验基地（项目）建设提出了四点要求：一是实验基地（项目）建设要符合社区教育内涵要求；二是要处理好社区教育与社区建设的关系；三是要充分调动社区各方面的力量，借力发展社区教育；四是要明确任务目标，严格经费管理，做好宣传工作。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 李连斌副局长最后指出：大家要认真学习领会《教育部等九部门关于进一步推进社区教育发展的意见》精神，严格按照省级相关标准做好实验基地（项目）的建设工作，要坚持把提高国民思想道德素质作为社区教育的宗旨贯穿其中，让社区教育在弘扬社会主义核心价值观、推动社会治理体系建设、传承中华优秀传统文化、形成科学文明生活消费方式、服务人的全面发展等方面发挥更大作用。</p>
+<p style="text-align: center">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;（稿源：唐山社区教育学院办公室）</p>
+
+                                    <br>    <br>
+                                                                    </div>
+                                                                <div class="relevantinformation">
+                                    <h2>
+                                        【相关信息】</h2>
+                                    <ul class="newslist">
+                                                                                <li><span>03-05</span><a href="620417798649.html">唐山市八里庄小学积极开展社区教育进校园活动</a></li>
+                                                                                <li><span>10-23</span><a href="684456119117.html">唐山市社区教育工作会议隆重召开</a></li>
+                                                                                <li><span>06-26</span><a href="910468723300.html">唐山市社区教育工作者培训班开班典礼（视频）</a></li>
+                                                                                <li><span>04-08</span><a href="575978746947.html">唐山市路南区举行“社区居民培训班走进社区”开班仪式</a></li>
+                                                                                <li><span>11-09</span><a href="239241118879.html">唐山市社区教育指导中心举办《河北省唐山教育信息网促进条例》专题讲座</a></li>
+                                                                            </ul>
+                                </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=756904070805" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

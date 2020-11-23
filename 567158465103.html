@@ -1,0 +1,582 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "250846114252";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="250846114252">
+    <input id="classallid" type="hidden" value="250846114252">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zcll.html">
+                    <span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点新闻</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <span class="darkyellow">通知公告</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    关于组建唐山市社区教育专家库的通知</h1>
+                                <div class="time">
+                                      浏览次数：<em>2355</em> 发布时间：<span>2018年07月02日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p>
+	&nbsp;</p>
+<p>
+	各县（市）区教育局、各分院：</p>
+<p align="left">
+	　　为深入贯彻落实党的十九大精神，办好人民满意的社区教育，推进我市社区教育高质量发展，唐山市社区教育指导中心决定建立我市社区教育专家库，现将组织推荐专家库人选的有关事项通知如下：</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 一、申报和推荐条件</p>
+<p align="left">
+	　　主要从我市广播电视大学系统、各普通高校、职业院校、各行政事业单位及企业中有志于推进我市社区教育发展的现职和退休人员中申报和推荐。具体条件如下：</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.拥护党的领导，政治立场坚定，具有良好的思想品德和职业道德，工作严谨，客观公正，责任心强，乐于奉献；</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.热爱社区教育事业，了解社区教育相关工作，对国内外社区教育理论与实践有一定研究和见解的人士；</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.熟悉学习型城市建设，数字化学习资源建设，老年教育和城乡社会教育等的人士；</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.在公民道德教育、法制教育、时事政策教育、家庭教育、学生校外教育、科学文化知识培训、实用技能培训、健康知识培训等社区教育领域术有专攻，有较高的造诣和较强的社会影响力，能够发挥示范、辐射和带头作用的人士；</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;5.专业技术人才要求具有突出的专长;学者型人才要求具有较高的学术地位和政策理论水平,一般应达到副高级以上职称；组织管理型人才要求具有较强的组织协调能力和社会活动能力；</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6.本人自愿，工作单位支持，能按要求完成相关工作任务。身体健康，年龄一般不超过65周岁。</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 二、主要任务</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 入选社区教育专家库的专家，在市社区教育指导中心的领导下，对全市社区教育工作开展研究、咨询、指导、评价和服务等工作。主要任务有：</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.开展理论与实践研究，进行工作调研，对我市社区教育事业发展中的重要问题和制定全市社区教育发展规划、法律法规、政策措施等提供咨询意见和建议；</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.参与社区教育有关工作的指导、检查、评估、验收及成果评审等工作；</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.开展社区教育讲座或师资培训。按照市社区教育指导中心年度计划，进行有利于居民素质提升的专家讲座或对社区教育教师进行指导、培训和专业素质提升等活动；</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.承担市社区教育指导中心委托的其它任务。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 三、聘任程序</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 按照&ldquo;自愿、公开、平等、竞争、择优&rdquo;原则，采取&ldquo;自下而上、逐级推荐、广泛认可&rdquo;的办法进行选聘。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1．报名推荐</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 即日起至2018年6月30日，推荐单位或申报人填写《唐山市社区教育专家库申报、推荐表》（附件），连同本人身份证（正反面）、学历证、职称证扫描件各1份，发送至唐山社区教育指导中心办公室公共邮箱。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2．审核和公示</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 唐山市社区教育指导中心负责组织入库专家资格审查，经审查合格的，由指导中心统一公示名单，无异议后纳入唐山市社区教育专家库并颁发证书。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 四、组织管理</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.市社区教育指导中心领导班子负责专家库建设的组织领导、决策部署、重大事项决定等。指导中心办公室负责专家库的日常管理工作。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.入选专家可优先参与市社区教育指导中心组织的业务研讨、课题研究、社区教育讲座、专业培训、专家咨询等活动；可按照有关规定获取相应劳动报酬。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.入选专家一般聘任期为2年。专家库实行动态管理，专家库人数、成员等可根据实际需要增补和调整。入库专家聘任期满后，将择优续聘。</p>
+<p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.专家库专家在聘任期内，因本人原因不宜担任专家者，可申请放弃成员资格。对未能履行职责或出现重大工作失误、造成不良影响者，因违法乱纪被追究刑事责任者，直接注销资格，取消聘任。解聘后，专家需将原聘书交还市社区教育指导中心。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 五、联系方式</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 联系人：张启新</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 电子邮箱：<a href="mailto:ttssqjy@126.com">ttssqjy@126.com</a></p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 联系电话：0315-2059278</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 联系地址：唐山市路北区建设北路92号</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 唐山广播电视大学</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 邮编：063000</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 附件：唐山市社区教育专家库申报、推荐表</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 唐山市社区教育指导中心</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;2018年6月10日</p>
+<p>
+	&nbsp;</p>
+<p>
+	附件</p>
+<p align="center">
+	<strong>唐山市社区教育专家库申报、推荐表</strong></p>
+<p align="right">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;填表时间：&nbsp;&nbsp;&nbsp; 年&nbsp;&nbsp; 月&nbsp;&nbsp; 日</p>
+<p>
+	&nbsp;</p>
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="635">
+	<tbody>
+		<tr>
+			<td style="width: 101px; height: 39px">
+				<p align="center">
+					姓&nbsp;&nbsp;&nbsp; 名</p>
+			</td>
+			<td style="width: 83px; height: 39px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+			<td style="width: 93px; height: 39px">
+				<p align="center">
+					性&nbsp;&nbsp;&nbsp; 别</p>
+			</td>
+			<td style="width: 83px; height: 39px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+			<td style="width: 93px; height: 39px">
+				<p align="center">
+					民&nbsp;&nbsp;&nbsp; 族</p>
+			</td>
+			<td style="width: 83px; height: 39px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+			<td rowspan="4" style="width: 100px; height: 39px">
+				<p align="center">
+					一寸免冠</p>
+				<p align="center">
+					照片(电子版)</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 101px; height: 37px">
+				<p align="center">
+					出生年月</p>
+			</td>
+			<td style="width: 83px; height: 37px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+			<td style="width: 93px; height: 37px">
+				<p align="center">
+					政治面貌</p>
+			</td>
+			<td style="width: 83px; height: 37px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+			<td style="width: 93px; height: 37px">
+				<p align="center">
+					所在地区</p>
+			</td>
+			<td style="width: 83px; height: 37px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 101px; height: 38px">
+				<p align="center">
+					第一学历</p>
+			</td>
+			<td style="width: 83px; height: 38px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+			<td style="width: 93px; height: 38px">
+				<p align="center">
+					毕业院校</p>
+			</td>
+			<td style="width: 83px; height: 38px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+			<td style="width: 93px; height: 38px">
+				<p align="center">
+					所学专业</p>
+			</td>
+			<td style="width: 83px; height: 38px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 101px; height: 45px">
+				<p align="center">
+					最终学位</p>
+			</td>
+			<td style="width: 83px; height: 45px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+			<td style="width: 93px; height: 45px">
+				<p align="center">
+					毕业院校</p>
+			</td>
+			<td style="width: 83px; height: 45px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+			<td style="width: 93px; height: 45px">
+				<p align="center">
+					所学专业</p>
+			</td>
+			<td style="width: 83px; height: 45px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 101px; height: 40px">
+				<p align="center">
+					擅长领域</p>
+			</td>
+			<td colspan="6" style="width: 534px; height: 40px">
+				<p>
+					&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 101px; height: 38px">
+				<p align="center">
+					职&nbsp;&nbsp;&nbsp; 务</p>
+			</td>
+			<td style="width: 83px; height: 38px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+			<td style="width: 93px; height: 38px">
+				<p align="center">
+					职&nbsp;&nbsp;&nbsp; 称</p>
+			</td>
+			<td style="width: 83px; height: 38px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+			<td style="width: 93px; height: 38px">
+				<p align="center">
+					移动电话</p>
+			</td>
+			<td colspan="2" style="width: 183px; height: 38px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 101px; height: 37px">
+				<p align="center">
+					工作单位</p>
+			</td>
+			<td colspan="3" style="width: 258px; height: 37px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+			<td style="width: 93px; height: 37px">
+				<p align="center">
+					办公电话</p>
+			</td>
+			<td colspan="2" style="width: 183px; height: 37px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 101px; height: 39px">
+				<p align="center">
+					通信地址</p>
+			</td>
+			<td colspan="3" style="width: 258px; height: 39px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+			<td style="width: 93px; height: 39px">
+				<p align="center">
+					电子邮箱</p>
+			</td>
+			<td colspan="2" style="width: 183px; height: 39px">
+				<p align="center">
+					&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 101px; height: 195px">
+				<p align="center" style="margin-left: 5.65pt">
+					工作简历</p>
+			</td>
+			<td colspan="6" style="width: 534px; height: 195px">
+				<p>
+					&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 101px; height: 280px">
+				<p style="margin-left: 5.65pt">
+					&nbsp;&nbsp;&nbsp; 主要专长、成果、</p>
+				<p style="margin-left: 5.65pt">
+					获奖及社会影响情况</p>
+			</td>
+			<td colspan="6" style="width: 534px; height: 280px">
+				<p>
+					&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 101px; height: 217px">
+				<p style="margin-left: 5.65pt">
+					主要专长、成果、</p>
+				<p align="center" style="margin-left: 5.65pt">
+					获奖及社会影响情况</p>
+			</td>
+			<td colspan="6" style="width: 534px; height: 217px">
+				<p>
+					&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 101px; height: 197px">
+				<p align="center" style="margin-left: 5.65pt">
+					单位推荐意见</p>
+			</td>
+			<td colspan="6" style="width: 534px; height: 197px">
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;</p>
+				<p>
+					负责人：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （公章）</p>
+				<p align="center">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 年&nbsp;&nbsp; 月&nbsp;&nbsp; 日</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 101px; height: 215px">
+				<p align="center" style="margin-left: 5.65pt">
+					唐山市社区教育</p>
+				<p align="center" style="margin-left: 5.65pt">
+					指导中心办公室意见</p>
+			</td>
+			<td colspan="6" style="width: 534px; height: 215px">
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;</p>
+				<p>
+					负责人：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+				<p>
+					&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp; 月&nbsp;&nbsp; 日</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 101px; height: 208px">
+				<p align="center" style="margin-left: 5.65pt">
+					唐山市社区教育</p>
+				<p align="center" style="margin-left: 5.65pt">
+					指导中心意见</p>
+			</td>
+			<td colspan="6" style="width: 534px; height: 208px">
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;</p>
+				<p>
+					负责人：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （公章）</p>
+				<p align="center">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 年&nbsp;&nbsp; 月&nbsp;&nbsp; 日</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="clear: both">
+	&nbsp;</div>
+
+                                    <br>    <br>
+                                                                    </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=567158465103" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

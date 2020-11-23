@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "250846114252";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="250846114252">
+    <input id="classallid" type="hidden" value="250846114252">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zcll.html">
+                    <span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点新闻</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <span class="darkyellow">通知公告</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    唐山市社区教育指导中心关于开展首届“唐山市百姓学习之星”评选工作的通知</h1>
+                                <div class="time">
+                                      浏览次数：<em>1585</em> 发布时间：<span>2015年11月26日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p>
+	<strong>各县（市）区教育局、各社区教育分院： </strong></p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 随着社区教育的深入开展，全民学习、终身学习的风气在全市城乡蔚然成风，社区教育在推进学习型城市、促进城市文明建设中发挥了突出的作用。为充分发挥广大市民在学习型社会建设中的主体作用，树立典型、表彰先进，充分发挥典型模范人物的引领带头作用，经市社区教育指导中心研究决定，在全市开展&ldquo;唐山市百姓学习之星&rdquo;评选工作，具体内容通知如下：</p>
+<p>
+	<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 一、指导思想</strong></p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 深入贯彻党的十八大、十八届三中、四中全会精神，落实教育部等七部门《关于推进学习型城市建设的意见》及市委市政府关于大力推进学习型城市建设的指导精神，表彰热爱学习、践行社会主义核心价值观，积极参与学习型城市建设工作的市民先进典型，在全社会积极营造全民学习、时时学习、处处学习、终身学习的良好氛围。</p>
+<p>
+	<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 二、评选范围</strong></p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 唐山市辖区内的常住城乡居民，考虑社区教育特点和实际，参评年龄以超过45岁的中老年人为主体（应占申报人数的80%以上）。</p>
+<p>
+	<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 三、基本条件</strong></p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 申报评选的个人必须具备下列条件：</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （一）热爱祖国，拥护中国共产党的领导，自觉践行科学发展观和社会主义核心价值观，遵纪守法。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （二）践行终身学习理念，自觉制定和执行个人学习计划，坚持持续学习，具有较强的个人学习能力，能够把学习融入生活。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （三）学有一技之长，并在当地或相关领域有较大的影响力。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （四）学以致用成效明显，特别是在促进就业、创业、创优和创造等方面成效显著。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （五）积极参加各项学习活动，尤其是能够在社会性学习、公益性学习活动中起到示范带头作用，带动其他社会成员学习，群众认可度较高的。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （六）百姓学习之星强调自主学习、终身学习、实践学习理念，所以，申报者不宜是学历教育在读人员，应在社区教育范围内进行遴选，尤其侧重中、老年人的自主学习。</p>
+<p>
+	<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 四、申报程序</strong></p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （一）各县（市）区根据申报评选的基本条件组织开展&ldquo;唐山市百姓学习之星&rdquo;初选活动，并在此基础上，确定推荐参评人员的名单，各县（市）区申报3-5名候选人。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （二）结合申报情况，唐山市社区教育领导小组将组织专家进行评选。</p>
+<p>
+	<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 五、</strong><strong>评选办法及</strong><strong>工作要求</strong></p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （一）加强对推荐工作的领导，扩大推荐的覆盖面，切实推选出具有说服力、影响力和榜样示范作用的市民学习先进典型。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （二）统筹安排，精心组织，严格依照评选基本条件和程序，并填写推荐意见，做好&ldquo;唐山市百姓学习之星&rdquo;的初选、推荐和材料报送等工作，确保评选工作公开、公正、公平进行。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （三）唐山市社区教育领导小组将组成专家评审小组，按照&ldquo;唐山市百姓学习之星&rdquo;的条件和个人事迹材料，进行评审，并通过媒体、网络等多种形式广泛征求各方面的意见，接受社会各界的监督，最终确定 &ldquo;唐山市百姓学习之星&rdquo;人选，并以适当形式进行表彰。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （四）各县（市）区社区教育分院请于2015年7月10日前，将以下材料纸质版和电子版报送唐山社区教育学院活动指导处，过期视为无效申报。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.填报《&ldquo;唐山市百姓学习之星&rdquo;申报表》，一式2份。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.由各申报单位统一填报《&ldquo;唐山市百姓学习之星&rdquo;申报登记表》，一式2份；</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.个人先进事迹材料一式2份，要突出以学习为主要内容的先进事迹，2000字以内。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.近期一寸彩色个人照片一张。</p>
+<p style="margin-left: 32pt">
+	联系人：韩丽馨</p>
+<p style="margin-left: 32pt">
+	联系电话：2059260</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 纸质材料报送地址：唐山市社区教育学院活动指导处</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 电子版发送地址：<a href="mailto:53550984@qq.com">53550984@qq.com</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 附件： 1.&ldquo;唐山市百姓学习之星&rdquo;申报表</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.&ldquo;唐山市百姓学习之星&rdquo;申报登记表</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;唐山市社区教育指导中心</p>
+<p align="center">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015年5月10日</p>
+<p>
+	&nbsp;</p>
+
+                                    <br>    <br>
+                                                                        <h2>
+                                     附件1：<a href="javascript:;">唐山市百姓学习之星”申报表</a></h2>
+                                                                           <h2>
+                                     附件2：<a href="javascript:;">唐山市百姓学习之星”申报登记表</a></h2>
+                                                                       </div>
+                                                                <div class="relevantinformation">
+                                    <h2>
+                                        【相关信息】</h2>
+                                    <ul class="newslist">
+                                                                                <li><span>10-15</span><a href="674146757655.html">唐山市社区教育指导中心关于征集社区教育典型案例的通知</a></li>
+                                                                                <li><span>10-15</span><a href="119435420674.html">唐山市2014年全民终身学习活动周工作方案</a></li>
+                                                                                <li><span>09-29</span><a href="333620543196.html">唐山市2015年全民终身学习活动周工作方案</a></li>
+                                                                                <li><span>11-26</span><a href="324394597321.html">唐山市社区教育指导中心关于组织开展社区教育实验项目工作的通知</a></li>
+                                                                            </ul>
+                                </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=357735862068" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

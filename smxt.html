@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="templets/tssq/js/cfijs1.js"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/menuchange.js"></script>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_course_init.js"></script>
+
+    <!--treeview js begin-->
+    <link rel="stylesheet" href="js/treeview/jquery.treeview.css">
+
+    <script type="text/javascript" src="js/treeview/jquery.treeview.js"></script>
+
+    <script type="text/javascript" src="js/treeview/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="js/treeview/demo.js"></script>
+
+    <!--treeview js end-->
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+ <script type="text/javascript" src="templets/tssq/js/course_learn_star.js"></script>
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj =$("#OptionClass").val();        
+            if (classObj != "0") {
+                document.getElementById('classid').value = classObj;
+            } else {
+                document.getElementById('classid').value = "";
+            }
+            window.location = "/search.aspx?tag=coursesearch&catalog=" + document.getElementById("classid").value + "&key=" + escape(document.getElementById("keyword").value);
+        }
+
+        function initNewsData(classitemid, itemname) {
+            document.getElementById('classid').value = classitemid;
+            document.getElementById("keyword").value = "";
+            document.getElementById('currentCatalog').innerHTML = itemname;
+            InitCourseData(0);
+        }
+
+        function InitCourseDataByType(tValue) {
+            document.getElementById('classid').value = "";
+            document.getElementById("keyword").value = "";
+            document.getElementById('currentCatalog').innerHTML = "";
+            if (tValue == "1") {
+                document.getElementById('coursetype').value = "newCourse";
+            }
+            if (tValue == "2") {
+                document.getElementById('coursetype').value = "hotCourse";
+            }
+            if (tValue == "3") {
+                document.getElementById('coursetype').value = "commendCourse";
+            }
+            InitCourseData(0);
+         }
+    </script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="">
+    <input id="coursecount" type="hidden" value="">
+    <input id="newscount" type="hidden" value="">
+    <input id="clickcount" type="hidden" value="">
+        <input id="coursetype" type="hidden" value="newCourse">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19">                <a href="" class="current"><span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zcll.html">
+                    <span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    市民学堂</h2>
+                            </div>
+                            <div class="pd10style2 shimingXT_lefttree">
+                                <p class="bt01 darkblue">
+                                    <a href="javascript:void(0)" onclick="InitCourseDataByType('2')">热门课程</a></p>
+                                <p class="bt02 darkblue">
+                                    <a href="javascript:void(0)" onclick="InitCourseDataByType('1')">最新课程</a></p>
+                                <p class="bt03 darkblue">
+                                    <a href="javascript:void(0)" onclick="InitCourseDataByType('3')">推荐课程</a></p>
+                                <p class="bt04 darkblue">
+                                    <a href="javascript:void(0)" onclick="InitCourseDataByType('1')">全部课程</a></p>
+                                <div id="box4" class="pd10style1">
+                                    <ul class="treeview-gray treeview" id="browser2">
+                                        <li style="text-align: left; vertical-align: text-bottom" class="open collapsable lastCollapsable">
+                                            <div class="hitarea open-hitarea collapsable-hitarea lastCollapsable-hitarea ">
+                                            </div>
+                                            课程分类<ul>
+                                                                                                <li id="sort_1" style="text-align: left;" class="closed expandable">
+                                                    <div class="hitarea closed-hitarea expandable-hitarea ">
+                                                    </div>
+                                                    <a onclick="initNewsData('1','生活技艺')" href="javascript:void(0);">生活技艺</a><ul style="display: none;">
+                                                        <li id="sort_10" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('10','宠物饲养')" href="javascript:void(0);">宠物饲养</a>
+</li>
+<li id="sort_11" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('11','家庭保健')" href="javascript:void(0);">家庭保健</a>
+</li>
+<li id="sort_12" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('12','家庭绿化')" href="javascript:void(0);">家庭绿化</a>
+</li>
+<li id="sort_13" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('13','文体艺术')" href="javascript:void(0);">文体艺术</a>
+</li>
+<li id="sort_14" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('14','手工艺制作')" href="javascript:void(0);">手工艺制作</a>
+</li>
+<li id="sort_15" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('15','生活小窍门')" href="javascript:void(0);">生活小窍门</a>
+</li>
+<li id="sort_16" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('16','烹饪')" href="javascript:void(0);">烹饪</a>
+</li>
+<li id="sort_17" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('17','电器维修')" href="javascript:void(0);">电器维修</a>
+</li>
+<li id="sort_18" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('18','美容美发')" href="javascript:void(0);">美容美发</a>
+</li>
+<li id="sort_19" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('19','装修装饰')" href="javascript:void(0);">装修装饰</a>
+</li>
+<li id="sort_34" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('34','家庭手工艺')" href="javascript:void(0);">家庭手工艺</a>
+</li>
+ 
+                                                    </ul>
+                                                </li>
+                                                                                                <li id="sort_5" style="text-align: left;" class="closed expandable">
+                                                    <div class="hitarea closed-hitarea expandable-hitarea ">
+                                                    </div>
+                                                    <a onclick="initNewsData('5','文化涵养')" href="javascript:void(0);">文化涵养</a><ul style="display: none;">
+                                                        <li id="sort_20" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('20','书法')" href="javascript:void(0);">书法</a>
+</li>
+<li id="sort_21" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('21','绘画')" href="javascript:void(0);">绘画</a>
+</li>
+<li id="sort_22" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('22','文体艺术')" href="javascript:void(0);">文体艺术</a>
+</li>
+ 
+                                                    </ul>
+                                                </li>
+                                                                                                <li id="sort_6" style="text-align: left;" class="closed expandable">
+                                                    <div class="hitarea closed-hitarea expandable-hitarea ">
+                                                    </div>
+                                                    <a onclick="initNewsData('6','文体休闲')" href="javascript:void(0);">文体休闲</a><ul style="display: none;">
+                                                        <li id="sort_23" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('23','茶艺')" href="javascript:void(0);">茶艺</a>
+</li>
+<li id="sort_24" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('24','养生运动')" href="javascript:void(0);">养生运动</a>
+</li>
+ 
+                                                    </ul>
+                                                </li>
+                                                                                                <li id="sort_7" style="text-align: left;" class="closed expandable">
+                                                    <div class="hitarea closed-hitarea expandable-hitarea ">
+                                                    </div>
+                                                    <a onclick="initNewsData('7','医疗保健')" href="javascript:void(0);">医疗保健</a><ul style="display: none;">
+                                                        <li id="sort_25" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('25','家庭保健')" href="javascript:void(0);">家庭保健</a>
+</li>
+<li id="sort_26" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('26','心理健康')" href="javascript:void(0);">心理健康</a>
+</li>
+ 
+                                                    </ul>
+                                                </li>
+                                                                                                <li id="sort_8" style="text-align: left;" class="closed expandable">
+                                                    <div class="hitarea closed-hitarea expandable-hitarea ">
+                                                    </div>
+                                                    <a onclick="initNewsData('8','安全教育')" href="javascript:void(0);">安全教育</a><ul style="display: none;">
+                                                        <li id="sort_27" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('27','公共安全')" href="javascript:void(0);">公共安全</a>
+</li>
+ 
+                                                    </ul>
+                                                </li>
+                                                                                                <li id="sort_9" style="text-align: left;" class="closed expandable">
+                                                    <div class="hitarea closed-hitarea expandable-hitarea ">
+                                                    </div>
+                                                    <a onclick="initNewsData('9','职业教育')" href="javascript:void(0);">职业教育</a><ul style="display: none;">
+                                                        <li id="sort_28" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('28','职业培训')" href="javascript:void(0);">职业培训</a>
+</li>
+ 
+                                                    </ul>
+                                                </li>
+                                                                                                <li id="sort_29" style="text-align: left;" class="closed expandable">
+                                                    <div class="hitarea closed-hitarea expandable-hitarea ">
+                                                    </div>
+                                                    <a onclick="initNewsData('29','农林牧渔')" href="javascript:void(0);">农林牧渔</a><ul style="display: none;">
+                                                        <li id="sort_30" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('30','农业技术')" href="javascript:void(0);">农业技术</a>
+</li>
+<li id="sort_31" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('31','畜牧兽医')" href="javascript:void(0);">畜牧兽医</a>
+</li>
+<li id="sort_32" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('32','水产养殖')" href="javascript:void(0);">水产养殖</a>
+</li>
+<li id="sort_33" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('33','农村环境与卫生')" href="javascript:void(0);">农村环境与卫生</a>
+</li>
+ 
+                                                    </ul>
+                                                </li>
+                                                                                                <li id="sort_37" style="text-align: left;" class="closed expandable">
+                                                    <div class="hitarea closed-hitarea expandable-hitarea ">
+                                                    </div>
+                                                    <a onclick="initNewsData('37','家庭教育')" href="javascript:void(0);">家庭教育</a><ul style="display: none;">
+                                                        <li id="sort_38" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('38','育儿专题')" href="javascript:void(0);">育儿专题</a>
+</li>
+<li id="sort_39" style="text-align: left;" class="closed">
+    <a onclick="initNewsData('39','家教专栏')" href="javascript:void(0);">家教专栏</a>
+</li>
+ 
+                                                    </ul>
+                                                </li>
+                                                                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    学习之星</h2>
+                            </div>
+                            <div class="xxzx_piclist zoom">
+                                <ul id="StarUlData">
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    学习排行</h2>
+                            </div>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" id="LearnOrder" class="xxph_tabble">
+                                <tr>
+                                    <th>
+                                        排名
+                                    </th>
+                                    <th>
+                                        姓名
+                                    </th>
+                                    <th>
+                                        学分
+                                    </th>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td>
+                    <td width="5">
+                    </td>
+                    <td valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="150">
+                                            &nbsp;
+                                        </td>
+                                        <td width="240" height="42">
+                                            <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                        <td width="120">
+                                            <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                <option value="0">......全部分类......</option>
+                                                <option value="1">生活技艺</option><option value="10">    ├宠物饲养</option><option value="11">    ├家庭保健</option><option value="12">    ├家庭绿化</option><option value="13">    ├文体艺术</option><option value="14">    ├手工艺制作</option><option value="15">    ├生活小窍门</option><option value="16">    ├烹饪</option><option value="17">    ├电器维修</option><option value="18">    ├美容美发</option><option value="19">    ├装修装饰</option><option value="34">    ├家庭手工艺</option><option value="5">文化涵养</option><option value="20">    ├书法</option><option value="21">    ├绘画</option><option value="22">    ├文体艺术</option><option value="6">文体休闲</option><option value="23">    ├茶艺</option><option value="24">    ├养生运动</option><option value="7">医疗保健</option><option value="25">    ├家庭保健</option><option value="26">    ├心理健康</option><option value="8">安全教育</option><option value="27">    ├公共安全</option><option value="9">职业教育</option><option value="28">    ├职业培训</option><option value="29">农林牧渔</option><option value="30">    ├农业技术</option><option value="31">    ├畜牧兽医</option><option value="32">    ├水产养殖</option><option value="33">    ├农村环境与卫生</option><option value="37">家庭教育</option><option value="38">    ├育儿专题</option><option value="39">    ├家教专栏</option><option value="40">易帮教育</option><option value="41">    ├三分屏</option><option value="42">    ├动画</option><option value="43">    ├网页</option><option value="46">超星教育</option><option value="47">    ├老年教育</option><option value="48">    ├青少年校外教育</option><option value="49">    ├市民教育</option><option value="50">    ├职工教育</option><option value="51">    ├婴幼儿教育</option><option value="52">走进唐山</option><option value="53">    ├视频资源</option><option value="54">    ├文本资源</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <img src="templets/tssq/images/smxt_search.jpg" style="cursor: hand" onclick="doQuery();" alt="搜索" width="52" height="24" align="absmiddle">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="shimingXT_ptlist">
+                                <div class="titlebg03 blueborder">
+                                    <p class="pd5 darkblue">
+                                        当前所属分类：<span class="darkyellow" id="currentCatalog"></span></p>
+                                </div>
+                                <div id="divload" style="top: 51%; right: 50%; position: absolute; padding: 0px;
+                                    margin: 0px; z-index: 999">
+                                    <img src="manage/read/jquerypager/spinner3-greenie.gif">
+                                </div>
+                                <ul class="picText" id="divCourseContent">
+                                </ul>
+                            </div>
+                            <div class="pd10 t-c">
+                                <div id="Pagination" class="digg" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>

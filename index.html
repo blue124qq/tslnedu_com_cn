@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="title" content="唐山教育网">
+<meta name="description" content="唐山市路南教育信息网为广大考生提供唐山教育局发布的最新考试信息，包括唐山小学教师招聘、唐山中学教师招聘考试、唐山教育局招聘、唐山幼儿教师招聘等多门类的教育考试信息,还提供最新唐山教育信息和新闻资讯。">
+<meta name="keywords" content="唐山教育网,唐山教育信息网,唐山教育局,唐山教育考试院">
+<meta name="language" content="zh-cn">
+<meta name="abstract" content="唐山教育网版权所有">
+  <title>唐山教育网_唐山市路南教育信息网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+   <script type="text/javascript" src="templets/tssq/js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="templets/tssq/js/cfijs1.js"></script>
+<script type="text/javascript" src="templets/tssq/js/menuchange.js"></script>
+<script type="text/javascript" src="templets/tssq/js/YlFloat.js"></script>
+<script type="text/javascript" src="templets/tssq/js/jquery.KinSlideshow-1.2.1.min.js"></script>
+
+
+    <script src="templets/tssq/js/swfobject.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+
+
+
+        function doCourseQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "课程关键字") {
+                alert("请输入课程关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            window.location = "/search.aspx?tag=coursesearch&catalog=&key="+escape(document.getElementById("keyword").value);
+        }
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+<script type="text/javascript" src="templets/tssq/js/index_searchtag.js"></script>
+
+ <script type="text/javascript" src="templets/tssq/js/course_learn_star.js"></script>
+</head>
+<body onload="getInitString();">
+   <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}"> 
+   <input type="hidden" id="hidspace" value="<%= http://space.tslnedu.com.cn %>">
+   <div class="duilian duilian_left" style="top:260px;position:absolute;  overflow:hidden;z-index:2000;left:5px; display:block;">
+ <img src="templets/tssq/images/2016110103201640700.jpg"> <a href="#" class="duilian_close" style="height:22px; line-height:22px; text-align:center; background:#ccc; display:block; font-size:12px; color:#000; text-decoration:none;">关 闭</a> </div>
+<div class="duilian duilian_right" style="top:260px;position:absolute;  overflow:hidden;z-index:2000;right:5px; display:block;"><a href="javascript:;" target="_blank"><img src="templets/tssq/images/2016071309155145300.jpg"></a> <a href="#" class="duilian_close" style="height:22px; line-height:22px; text-align:center; background:#ccc; display:block; font-size:12px; color:#000; text-decoration:none;">关 闭</a> </div>
+<div class="mainindexbg">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a class="current"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="xwkd.html" target="_blank"><span>新闻快递</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="xyjj.html" target="_blank"><span>学院简介</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="smxt.html" target="_blank"><span>市民学堂</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="pxxm.html" target="_blank"><span>培训项目</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="index1.html" target="_blank"><span>社区家园</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="xfyh.html" target="_blank"><span>学分银行</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="zcll.html" target="_blank"><span>政策理论</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="zjts.html" target="_blank"><span>走进唐山</span></a>
+                            </div>
+            <!--<div id="KinSlideshow" style="visibility:hidden;">
+                    <a ><img src="/templets/tssq/images/2015052604222978200.jpg" alt="" width="998" height="172" /></a>
+ 
+            </div>-->
+           
+<div id="swfContent"></div>
+          <script type="text/javascript">
+              //焦点
+              var xmlData = "<list><item><img>/templets/tssq/images/2015052604222978200.jpg</img><url></url></item></list>";
+              var flashvars = { xmlData: xmlData };
+              var params = { menu: false, wmode: "opaque" };
+              var attributes = {};
+              swfobject.embedSWF("/templets/tssq/swf/hz.swf", "swfContent", "998", "172", "9", "expressInstall.swf", flashvars, params, attributes);
+</script> 
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td valign="top">
+                        <div class="blueborder" style="height: 423px; overflow: hidden;">
+                            <div class="titlebg01">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="220">
+                                            <a href="smxt.html">
+                                                <img src="templets/tssq/images/smxt.jpg" alt="市民学堂"></a>
+                                        </td>
+                                        <td>
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="222">
+                                                        <input name="" id="keyword" type="text" onfocus="if(this.value=='课程关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='课程关键字';this.style.color='#999999';}" value="课程关键字" class="smxt_searchinput">
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" width="52" onclick="doCourseQuery();" style="cursor:hand" height="24" alt="搜索">
+                                                    </td>
+                                                    <td>
+                                                        <div class="smxt_searchkey" id="searchTag">
+                                                            </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="piclist01">
+                                <h2>
+                                                                                                                        <a href="search-1_course.html" target="_blank">生活技艺</a>  
+                                                                                                                                                                | <a href="search-5_course.html" target="_blank">文化涵养</a> 
+                                                                                                                                                                | <a href="search-6_course.html" target="_blank">文体休闲</a> 
+                                                                                                                                                                | <a href="search-7_course.html" target="_blank">医疗保健</a> 
+                                                                                                                                                                | <a href="search-8_course.html" target="_blank">安全教育</a> 
+                                                                                                                                                                | <a href="search-9_course.html" target="_blank">职业教育</a> 
+                                                                                                                                                                | <a href="search-29_course.html" target="_blank">农林牧渔</a> 
+                                                                                                                                                                | <a href="search-37_course.html" target="_blank">家庭教育</a> 
+                                                                                                                </h2>
+                                <ul id="indexcourse">
+                                                               
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                    <td width="5">
+                    </td>
+                    <td width="256">
+                        <div class="blueborder">
+                            <div class="newstab">
+                                <ul id="myTab" class="menu">
+                                    <li class="active" onmouseover="nTabs(this,0);"><a href="xwkd.html" target="_blank">新闻快递</a></li>
+                                    <li class="normal" onmouseover="nTabs(this,1);"><a href="tzgg.html" target="_blank">通知公告</a></li>
+                                </ul>
+                                <div id="myTab_Content0" class="content">
+                                    <ul class="newslist">
+                                    <li><span>[11-17]</span>
+                                                            <a href="345893621873.html" target="_blank" title="路南区永红桥街道开展全民终身学习活动">路南区永红桥街道开展全民终身</a></li>
+                                                        <li><span>[11-17]</span>
+                                                            <a href="365941874063.html" target="_blank" title="唐山市妇联家庭教育流动课堂进社区">唐山市妇联家庭教育流动课堂进</a></li>
+                                                        <li><span>[11-17]</span>
+                                                            <a href="321179236531.html" target="_blank" title="路南区广场街道万达二社区开展“敬老月”活动">路南区广场街道万达二社区开展</a></li>
+                                                        <li><span>[11-17]</span>
+                                                            <a href="955475881726.html" target="_blank" title="路南区广场街道燕南社区开展“书香进万家”读书活动">路南区广场街道燕南社区开展“</a></li>
+                                                        <li><span>[11-17]</span>
+                                                            <a href="848548773069.html" target="_blank" title="路南区梁家屯路街道办事处开展全民终身学习周活动">路南区梁家屯路街道办事处开展</a></li>
+                                                        <li><span>[11-17]</span>
+                                                            <a href="097774483929.html" target="_blank" title="古冶社区教育分院举办全民终身学习活动周宣传活动">古冶社区教育分院举办全民终身</a></li>
+                                                                                            </ul>
+                                </div>
+                                <div id="myTab_Content1" class="content none">
+                                    <ul class="newslist">
+                                        <li><span>[07-02]</span>
+                                                            <a href="567158465103.html" target="_blank" title="关于组建唐山市社区教育专家库的通知">关于组建唐山市社区教育专家库</a></li>
+                                                        <li><span>[09-27]</span>
+                                                            <a href="657715952558.html" target="_blank" title="关于公布“缅怀先烈，追忆故人，热爱唐山，共创未来” ">关于公布“缅怀先烈，追忆故人</a></li>
+                                                        <li><span>[04-11]</span>
+                                                            <a href="799530087275.html" target="_blank" title="关于举办唐山市迎世园“拓天伟业杯”老年广场舞交流活动的通知">关于举办唐山市迎世园“拓天伟</a></li>
+                                                        <li><span>[03-14]</span>
+                                                            <a href="841399994017.html" target="_blank" title="关于开展“缅怀先烈，追忆故人，热爱唐山，共创未来”主题征文活动的通知">关于开展“缅怀先烈，追忆故人</a></li>
+                                                        <li><span>[12-28]</span>
+                                                            <a href="538330192619.html" target="_blank" title="关于公布“我与唐山教育信息网”征文活动获奖名单的通知">关于公布“我与唐山教育信息网”征文</a></li>
+                                                        <li><span>[11-26]</span>
+                                                            <a href="324394597321.html" target="_blank" title="唐山市社区教育指导中心关于组织开展社区教育实验项目工作的通知">唐山市社区教育指导中心关于组</a></li>
+                                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <a href="index2.html" target="_blank"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <a href="book.html" target="_blank"><img src="templets/tssq/images/rightbanner02.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <a href="xfyh.html" target="_blank"><img src="templets/tssq/images/rightbanner03.jpg" width="256" height="64"></a></p>
+                    </td>
+                </tr>
+            </table>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td valign="top">
+                        <div class="blueborder" style="height: 376px; overflow: hidden;">
+                            <div class="titlebg01">
+                                <span>
+                                    <a href="pxxm.html" target="_blank"><img src="templets/tssq/images/more.jpg" width="41" height="10" alt="更多"></a>
+                                    </span><a href="pxxm.html"><img src="templets/tssq/images/pxxm.jpg" alt=""></a></div>
+                            <div class="peixunxm_pictext">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="345" valign="top">
+                                            <div class="titlestyle01 zoom">
+                                                <h2>
+                                                    在线培训</h2>
+                                            </div>
+                                            <div class="clrm10">
+                                            </div>
+                                            <div class="content">
+                                                <ul>
+                                                       <li>
+                                                        <div class="picText">
+                                                            <div class="imag imgrec01">
+                                                                    <a href="50.html" target="_blank">
+                                                                    <img src="UploadFile/8a1cce73-549d-42b8-9798-30be6038.jpg" width="148" height="103" alt=""></a></div>
+                                                            <div class="text">
+                                                                <h2 class="darkblue">
+                                                                                <a href="50.html" target="_blank">网站使用指南-社区家园</a></h2>
+                                                                <p>
+                                                                    <span>唐山社区教育网为普及本网，特制作了一系列网站使用教程，主要针对广大市民及一些对网络不</span>…</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>      <li>
+                                                        <div class="picText">
+                                                            <div class="imag imgrec01">
+                                                                    <a href="49.html" target="_blank">
+                                                                    <img src="UploadFile/883f69fd-d6e9-458e-afdc-c124adfc.jpg" width="148" height="103" alt=""></a></div>
+                                                            <div class="text">
+                                                                <h2 class="darkblue">
+                                                                                <a href="49.html" target="_blank">网站使用指南-课程学习</a></h2>
+                                                                <p>
+                                                                    <span>唐山社区教育网为普及本网，特制作了一系列网站使用教程，主要针对广大市民及一些对网络不</span>…</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>                                                      
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td width="20">
+                                        </td>
+                                        <td valign="top">
+                                            <div class="titlestyle01 zoom">
+                                                <h2>
+                                                    线下培训</h2>
+                                            </div>
+                                            <div class="clrm10">
+                                            </div>
+                                            <div class="content">
+                                                <ul>
+                                                     <li>
+                                                        <div class="picText">
+                                                            <div class="imag imgrec01">
+                                                                    <a href="683644500250.html" target="_blank">
+                                                                    <img src="files/sqxiangmu/老人保健师.jpg" width="148" height="103" alt=""></a></div>
+                                                            <div class="text">
+                                                                <h2 class="darkblue">
+                                                                                <a href="683644500250.html" target="_blank">老人保健师职业技能培训</a></h2>
+                                                                <p>
+                                                                    <span>老人保健师职业技能培训    招生简章   2010年6月10日，唐山广播电视大学与</span>…</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>      <li>
+                                                        <div class="picText">
+                                                            <div class="imag imgrec01">
+                                                                    <a href="041060183434.html" target="_blank">
+                                                                    <img src="files/sqxiangmu/lnjy.jpg" width="148" height="103" alt=""></a></div>
+                                                            <div class="text">
+                                                                <h2 class="darkblue">
+                                                                                <a href="041060183434.html" target="_blank">唐山社区教育学院免费老年</a></h2>
+                                                                <p>
+                                                                    <span>为建设全民学习、终身学习的学习型社会，经市委市政府批准，依托唐山广播电视大学成立唐山</span>…</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>                                                      
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                    <td width="5">
+                    </td>
+                    <td width="256" valign="top">
+                        <div class="blueborder posit_r">
+                            <div class="titlebg01">
+                                <img src="templets/tssq/images/xxzx.jpg"></div>
+                            <div class="xxzx_piclist zoom">
+                                <ul id="StarUlData">
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <img src="templets/tssq/images/xxph.jpg"></div>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" id="LearnOrder" class="xxph_tabble">
+                                <tr>
+                                    <th>
+                                        排名
+                                    </th>
+                                    <th>
+                                        姓名
+                                    </th>
+                                    <th>
+                                        学分
+                                    </th>
+                                </tr> 
+                                                            </table>
+                        </div>
+                </td></tr>
+            </table>
+            <div class="clrm5">
+            </div>
+              <p>
+                                          <a target="_blank" href="javascript:;"><img src="templets/tssq/images/2014010910025148224.jpg" width="1000" align="middle"></a>
+                                          </p>
+   
+            <div class="clrm5">
+            </div>
+            <div class="blueborder">
+                <div class="titlebg01">
+                    <a href="javascript:;"><img src="templets/tssq/images/sqjy.jpg"></a></div>
+                <div class="shequjy">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td valign="top">
+                                <div class="titlestyle01 zoom">
+                                    <h2>
+                                        社区活动</h2>
+                                    <span class="more">
+                                        <a href="StreetEvent.html"><img src="templets/tssq/images/more2.gif" width="41" height="10"></a></span>
+                                </div>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab01">
+                <tr>
+                  <th> 活动名称</th>
+                  <th> 时间</th>
+                  <th> 地点</th>
+                </tr>
+               
+                                                                       <tr>
+                                        <td>
+                                           <a href="T-41.html" title="广场街道开展&quot;爱国卫生月&quot;义务劳动" target="_blank">广场街道开展&quot;爱国卫生月&quot;义务劳动</a>
+                                        </td>
+                                        <td>
+                                            2015-05-14 08:00
+                                        </td>
+                                        <td>
+                                         唐山市路南区广场街道不限
+                                        </td>
+                                    </tr>
+                                                                         <tr>
+                                        <td>
+                                           <a href="T-40.html" title="沁园春社区中秋送温暖" target="_blank">沁园春社区中秋送温暖</a>
+                                        </td>
+                                        <td>
+                                            2015-05-01 08:00
+                                        </td>
+                                        <td>
+                                         唐山市路北区钓鱼台街道社区礼堂
+                                        </td>
+                                    </tr>
+                                                                         <tr>
+                                        <td>
+                                           <a href="T-39.html" title="钓鱼台-看望孤老人活动" target="_blank">钓鱼台-看望孤老人活动</a>
+                                        </td>
+                                        <td>
+                                            2015-04-10 08:00
+                                        </td>
+                                        <td>
+                                         唐山市路北区钓鱼台街道南山养老院
+                                        </td>
+                                    </tr>
+                                                                         <tr>
+                                        <td>
+                                           <a href="T-38.html" title="推动全民健身活动的广泛开展" target="_blank">推动全民健身活动的广泛开展</a>
+                                        </td>
+                                        <td>
+                                            2012-10-20 08:00
+                                        </td>
+                                        <td>
+                                         唐山市路北区河北路街道广场
+                                        </td>
+                                    </tr>
+                                                                         <tr>
+                                        <td>
+                                           <a href="T-36.html" title="学院南路街道扎实开展创先争优活动" target="_blank">学院南路街道扎实开展创先争优活动</a>
+                                        </td>
+                                        <td>
+                                            2012-10-20 08:00
+                                        </td>
+                                        <td>
+                                         唐山市路南区学院南路街道街道礼堂
+                                        </td>
+                                    </tr>
+                                                                         
+                                </table>
+                            </td>
+                            <td width="15">
+                                &nbsp;
+                            </td>
+                            <td width="300" valign="top">
+                                <div class="titlestyle01 zoom">
+                                    <h2>
+                                        学习小组动态</h2>
+                                </div>
+                                <div class="xuexiXZ">
+               
+                   <ul id="LearnUlData">
+                                       
+                                       
+                                    </ul>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="clrm10">
+                    </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+           <tr>
+                            <td valign="top">
+                                <div class="titlestyle01 zoom">
+                                    <h2>
+                                        社区风采</h2>
+                                </div>
+                                <ul class="piclist zoom">
+                                                                             <li>
+                                       <a href="ShowStreetStyle-49.html" title="钓鱼台一小整顿中队秩序井然 共建平安校园" target="_blank"><img src="Uploads/StreetStyle/d4e9823d-7349-44ce-b394-8f5fe716.jpg" width="143" height="111"></a></li>
+                                                                            <li>
+                                       <a href="ShowStreetStyle-48.html" title="唐山乔屯楼小学举行庆祝教师节系列活动" target="_blank"><img src="Uploads/StreetStyle/de180e70-45cb-405b-aa54-c6d7d44c.jpg" width="143" height="111"></a></li>
+                                                                            <li>
+                                       <a href="ShowStreetStyle-47.html" title="路南友谊街道社区召开" 庆双节="" 行善举="" 贺团圆"茶话会"="" target="_blank"><img src="Uploads/StreetStyle/535431a1-33d2-43a6-87bf-12efdf7e.jpg" width="143" height="111"></a></li>
+                                                                            <li>
+                                       <a href="ShowStreetStyle-46.html" title="钓鱼台街道开展社区党员风采" target="_blank"><img src="Uploads/StreetStyle/3e95d3b8-d09e-4139-ae26-6677f0ce.jpg" width="143" height="111"></a></li>
+                                                                        </ul>
+                            </td>
+                            <td width="15">
+                                &nbsp;
+                            </td>
+                            <td width="300" valign="top">
+                                <div class="titlestyle01 zoom">
+                                    <h2>
+                                        热门话题</h2>
+                                </div>
+                                <ul class="newslist">
+                                    <li><span>唐山学大教育 2014-10-20 11:06</span><a href="t-143.html" title="名师导航，巧渡期中考，唐山学大教育">名师导航，巧渡期中考，..</a> </li> 
+                                  <li><span>洋洋 2012-10-20 10:52</span><a href="t-52.html" title="唐山哪里可以学古琴？">唐山哪里可以学古琴？..</a> </li> 
+                                  <li><span>王涛 2012-10-20 10:51</span><a href="t-51.html" title="学习插花艺术这门课程的技巧">学习插花艺术这门课程的..</a> </li> 
+                                  <li><span>小小 2012-10-20 10:49</span><a href="t-49.html" title="如果毕业证书丢失，可以补办吗？">如果毕业证书丢失，可以..</a> </li> 
+                                  <li><span>赵兰香 2012-10-31 10:05</span><a href="t-66.html" title="为人师表">为人师表..</a> </li> 
+                                                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="clrm5">
+                    </div>
+                </div>
+            </div>
+            <div class="clrm5">
+            </div>
+            <div class="blueborder">
+                <div class="titlebg01">
+                    <a href="zcll.html"><img src="templets/tssq/images/zcll.jpg" width="95" height="42">
+                    </a>
+                    </div>
+                <div class="shequjy">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td valign="top" width="480">
+                                <div class="titlestyle01 zoom">
+                                    <h2>
+                                        政策法规</h2>
+                                    <span class="more">
+                                        <a href="zcfg.html" target="_blank"><img src="templets/tssq/images/more2.gif" width="41" height="10"></a></span>
+                                </div>
+                                <ul class="newslist">
+                                   <li><span>[2017-03-20]</span>
+                                                            <a href="391093316967.html" title="构建唐山教育信息网体系 河北制定社区教育三年行动计划" target="_blank">构建唐山教育信息网体系 河北制定社区教育三年行动计划</a></li>
+                                                        <li><span>[2017-03-20]</span>
+                                                            <a href="805848053102.html" title="国务院办公厅关于印发老年教育发展规划（2016—2020年）的通知" target="_blank">国务院办公厅关于印发老年教育发展规划（2016—2020年）</a></li>
+                                                        <li><span>[2017-03-20]</span>
+                                                            <a href="613334482431.html" title="教育部等九部门关于进一步推进 社区教育发展的意见" target="_blank">教育部等九部门关于进一步推进 社区教育发展的意见</a></li>
+                                                        <li><span>[2015-10-19]</span>
+                                                            <a href="550918299764.html" title="中成协：关于印发《2015年全民终身学习活动周工作方案》的通知" target="_blank">中成协：关于印发《2015年全民终身学习活动周工作方案》的通</a></li>
+                                                        <li><span>[2015-10-19]</span>
+                                                            <a href="200096199788.html" title="河北省唐山市：唐山市2015年全民终身学习活动周工作方案" target="_blank">河北省唐山市：唐山市2015年全民终身学习活动周工作方案</a></li>
+                                                                                        </ul>
+                            </td>
+                            <td width="20">
+                            </td>
+                            <td valign="top">
+                                <div class="titlestyle01 zoom">
+                                    <h2>
+                                        理论研究</h2>
+                                    <span class="more">
+                                         <a href="llyj.html" target="_blank"><img src="templets/tssq/images/more2.gif" width="41" height="10"></a></span></div>
+                                <ul class="newslist">
+                                  <li><span>[2019-12-13]</span>
+                                                            <a href="541399886973.html" title="关于街道社会组织促进社区教育品牌建设的实践与思考" target="_blank">关于街道社会组织促进社区教育品牌建设的实践与思考</a></li>
+                                                        <li><span>[2019-11-28]</span>
+                                                            <a href="490537718885.html" title="多元共建：社区教育信息资源共享问题研究" target="_blank">多元共建：社区教育信息资源共享问题研究</a></li>
+                                                        <li><span>[2019-11-28]</span>
+                                                            <a href="329474986835.html" title="我国社区教育政策的演进历程、文本分析和改进策略" target="_blank">我国社区教育政策的演进历程、文本分析和改进策略</a></li>
+                                                        <li><span>[2019-11-28]</span>
+                                                            <a href="955952571126.html" title="老年人力资源开发的社区教育模式探微" target="_blank">老年人力资源开发的社区教育模式探微</a></li>
+                                                        <li><span>[2019-11-27]</span>
+                                                            <a href="095311023063.html" title="大数据驱动社区公民教育研究" target="_blank">大数据驱动社区公民教育研究</a></li>
+                                                                                        </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="clrm5">
+            </div>
+            <div class="blueborder">
+                <div class="titlebg01">
+                    <a href="zjts.html"><img src="templets/tssq/images/zjts.jpg" width="95" height="42">
+                    </a>
+                    </div>
+                <div class="zoujints">
+                    <ul class="piclist zoom">
+                        <li>
+                           <a href="zjts.html" target="_blank"><img src="templets/tssq/images/zjtsimg01.jpg" width="152" height="116"></a> </li>
+                        <li>
+                            <a href="tsly-5.html" target="_blank"><img src="templets/tssq/images/zjtsimg02.jpg" width="152" height="116"></a></li>
+                        <li>
+                            <a href="tsly-5.html" target="_blank"><img src="templets/tssq/images/zjtsimg03.jpg" width="152" height="116"></a></li>
+                        <li>
+                            <a href="tsrw.html" target="_blank"><img src="templets/tssq/images/zjtsimg04.jpg" width="152" height="116"></a></li>
+                        <li>
+                            <a href="tsrw.html" target="_blank"><img src="templets/tssq/images/zjtsimg05.jpg" width="152" height="116"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clrm5">
+            </div>
+            <div class="blueborder">
+                <div class="titlebg01">
+                    <img src="templets/tssq/images/qxfy.jpg">
+                </div>
+                    <div class="friendlink">
+                    <a href="javascript:;" target="_blank"><img src="files/lblogo.jpg" width="108" height="38"></a><a href="javascript:;" target="_blank"><img src="files/lnlogo.jpg" width="108" height="38"></a><a href="javascript:;" target="_blank"><img src="files/kplogo.jpg" width="108" height="38"></a><a href="javascript:;" target="_blank"><img src="files/截图1281690596.jpg" width="108" height="38"></a>
+                   
+                    </div>
+            </div>
+            <div class="clrm5">
+            </div>
+            <div class="blueborder">
+                <div class="titlebg01">
+                    <img src="templets/tssq/images/friendlink.jpg">
+                </div>
+                    <div class="friendlink"> 
+                    <a href="javascript:;" target="_blank"><img src="templets/tssq/2016-1/201601071005472.jpg" width="108" height="38"></a><a href="javascript:;" target="_blank"><img src="files/2013-9/hbLLL.gif" width="108" height="38"></a><a href="javascript:;" target="_blank"><img src="templets/tssq/images/friendlink03.jpg" width="108" height="38"></a><a href="javascript:;" target="_blank"><img src="templets/tssq/images/friendlink01.jpg" width="108" height="38"></a><a href="javascript:;" target="_blank"><img src="templets/tssq/images/friendlink02.jpg" width="108" height="38"></a><a href="javascript:;" target="_blank"><img src="templets/tssq/images/friendlink07.jpg" width="108" height="38"></a><a href="javascript:;" target="_blank"><img src="templets/tssq/images/friendlink06.jpg" width="108" height="38"></a><a href="javascript:;" target="_blank"><img src="templets/tssq/images/friendlink04.jpg" width="108" height="38"></a></div><div class="friendlink"><a href="javascript:;" target="_blank"><img src="templets/tssq/images/friendlink05.jpg" width="108" height="38"></a><a href="javascript:;" target="_blank"><img src="templets/tssq/images/friendlink08.jpg" width="108" height="38"></a>
+
+                    </div>
+            </div>
+            <div class="clrm10">
+            </div>
+            <h3 class="darkblue t-c pd5">
+                <a href="zjts.html" target="_blank">走进唐山</a> | <a href="xyjj.html" target="_blank">学院简介</a> | <a href="wzdh.html" target="_blank">网站导航</a></h3>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div>
+    </form>
+</body>
+</html>

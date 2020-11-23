@@ -1,0 +1,86 @@
+/* Copyright 2009 Spacebuilder.com. All Rights Reserved. */
+
+/* general style  */
+* {margin: 0px;padding: 0px;}
+ol, ul{ list-style: none;}
+hr{ border: 0; border-top: 1px solid #cacaca; height: 1px; }
+img{ border: 0;}
+a { color: #069; text-decoration: none; }
+a:hover { color: #f60; text-decoration: underline; }
+/* layout */ 
+#commonDoc{ width: 990px; height: 100%; margin-left: -495px; position: absolute; left: 50%; }
+#commonHeader{ background: url(../images/header_bg.gif) no-repeat center bottom; }
+#commonHeader a, #commonHeader a:hover { color: #fff; }
+#commonHeader h1 { font-size: 24px; font-weight: bold; color: #069; padding: 10px 10px 10px 250px; background: url(../../Images/logo.png) no-repeat 20px center; color: #fff; }
+#commonHeader p { text-align: right; padding: 20px 20px 0; float: right; }
+#commonContent { padding: 20px 0; overflow: hidden; zoom:1;}
+#commonLeftColumn{ width: 223px; float: left; background: url(../images/column_top.gif) no-repeat; }
+#commonCenterColumn{ }
+#commonRightColumn{ margin-left: 230px; }
+.containerLeft { padding: 10px; background: url(../images/column_bottom.gif) no-repeat 0 bottom; }
+.containerLeft h1 { line-height: 25px; color: #069; font-size: 14px; font-weight: bold; text-indent: 50px; background: url(../images/menu_title.gif) no-repeat 20px center; }
+.containerLeft ul { }
+.containerLeft li { line-height: 18px; border-bottom: dotted #ccc 1px; padding: 8px 0; }
+.titleBackground { background: url(http://space.tssqjy.com/Help/images/title_bg.gif) no-repeat 50px center; }
+.containerRight { overflow: hidden; }
+.menuBackground { background: url(../images/menu_title.gif) no-repeat 18px center; }
+.commonContentArea{  padding: 10px;}
+.commonContentArea h1 { border-bottom: dotted #ccc 1px; margin-bottom: 10px; padding: 5px 20px 10px; font-size: 14px; font-weight: bold; color: #f60; }
+.commonContentArea h2 { font-size: 14px; color: #333; font-weight: bold; line-height: 30px;}
+.commonContentArea p { line-height: 25px; color: #666; margin-bottom: 10px }
+.commonContentArea li { padding-left: 20px; background: url(http://space.tssqjy.com/Help/images/arrow.gif) no-repeat 0px 6px; margin-bottom: 20px; }
+.helpCutline { padding: 10px; }
+.contact { color: #666; }
+.contact p { padding: 5px 0; line-height: normal; }
+.clear { clear: both; }
+#commonFooter { }
+
+#spb-logo {
+float:left;
+height:36px;
+padding-bottom:10px;
+padding-left:0;
+padding-right:0;
+padding-top:10px;
+width:200px;
+}
+.spb-help {
+margin-top:0;
+float:left;
+height:36px;
+vertical-align:middle;
+padding-bottom:10px;
+padding-left:20px;
+padding-top:5px;
+width:200px;
+}
+
+#spb-logo a {
+-moz-background-clip:border;
+-moz-background-origin:padding;
+-moz-background-size:auto auto;
+background-attachment:scroll;
+background-color:transparent;
+background-image:url(../images/logo.png);
+background-position:0 0;
+background-repeat:no-repeat;
+}
+
+#spb-logo a {
+display:block;
+height:36px;
+line-height:50em;
+overflow-x:hidden;
+overflow-y:hidden;
+width:240px;
+}
+.spb-retrun {
+margin-top:0;
+float:right;
+height:36px;
+vertical-align:middle;
+padding-bottom:10px;
+padding-left:20px;
+padding-top:24px;
+width:100px;
+}

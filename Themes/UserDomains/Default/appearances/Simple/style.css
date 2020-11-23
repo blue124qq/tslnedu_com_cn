@@ -1,0 +1,96 @@
+/* SpaceBuilder UserDomains Simple skin Cascading Style Sheets. Copyright (c) 2010, Tunynet Inc. All rights reserved. version: 3.0 */
+
+/* Layout
+----------------------------------*/
+.spb-top-menubar .tn-wrapper-inner,
+.spb-branding-area { width: 950px; margin: 0 auto; }
+
+/* Theme
+----------------------------------*/
+a, a:hover { color: #9f763b; }
+.tn-doc-bg { background: url(Images/top-bg.png) no-repeat center top; }
+.sf-menu .tn-icon,
+.spb-nav1 .spb-nav-item a.sf-with-ul span.tn-icon { background-image: url(Images/tn-icons-sprite-9f763b.png); }
+
+/* Page header
+----------------------------------*/
+.spb-top-menubar { border: solid #efe6e0 1px; border-width: 0 0 1px; }
+
+/* Navigation
+----------------------------------*/
+.spb-nav1-area { width: 950px; border-bottom: solid #9f763b 1px; margin: 0 auto 5px; }
+.spb-nav1 .spb-nav-item a,
+.spb-nav1 .spb-nav-item span,
+.spb-nav1 .spb-nav-item a:hover,
+.spb-nav1 .spb-nav-item a:hover span,
+.spb-nav1 .tn-selected a,
+.spb-nav1 .tn-selected span,
+.spb-nav2 .tn-selected a,
+.spb-nav2 .tn-selected span { background-image: url(Images/nav.png); }
+.spb-nav1 .spb-nav-item span { background-position: right -50px; line-height: 25px; }
+.spb-nav1 .spb-nav-item a:hover { background-position: 0 -100px; text-decoration: none; }
+.spb-nav1 .spb-nav-item a:hover span { background-position: right -150px; }
+.spb-nav1 .tn-selected a,
+.spb-nav1 .tn-selected a:hover { background-position: 0 -200px; color: #fff; }
+.spb-nav1 .tn-selected span,
+.spb-nav1 .tn-selected a:hover span { background-position: right -250px; }
+.spb-nav1 .spb-nav-item a.sf-with-ul { padding: 0 0 0 10px; }
+.spb-nav1 .spb-nav-item a.sf-with-ul span.tn-icon { background-position: 0 0; right: 5px; }
+.spb-nav1 .spb-nav-item ul { border: solid #9f763b 1px; }
+.spb-nav1 .spb-nav-item li a { background: #efe6e0; }
+.spb-nav1 .spb-nav-item li a:hover { background: #dfcec3; }
+.spb-nav1 .spb-nav-item li span,
+.spb-nav1 .spb-nav-item li a:hover span { background: none; }
+.spb-nav1 .spb-separator { background: #9f763b; }
+
+.spb-nav2-area { width: 950px; border-bottom: solid #efe6e0 1px; margin: 0 auto 10px; }
+.spb-nav2 .tn-selected a { background-position: 0 -300px; }
+.spb-nav2 .tn-selected span { background-position: right -350px; line-height: 25px; }
+.spb-nav2 .spb-nav-item { position: relative; top: 1px; }
+
+/* Component containers
+----------------------------------*/
+.tn-widget-content, .ui-widget-content { border-color: #efe6e0; }
+.tn-widget-header, .ui-widget-header { border-color: #efe6e0; background-image: url(Images/bg-pipe-ffffff.png); }
+
+/* Interaction states
+----------------------------------*/
+.tn-state-default, .tn-widget-content .tn-state-default,
+.ui-state-default, .ui-widget-content .ui-state-default { border-color: #efe6e0; background-image: url(Images/bg-pipe-f9f8f7.png) }
+.tn-state-hover, .tn-widget-content .tn-state-hover,
+.ui-state-hover, .ui-widget-content .ui-state-hover { border-color: #dfcec3; background-image: url(Images/bg-pipe-270f0f.png) }
+.tn-state-focus, .tn-widget-content .tn-state-focus,  
+.ui-state-focus, .ui-widget-content .ui-state-focus,
+.tn-state-active, .tn-widget-content .tn-state-active,  
+.ui-state-active, .ui-widget-content .ui-state-active { border-color: #efe6e0; background: #fff; }
+
+/* Button
+----------------------------------*/
+.tn-button-default { border-color: #efddd1; background-image: url(Images/bg-pipe-f5f1ee.png); }
+.tn-button-default .tn-first-child { border-color: #efddd1; }
+.tn-button-default-hover { border-color: #dfc6b5; background-image: url(Images/bg-pipe-f2ebe6.png); }
+.tn-button-default-hover .tn-first-child { border-color: #dfc6b5; }
+.tn-button-primary { border-color: #7f571f; background-image: url(Images/bg-pipe-bf9253.png); }
+.tn-button-primary .tn-first-child { border-color: #7f571f; }
+.tn-button-primary-hover { border-color: #4f320a; background-image: url(Images/bg-pipe-cd9f60.png); }
+.tn-button-primary-hover .tn-first-child { border-color: #4f320a; }
+.tn-button-secondary { border-color: #ddd; background-image: url(Images/bg-pipe-f7f7f1.png); }
+.tn-button-secondary .tn-first-child { border-color: #ddd; }
+.tn-button-secondary-hover { border-color: #ccc; background-image: url(Images/bg-pipe-f2f2e9.png); }
+.tn-button-secondary-hover .tn-first-child { border-color: #ccc; }
+
+/* Background 
+----------------------------------*/
+.tn-bg-light { background: #fff5ef; }
+.tn-bg-deep { background: #7f571f; }
+
+/* Border
+----------------------------------*/
+.tn-border-light { border-color: #efddd1; }
+.tn-border-deep { border-color: #4f320a; }
+
+/* Pagination
+----------------------------------*/
+.tn-pagination a { border-color: #efddd1; }
+.tn-pagination a:hover { border-color: #7f571f; background: #fff5ef; }
+.tn-pagination span.tn-selected { border-color: #7f571f; background: #7f571f; }

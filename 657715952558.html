@@ -1,0 +1,634 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "250846114252";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="250846114252">
+    <input id="classallid" type="hidden" value="250846114252">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zcll.html">
+                    <span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点新闻</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <span class="darkyellow">通知公告</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    关于公布“缅怀先烈，追忆故人，热爱唐山，共创未来” </h1>
+                                <div class="time">
+                                      浏览次数：<em>2354</em> 发布时间：<span>2016年09月27日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p>
+	各县（市）区分院：</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 今年清明节期间，唐山市教育指导中心举办了&ldquo;缅怀先烈，追忆故人，热爱唐山，共创未来&rdquo;主题征文活动。此次活动共收到11个县（市）区分院选送的作品91篇。这些作品大力弘扬了以爱国主义为核心的民族精神，深切地缅怀了那些为了民族独立、祖国富强而牺牲的先烈以及对自己人生有重要影响的故人；展示了我市广大社区居民多彩的人生经历和细腻的内心世界,情真意切，感人至深。征文活动结束后，唐山市社区教育指导中心组织专家从优秀原创征文中评选出了一等奖1篇，二等奖6篇，三等奖12篇，优秀奖18篇。现将获奖名单公布如下(见附件)。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 希望各位获奖作者发扬成绩，不断进步，为进一步丰富广大社区居民的文化生活做出积极贡献。</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 附件：&ldquo;缅怀先烈，追忆故人，热爱唐山，共创未来&rdquo; 主题征文活动获奖名单</p>
+<p style="text-align: center">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 唐山市社区教育指导中心</p>
+<p style="text-align: center">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;2016年9月20日</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	附件：&ldquo;缅怀先烈，追忆故人，热爱唐山，共创未来&rdquo; 主题征文活动获奖名单</p>
+<p>
+	&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" style="width: 581px" width="581">
+	<colgroup>
+		<col>
+		<col>
+		<col>
+		<col>
+	</colgroup>
+	<tbody>
+		<tr height="62">
+			<td colspan="4" height="62" style="width: 581px; height: 62px">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>&nbsp;唐山社区教育学院2016年<br>
+				&nbsp;&ldquo;缅怀先烈、追忆故人、热爱唐山、共创未来&rdquo;征文评选结果</strong></td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				<strong>奖项</strong></td>
+			<td>
+				<strong>作品名称</strong></td>
+			<td>
+				<strong>作者</strong></td>
+			<td>
+				<strong>报送单位</strong></td>
+		</tr>
+		<tr height="51">
+			<td height="51" style="height: 51px">
+				一等奖</td>
+			<td style="width: 263px">
+				我知道你想告诉我爱不用多说<br>
+				&mdash;&mdash;追忆逝去的爷爷</td>
+			<td>
+				宋方舟</td>
+			<td>
+				丰南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				二等奖</td>
+			<td>
+				故乡的清明，故乡的情</td>
+			<td>
+				郑占楠</td>
+			<td>
+				丰南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				二等奖</td>
+			<td>
+				看照片忆亲人</td>
+			<td>
+				乔志宽</td>
+			<td>
+				路北社区教育分院</td>
+		</tr>
+		<tr height="32">
+			<td height="32" style="height: 32px">
+				二等奖</td>
+			<td style="width: 263px">
+				清明节的哀思<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &mdash;&mdash;悼无名烈士墓</td>
+			<td>
+				李荣亭</td>
+			<td>
+				乐亭社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				二等奖</td>
+			<td>
+				忆我的舅舅赵和</td>
+			<td>
+				武德宝</td>
+			<td>
+				乐亭社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				二等奖</td>
+			<td>
+				心祭</td>
+			<td>
+				孟东光&nbsp;</td>
+			<td>
+				丰南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				二等奖</td>
+			<td>
+				七枚纸花</td>
+			<td>
+				&nbsp;邢立雅</td>
+			<td>
+				丰南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				三等奖</td>
+			<td>
+				清明感怀</td>
+			<td>
+				王济洪</td>
+			<td>
+				玉田社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				三等奖</td>
+			<td>
+				怀念母亲</td>
+			<td>
+				孟凤霞</td>
+			<td>
+				开平社区教育分院</td>
+		</tr>
+		<tr height="32">
+			<td height="32" style="height: 32px">
+				三等奖</td>
+			<td style="width: 263px">
+				清明节的思念<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &mdash;&mdash;致最爱的妈妈</td>
+			<td>
+				王兰</td>
+			<td>
+				丰南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				三等奖</td>
+			<td>
+				.舅！您在天堂可安好？</td>
+			<td>
+				孙小华</td>
+			<td>
+				丰南社区教育分院</td>
+		</tr>
+		<tr height="32">
+			<td height="32" style="height: 32px">
+				三等奖</td>
+			<td style="width: 263px">
+				此情可待成追忆<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &mdash;&mdash;追忆我的外公</td>
+			<td>
+				&nbsp;张丹</td>
+			<td>
+				路北社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				三等奖</td>
+			<td>
+				怀念我亲爱的母亲</td>
+			<td>
+				侯淑云</td>
+			<td>
+				曹妃甸社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				三等奖</td>
+			<td>
+				缅怀冀东军区司令员李运昌</td>
+			<td>
+				戴成龙</td>
+			<td>
+				滦南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				三等奖</td>
+			<td>
+				有一种爱，失去方知珍惜</td>
+			<td>
+				&nbsp;张国芳</td>
+			<td>
+				丰南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				三等奖</td>
+			<td>
+				真情无限---怀念我的父亲</td>
+			<td>
+				郑群英</td>
+			<td>
+				路南社区教育分院</td>
+		</tr>
+		<tr height="32">
+			<td height="32" style="height: 32px">
+				三等奖</td>
+			<td style="width: 263px">
+				怀念<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &mdash;&mdash;清明的问&nbsp;</td>
+			<td>
+				王静荣</td>
+			<td>
+				路南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				三等奖</td>
+			<td>
+				永远的怀念</td>
+			<td>
+				&nbsp;刘坤</td>
+			<td>
+				乐亭社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				三等奖</td>
+			<td>
+				缅怀亲人</td>
+			<td>
+				阚桂香</td>
+			<td>
+				开平社区教育分院</td>
+		</tr>
+		<tr height="32">
+			<td height="32" style="height: 32px">
+				优秀奖</td>
+			<td style="width: 263px">
+				兴隆上空的一颗星星在闪光<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &mdash;&mdash;忆我的堂兄庞晓春烈士</td>
+			<td>
+				庞晓飞</td>
+			<td>
+				乐亭社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				优秀奖</td>
+			<td>
+				寄往天堂</td>
+			<td>
+				檀翠红</td>
+			<td>
+				丰南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				优秀奖</td>
+			<td>
+				回忆我的奶奶</td>
+			<td>
+				罗国志</td>
+			<td>
+				路北社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				优秀奖</td>
+			<td>
+				又见小英雄</td>
+			<td>
+				焦振平</td>
+			<td>
+				玉田社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				优秀奖</td>
+			<td>
+				一次别开生面的家庭会议</td>
+			<td>
+				李向明</td>
+			<td>
+				乐亭社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				优秀奖</td>
+			<td>
+				追忆先烈，开创未来</td>
+			<td>
+				&nbsp;孙凤春</td>
+			<td>
+				丰南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				优秀奖</td>
+			<td>
+				抬头仰望，低头怀念</td>
+			<td>
+				郑林燕</td>
+			<td>
+				古冶社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				优秀奖</td>
+			<td>
+				忆英烈，晓道义</td>
+			<td>
+				马彩涛</td>
+			<td>
+				丰南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				优秀奖</td>
+			<td>
+				缅怀先烈 为四叔敬礼</td>
+			<td>
+				林国旺</td>
+			<td>
+				迁安社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				优秀奖</td>
+			<td>
+				岳父</td>
+			<td>
+				贾锁生</td>
+			<td>
+				路南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				优秀奖</td>
+			<td>
+				&nbsp;清明节祭奠公公</td>
+			<td>
+				孙丽辉</td>
+			<td>
+				丰南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				优秀奖</td>
+			<td>
+				缅怀可敬的百岁老人</td>
+			<td>
+				巢书林</td>
+			<td>
+				乐亭社区教育分院</td>
+		</tr>
+		<tr height="32">
+			<td height="32" style="height: 32px">
+				优秀奖</td>
+			<td style="width: 263px">
+				唐山&hellip;&hellip;正用浓墨重彩，<br>
+				&nbsp;&nbsp;&nbsp;&nbsp; 告慰大地震中的遇难者</td>
+			<td>
+				杨杰</td>
+			<td>
+				玉田社区教育分院</td>
+		</tr>
+		<tr height="36">
+			<td height="36" style="height: 36px">
+				优秀奖</td>
+			<td style="width: 263px">
+				缅怀先烈，追忆故人<br>
+				&nbsp; &mdash;&mdash;生而信仰</td>
+			<td>
+				孙荣丽&nbsp;</td>
+			<td>
+				丰南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				优秀奖</td>
+			<td>
+				每个平凡的人都是英雄</td>
+			<td>
+				郭子娟</td>
+			<td>
+				迁安社区教育分院</td>
+		</tr>
+		<tr height="22">
+			<td height="22" style="height: 22px">
+				优秀奖</td>
+			<td>
+				清明节随想</td>
+			<td>
+				刘俐莉&nbsp;</td>
+			<td>
+				路南社区教育分院</td>
+		</tr>
+		<tr height="22">
+			<td height="22" style="height: 22px">
+				优秀奖</td>
+			<td>
+				缅怀先烈，共创未来</td>
+			<td>
+				倪祥文&nbsp;</td>
+			<td>
+				路南社区教育分院</td>
+		</tr>
+		<tr height="19">
+			<td height="19" style="height: 19px">
+				优秀奖</td>
+			<td>
+				缅怀革命先烈，弘扬爱国精神</td>
+			<td>
+				黄九云&nbsp;</td>
+			<td>
+				玉田社区教育分院</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	&nbsp;</p>
+
+                                    <br>    <br>
+                                                                    </div>
+                                                                <div class="relevantinformation">
+                                    <h2>
+                                        【相关信息】</h2>
+                                    <ul class="newslist">
+                                                                                <li><span>12-28</span><a href="538330192619.html">关于公布“我与唐山教育信息网”征文活动获奖名单的通知</a></li>
+                                                                            </ul>
+                                </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=657715952558" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

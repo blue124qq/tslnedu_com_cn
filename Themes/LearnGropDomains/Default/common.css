@@ -1,0 +1,63 @@
+/* SpaceBuilder ClubDomains Themes common Cascading style sheets. Copyright (c) 2010, Tunynet Inc. All rights reserved. version: 3.0 */
+
+/* Header
+----------------------------------*/
+.spb-top-menubar .tn-search-box { float: right; margin: 2px 10px 0 0; }
+.spb-user-menu { float: right; padding: 0 10px; }
+.spb-user-menu li { float: right; padding: 5px 0 5px 10px; }
+.spb-user-menu li ul { padding: 5px 1px; top: 25px; _width: 120px; }
+.spb-user-menu li li { float: none; *width: 100%; padding: 5px 0; white-space: nowrap; }
+.spb-user-menu li li a { padding: 0 10px; }
+.spb-user-menu li li.spb-separator { padding: 0; height: 0; margin: 3px 0px; line-height: 0; font-size: 0; }
+.spb-club-image { overflow: hidden; margin: 5px 0; }
+.spb-club-name { margin: 15px 0 10px; font-size: 133.33%; padding: 0 0 0 20px; }
+.spb-club-intro { margin: 10px 0 15px; padding: 0 0 0 20px; }
+
+/* Navigation */
+.spb-nav1-area .tn-shortcut { float: right; }
+.spb-nav1 { float: left; }
+.spb-nav1 .spb-nav-item { margin-right: 2px; }
+.spb-nav1 .spb-nav-item, 
+.spb-nav2 .spb-nav-item { float: left; }
+.spb-nav1 .spb-nav-item a, 
+.spb-nav2 .spb-nav-item a { float: left; font-weight: bold; white-space: nowrap; padding: 0 0 0 10px; }
+.spb-nav1 .spb-nav-item span,
+.spb-nav2 .spb-nav-item span { float: left;  line-height: 2em; padding: 0 10px 0 0; }
+.spb-nav1 .spb-nav-item a:hover span,
+.spb-nav2 .spb-nav-item a:hover span { cursor: pointer; }
+.spb-nav1 .spb-nav-item a.sf-with-ul { padding: 0; }
+.spb-nav1 .spb-nav-item a.sf-with-ul:hover { text-decoration: none; }
+.spb-nav1 .spb-nav-item a.sf-with-ul span { padding: 0; width: 16px; }
+.spb-nav1 .spb-nav-item a.sf-with-ul span.tn-icon { right: 0; top: 4px; }
+.spb-nav1 .spb-nav-item ul { left: 0; top: 100%; }
+.spb-nav1 .spb-nav-item li { zoom:1; _width: 1px; }
+.spb-nav1 .spb-nav-item li a { float: none; padding: 5px 10px; }
+.spb-nav1 .spb-separator { height: 1px; font-size: 0; overflow: hidden; _display: none; }
+
+/* Content
+----------------------------------*/
+.spb-club-panel { width: 160px; margin: auto; }
+.spb-club-panel .spb-avatar-area { text-align: center; }
+.spb-club-panel .spb-avatar-area .tn-action { position: relative; z-index: 12; top: -30px; }
+
+/* Member */
+.spb-club-members .tn-box-content { padding: 10px 20px; }
+.spb-club-members .tn-list { padding: 0 0 10px; }
+.spb-club-members .tn-list-item { float: left; width: 31.3%; padding: 15px 1% 0; }
+.spb-club-members .tn-list-item-area-left { padding: 0 10px 0 0; }
+.spb-club-members .tn-list-item-row { margin: 0; line-height: 16px; height: 16px; overflow: hidden; }
+.spb-club-members .tn-list-item-row em { padding: 0; }
+.spb-invite-friends .tn-expand-control { z-index: 11; }
+
+/* Manage */
+.spb-club-manage-main .tn-list { padding: 40px 0 20px; }
+.spb-club-manage-main .tn-list-item { float: left; width: 40%; padding: 0 5%; height: 80px; }
+.spb-club-manage-icon { width: 32px; height: 32px; background-image: url(../../Shared/Styles/Images/manage.png); }
+.spb-club-manage-icon-1 { background-position: -9px -9px; }
+.spb-club-manage-icon-2 { background-position: -59px -9px; }
+.spb-club-manage-icon-3 { background-position: -9px -59px; }
+.spb-club-manage-icon-4 { background-position: -59px -59px; }
+
+/* Footer
+----------------------------------*/
+#tn-footer { margin: 0 auto; width: 950px; }

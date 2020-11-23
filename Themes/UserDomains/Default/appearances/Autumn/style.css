@@ -1,0 +1,105 @@
+/* SpaceBuilder UserDomains Autumn skin Cascading Style Sheets. Copyright (c) 2010, Tunynet Inc. All rights reserved. version: 3.1 */
+
+/* Layout
+----------------------------------*/
+
+/* Theme
+----------------------------------*/
+a, a:hover { color: #f66209; }
+.tn-page-bg { background: #fcf9c2;  }
+.tn-doc-bg { background: url(Images/page-bg.png) repeat-x; }
+.tn-header-bg { background: url(Images/top-bg.png) no-repeat center top;; }
+.sf-menu .tn-icon,
+.spb-nav1 .spb-nav-item a.sf-with-ul span.tn-icon { background-image: url(Images/tn-icons-sprite-f66209.png); }
+.tn-text-note, .tn-text-note a, .tn-text-note:hover, .tn-text-note a:hover { color: #a3a178; }
+
+/* Page header
+----------------------------------*/
+.spb-top-menubar .tn-wrapper-inner,
+.spb-branding-area { width: 950px; margin: 0 auto; }
+.spb-branding-area { padding-top: 280px; }
+.spb-top-menubar { background: #fcefc2; border: solid #ffde81 1px; border-width: 0 0 1px; -moz-opacity: 0.85; opacity: 0.85; filter: alpha(opacity=85); }
+
+/* Navigation
+----------------------------------*/
+.spb-nav1-area, .spb-nav2-area { width: 950px; margin: 0 auto; }
+.spb-nav1-area { border-bottom: solid #f66209 1px; margin-bottom: 5px; }
+.spb-nav1 .spb-nav-item a,
+.spb-nav1 .spb-nav-item span,
+.spb-nav1 .spb-nav-item a:hover,
+.spb-nav1 .spb-nav-item a:hover span,
+.spb-nav1 .tn-selected a,
+.spb-nav1 .tn-selected span,
+.spb-nav2 .tn-selected a,
+.spb-nav2 .tn-selected span { background-image: url(Images/nav.png); }
+.spb-nav1 .spb-nav-item span { background-position: right -50px; }
+.spb-nav1 .spb-nav-item a:hover { background-position: 0 -100px; text-decoration: none; }
+.spb-nav1 .spb-nav-item a:hover span { background-position: right -150px; }
+.spb-nav1 .tn-selected a,
+.spb-nav1 .tn-selected a:hover { background-position: 0 -200px; color: #fff; }
+.spb-nav1 .tn-selected span,
+.spb-nav1 .tn-selected a:hover span { background-position: right -250px; }
+.spb-nav1 .spb-nav-item a.sf-with-ul { padding: 0 0 0 10px; }
+.spb-nav1 .spb-nav-item a.sf-with-ul span.tn-icon { background-position: 0 0; right: 5px; }
+.spb-nav1 .spb-nav-item ul { border: solid #f66209 1px; }
+.spb-nav1 .spb-nav-item li a { background: #f8eba2; }
+.spb-nav1 .spb-nav-item li a:hover { background: #f8d36b; }
+.spb-nav1 .spb-nav-item li span,
+.spb-nav1 .spb-nav-item li a:hover span { background: none; }
+.spb-nav1 .spb-separator { background: #f66209; }
+
+.spb-nav2-area { border-bottom: solid #ffde81 1px; margin-bottom: 10px; }
+.spb-nav2 .tn-selected a { background-position: 0 -300px; }
+.spb-nav2 .tn-selected span { background-position: right -350px; }
+.spb-nav2 .spb-nav-item { position: relative; top: 1px; }
+
+/* Component containers
+----------------------------------*/
+.tn-widget-content, .ui-widget-content { border-color: #ffde81; background-color: #fcf9c2; }
+.tn-widget-header, .ui-widget-header { border-color: #ffde81; background-image: url(Images/bg-pipe-fcf9c2.png); }
+
+/* Interaction states
+----------------------------------*/
+.tn-state-default, .tn-widget-content .tn-state-default,
+.ui-state-default, .ui-widget-content .ui-state-default { border-color: #ffde81; background-image: url(Images/bg-pipe-fee89b.png) }
+.tn-state-hover, .tn-widget-content .tn-state-hover,
+.ui-state-hover, .ui-widget-content .ui-state-hover { border-color: #ffde81; background-image: url(Images/bg-gradient-fcf9c2.png) }
+.tn-state-focus, .tn-widget-content .tn-state-focus,  
+.ui-state-focus, .ui-widget-content .ui-state-focus,
+.tn-state-active, .tn-widget-content .tn-state-active,  
+.ui-state-active, .ui-widget-content .ui-state-active { border-color: #ffde81; background: #fcf9c2;  }
+
+/* Button
+----------------------------------*/
+.tn-button-default { border-color: #ffcb81; background-image: url(Images/bg-pipe-f6f3b3.png); }
+.tn-button-default .tn-first-child { border-color: #ffcb81; }
+.tn-button-default-hover { border-color: #88d5f1; background-image: url(Images/bg-pipe-d1f3ff.png); }
+.tn-button-default-hover .tn-first-child { border-color: #88d5f1; }
+.tn-button-primary { border-color: #f66209; background-image: url(Images/bg-pipe-f6bb09.png); }
+.tn-button-primary .tn-first-child { border-color: #f66209; }
+.tn-button-primary-hover { border-color: #0180af; background-image: url(Images/bg-pipe-9ce2fc.png); }
+.tn-button-primary-hover .tn-first-child { border-color: #0180af; }
+.tn-button-secondary { border-color: #d6cdb5; background-image: url(../Simple/Images/bg-pipe-f7f7f1.png); }
+.tn-button-secondary .tn-first-child { border-color: #d6cdb5; }
+.tn-button-secondary-hover { border-color: #c7bda2; background-image: url(Images/bg-pipe-f2f2e9.png); }
+.tn-button-secondary-hover .tn-first-child { border-color: #c7bda2; }
+
+/* Background 
+----------------------------------*/
+.tn-bg-light { background: #f5e8d4; }
+.tn-bg-gray { background: #efeee2; }
+.tn-bg-deep { background: #f66209; }
+.tn-round-corner { background-image: url(Images/tn-ui-round-corner.png); }
+
+/* Border
+----------------------------------*/
+.tn-border-light { border-color: #ffde81; }
+.tn-border-gray { border-color: #e6e0cf; }
+.tn-border-deep { border-color: #e24912; }
+
+/* Pagination
+----------------------------------*/
+.tn-pagination span { border-color: #e6e0cf; }
+.tn-pagination a { border-color: #ffde81; }
+.tn-pagination a:hover { border-color: #e24912; background: #f5e8d4; }
+.tn-pagination span.tn-selected { border-color: #e24912; background: #f66209; }

@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "382032510445";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="382032510445">
+    <input id="classallid" type="hidden" value="382032510445">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19">                <a href="zcll.html" class="current"><span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点信息</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <a href="zcll.html">政策理论</a> &gt;&gt; <span class="darkyellow">政策法规</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    河北省唐山市：唐山市2015年全民终身学习活动周工作方案</h1>
+                                <div class="time">
+                                      浏览次数：<em>2783</em> 发布时间：<span>2015年10月19日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <div class="content" style="font-size: 15px; line-height: 28px">
+	各县（市）区教育局、唐山社区教育学院：<br>
+	　　按照河北省教育厅《关于举办2015年全民终身学习活动周的通知》（冀教职成〔2015〕12号）要求，特制定我市2015年全民终身学习活动周工作方案。<br>
+	<strong>一、指导思想</strong><br>
+	　　以党的十八大和十八届三中全会精神为指导，全面落实《国家中长期教育改革和发展规划纲要》，宣传贯彻《河北省唐山教育信息网促进条例》和市委市政府发展职业教育和继续教育、全面推进社区教育的有关要求，广泛宣传唐山教育信息网理念，开展各类教育培训和学习活动，为创建学习型城市，促进唐山经济社会发展做出贡献。<br>
+	<strong>二、活动周时间和主题</strong><br>
+	　　（一）时间：唐山市2015年全民终身学习活动周时间为10月12日至18日，各县（市）区可根据本地实际确定具体日期，但要在10月底前完成。<br>
+	　　（二）主题：落实《河北省唐山教育信息网促进条例》，促进全民终身学习。<br>
+	<strong>三、组织领导</strong><br>
+	　　唐山市2015年全民终身学习活动周由唐山市社区教育工作领导小组组织领导，由唐山市社区教育指导中心和唐山社区教育学院具体组织实施。各县（市）区按照全市统一要求，成立本县（市）区&ldquo;活动周&rdquo;工作领导小组，要明确相应的责任部门。各社区教育分院、职教中心、乡镇(街道)社区教育中心、村（市）民学校要充分发挥作用，组织好具有本地特色的活动。今年的活动周，全市不再集中举行开幕式，各县（市）区可根据本地实际，安排开幕式或集中展示活动。<br>
+	<strong>四、主要内容</strong><br>
+	　　（一）深入开展《河北省唐山教育信息网促进条例》宣讲活动<br>
+	　　要通过各种方式，广泛宣传《河北省唐山教育信息网促进条例》。全市将统一印制《条例》单行本，编制《&lt;河北省唐山教育信息网促进条例&gt;问答》，向县(市)区、乡镇（街道）和社区发放。市社区教育学院将在活动周期间举办社区教育工作者培训班，就《条例》内容和宣讲方法进行重点讲解。<br>
+	　　（二）广泛开展各类社区教育培训活动<br>
+	　　市社区教育学院要发挥在活动中的引领示范作用，以社区老年人公益培训为重点，开展好英语、计算机、葫芦丝、书画、形体、太极拳等各类培训活动，培训场次不少于30场，培训人次不少于2000人。并组织传统文化进社区、法律咨询进社区等社区巡讲活动，大力弘扬优秀传统文化、提高市民法律素养，听讲人数不少于2000人。<br>
+	　　各县（市）区社区教育分院要开展以社会公德、文明礼仪、法律常识、科普知识、养生保健、家庭教育、历史文化、农业技术等社区教育培训和学习体验活动。培训场次不少于10场，培训人次不少于1000人次。<br>
+	　　各乡镇（街道）社区教育中心活动周期间要至少举办两场以上的公益性培训。培训人数不少于300人次。<br>
+	　　各县（市）区培训活动要做到时间、地点、师资、学员、培训档案五落实，每个县（市）区活动周期间总培训人数不少于3000人次。<br>
+	　　（三）积极组织各级各类竞赛、评选、表演等社区教育活动<br>
+	　　1. 开展唐山市&ldquo;百姓学习之星&rdquo;评选活动。在媒体宣传和表彰学习之星的事迹。<br>
+	　　2. 开展唐山市社区教育微视频大赛，各县（市）区分院要按照唐山社区教育学院《关于举办首届唐山社区教育微课比赛的通知》（唐社教字〔2015〕1号）要求，发动本地教师积极参加活动。相关获奖作品在唐山教育网进行展示。<br>
+	　　3.开展唐山市&ldquo;百姓摄影大赛&rdquo;和&ldquo;百姓十大书法之星&rdquo;、 &ldquo;百姓十大绘画之星&rdquo;评比活动，带动广大市民广泛参与社区教育活动。<br>
+	　　4．利用唐山教育网，开展第二届&ldquo;我与唐山教育信息网&rdquo;征文活动。<br>
+	　　5.组织书画展、摄影展、体育健身表演、文艺汇演、知识竞赛等活动，充分展示社区教育成果，宣传社区教育和全民学习、终身学习理念，为市民提供展示才华和学习交流的平台。<br>
+	<strong>五、广泛宣传，扩大影响</strong><br>
+	　　活动周期间，各单位要积极联系唐山电视台、《唐山劳动日报》、《唐山晚报》等媒体和当地媒体，及时、充分报道活动情况，扩大活动影响。<br>
+	　　市社区教育指导中心将在市唐山教育信息网网站开设全民终身学习活动周专栏， 各单位要向市社区教育指导中心及时上报活动开展情况，随时展示各地活动的典型做法和成功经验。<br>
+	　　活动周结束后，市社区教育活动指导中心将编印《唐山市社区教育典型案例集》，集中展示唐山市社区教育的先进典型和优秀成果。<br>
+	<strong>六、其它事项</strong><br>
+	　　（一）各县（市）区教育局于9月25日前将本县（市）区活动周工作方案及举办全民终身学习活动周项目计划表（附表一、二）报唐山市社区教育指导中心。<br>
+	　　（二）市社区教育指导中心派人参加各县（市）区的有关活动。<br>
+	　　（三）各县（市）区教育局于10月31日前将本县（市）区活动周图片、影像材料以及本县（市）区活动周工作总结报唐山市社区教育指导中心。<br>
+	<br>
+	<!--内容关联投票--></div>
+
+                                    <br>    <br>
+                                                                    </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=200096199788" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

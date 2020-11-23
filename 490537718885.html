@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "167681906525";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="167681906525">
+    <input id="classallid" type="hidden" value="167681906525">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19">                <a href="zcll.html" class="current"><span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点信息</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <a href="zcll.html">政策理论</a> &gt;&gt; <span class="darkyellow">理论研究</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    多元共建：社区教育信息资源共享问题研究</h1>
+                                <div class="time">
+                                      浏览次数：<em>1250</em> 发布时间：<span>2019年11月28日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<span style="box-sizing: border-box; font-family: 楷体, 楷体_GB2312"><strong style="box-sizing: border-box; font-weight: 700">作者简介：</strong>张荣艳，长春理工大学 长春 130022 张荣艳(1975- )，女，长春理工大学法学院副教授，吉林大学哲学社会学院在站博士后。</span></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<span style="box-sizing: border-box; font-family: 楷体, 楷体_GB2312">　　<strong style="box-sizing: border-box; font-weight: 700">内容提要：</strong>社区教育信息资源共享是实施社区教育的一个重要手段和创新机制。目前，在社区教育信息资源共享过程中还存在着诸如信息系统共享体制和机制不完善、社区教育信息生态失衡、系统内部各要素之间互动不足、缺乏信息公共服务意识等问题。需要通过政府、社区教育信息资源开发相关的企业、社会组织和居民多元共建的方式，开发优质共享信息资源，构建相互协调的资源共享模式，在区域内建立社区间的信息共享联动机制，提升政府和居民的信息公共服务意识来不断完善社区教育信息资源共享系统，达到良性运转。</span></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<span style="box-sizing: border-box; font-family: 楷体, 楷体_GB2312">　　<strong style="box-sizing: border-box; font-weight: 700">关 键 词：</strong>多元共建 社区教育 信息资源 资源共享</span></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<span style="box-sizing: border-box; font-family: 楷体, 楷体_GB2312">　　<strong style="box-sizing: border-box; font-weight: 700">项目基金：</strong>教育部人文社会科学研究青年基金项目：东北老工业基地改造中的城市社区调解机制研究(11YJC840070)；教育部春晖项目：东北城镇化过程中社区调解机制研究(S2014038)；博士后社科基金项目：东北城市社区调解机制研究(2013M541275).</span></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　[中图分类号]G203 [文献标识码]A</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　[DOI]10.14071/j.1008-8105(2016)05-0026-05</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　&ldquo;活到老、学到老&rdquo;的唐山教育信息网理念主张教育应该贯穿于人的一生，彻底改变过去将人的一生截然划分为学习期和工作期两个阶段的观念，它促进了教育社会化和学习型社会的建立。美国著名教育家杜威认为，教育的头一个改革就是把学校与社会打成一片，理想的学校应该是一个完整的社会。而社会的缩影就是社区，因此社区教育便成为教育社会化的一个重要载体。随着网络化、信息化的飞速发展，利用信息技术开展数字化学习，成为人们终生学习的重要方式。所以，社区教育信息资源共享便成为实施教育社会化和终生化的一个重要手段和创新机制。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　<strong style="box-sizing: border-box; font-weight: 700">一、社区教育信息资源共享的原理分析</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<strong style="box-sizing: border-box; font-weight: 700">　　(一)社区教育信息资源的内涵解析</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　信息资源是20世纪70年代由西方企业界和政府提出来的，主要是将信息资源作为新的生产要素和公共行政资源。对于信息资源的界定不同的西方学者也给出了不同的定义，最著名的是由美国学者霍顿提出来的。他认为信息资源包括所有的信息源、服务、产品和各种信息系统。它具有两层涵义：当资源为单数时，信息资源主要指某种内容的来源；当资源为复数时，信息资源主要指支持工具，包括供给、设备、环境、人员、资金等。对于整个社会和国家来说，信息资源主要包括具有与信息相关的技能的人才、信息技术中的硬件和软件、信息机构和信息处理服务提供者[1]。我国学者在霍顿的影响下也开始探讨信息资源问题。乌家培指出，信息资源有两种理解：一种是狭义的理解，即指信息内容本身；另一种是广义的理解，指的是除信息内容本身外，还包括与其紧密相联的信息设备、信息人员、信息系统、信息网络等[2]。而本文主要探讨的是社区教育信息资源，根据信息资源的广义理解可以界定为社区内对居民产生教育功能的信息资源。这里的信息资源主要是借鉴霍顿的复数资源和乌家培的广义理解。具体来说，社区教育信息资源主要是指在信息化环境中运行的数字化教育、教学资源，主要包括具有与信息相关的技能的人才、信息技术中的硬件和软件、信息机构和信息处理服务提供者。社区教育信息资源具有广泛性、及时性和复杂性，同时社区教育信息资源又具有很强的共享性，因此在社区教育中，要充分发挥教育信息资源的共享性，为人们的终身学习提供更加便捷的途径。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　<strong style="box-sizing: border-box; font-weight: 700">　(二)社区教育信息资源共享的理论基础</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　1.信息生态系统理论</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　自1997年Thomas H.Davenport正式提出了信息生态的概念以来，传播学、社会学等学者便开始从各自学科的角度对信息生态系统进行了研究。普遍能够达成的共识是多数学者都认为信息生态系统是由信息&mdash;人&mdash;信息环境组成，是具有一定自我调节能力的人工系统。系统观、平衡观、人本观和互动观是指导信息生态理论研究的核心观念。从系统观来看，信息生态系统中各个不同组成部分之间是相互联系且相互依赖的，一个生态要素发生变化就会影响整个信息生态系统。从平衡观来看，信息生态系统具有一定的自我调节能力，在一定的时间内，其结构和功能保持相对的稳定状态。但是生态平衡又是动态的，因此，要不断地建立新的平衡来维持整个信息生态系统。从互动观来看，信息生态系统的各种要素之间和各个子系统之间是相互联系、相互作用的。只有通过各系统要素之间的互动才能更好地构建和谐的信息生态系统。从人本观来看，信息生态系统强调信息活动的主体是&ldquo;人&rdquo;，强调以人为本，要围绕人来建构和维护生态系统平衡[3]。社区教育信息资源共享作为一个创新机制，教育信息、社区居民和信息提供者、信息环境构成了一个必不可少的信息生态系统。因此笔者试图运用信息生态理论的四个核心观念来分析社区教育信息资源共享问题，构建和谐的社区教育信息生态系统，从而达到终身学习的目的。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　2.公共服务理论</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　公共服务的概念最早由法国的莱昂&middot;狄骥提出，他认为公共服务必须由政府来加以规范和控制。而后来行动理论的代表者奥克森则强调，公共服务供应是指一系列集体选择行为的总称，在一定程度上表明了公共服务并非一定要由政府提供。随着福利国家时代的到来，越来越多的学者开始对公共服务进行研究。许多学者普遍认为公共服务的本质为公共物品，由于公共物品具有非排他性和非竞争性的特点，提供公共物品的公共服务因此也就具有公共性、公益性和公平性的特征。公共服务的供给主体除了政府以外，市场以及社会组织也运用多种机制和方式，提供各种物质形态和非物质形态的公共物品。新公共服务理论的代表者美国亚利桑那州立大学的丹哈特夫妇认为，在新的公共服务的模式下，政府的职能是服务而非掌舵，所以首先要变政府的控制者角色为议程安排者角色，安排和提供各种相关的公共设施和公共服务并选择真正的&ldquo;参与者&rdquo;，通过联合公共部门、私营组织和非营利机构来共同参与服务。其次，要清晰地认识到公民是服务的享有者，也是服务的提供者，要重视公民，目的是创造一个利益共享、责任共担的机制[4]。社区教育作为一个公共物品，对社区居民具有非排他性和非竞争性，同时社区教育作为唐山教育信息网的载体，一直追求公平性、公共性和公益性。因此，社区教育应该由政府、市场、社会组织和居民等多元联合共建，共同生产或提供教育公共产品与公共服务，并共同承担相应责任。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	&nbsp;</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	&nbsp;</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　<strong style="box-sizing: border-box; font-weight: 700">二、社区教育信息资源共享存在的问题</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　伴随着信息化的到来，社区教育信息资源共享成为社区教育发展的必然方向，我们国家大力开展社区教育，建立了社区教育实验区、示范区，取得了一定成效，但还存在着一些尚待完善的问题。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　<strong style="box-sizing: border-box; font-weight: 700">(一)信息系统共享体制和机制不完善</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　信息生态系统观强调社区教育信息共享是一个生态系统，它包括社区教育的信息资源、教育信息提供的主体、社区居民、信息场地、信息共享技术、环境、政策等要素。只有这些要素形成一个有机的整体，才能真正实现信息共享。但是，目前我国虽然在大力推进社区教育信息共享系统的建设，却缺乏一个完善的共享体制和机制。条块分割、各自为政的行政管理体制比较明显，互相之间缺乏有机联系、没有统一的协作协调方案，缺少统筹规划。由此导致产生了诸多问题，如：应该在多大范围内实现信息资源共享？运行和维护的资金如何保证？由谁来承担实现数据共享带来的大量的协调、运行、维护和监督工作？各个社区的辖区单位包括学校、公共图书馆等教育机构主观上是否愿意将这些信息资源共享？教育信息共享的法规和管理制度应如何制定等一系列问题。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　在基层实践中的现实困境是：地方自建平台相对分散，维护力量比较薄弱。全国各地都力争全覆盖，在数据的制作上求全贪大，因此无法做到高精尖、趣易简。多数社区都建立了信息资源库，耗费了大量的人力、物力和财力，但在信息资源共享中没有统一的共享机制，导致出现各部门间资源库的&ldquo;闭关自用&rdquo;现象，社区与社区之间&ldquo;信息孤岛&rdquo;现象明显，无法形成一个良性运行的信息共享系统。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　<strong style="box-sizing: border-box; font-weight: 700">(二)社区教育信息生态失衡</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　目前在社区教育信息生态系统中，信息生态失衡状况严重。一方面体现在信息生产者的无序生产。社区教育信息不同于学校教育信息，学校教育信息的内容和对象相对而言比较固定，但社区教育针对的是社区居民，由于不同社区居民的文化层次不同、年龄结构不同，居民的需求、学习的兴趣不同，因此便会导致信息供给和信息需求相对不平衡。虽然信息系统中存储和流动着海量级的教育信息资源，但居民不知道如何去分辨、挑选对自己有用的信息。另一方面，虚假信息、垃圾信息比较多，优质信息资源却相对匮乏。据黄萍萍2010年对浙江省杭州市某区居民的调查发现，有75％的居民认为有用信息资源不易获取，易于获取的多数为垃圾信息资源[5]。造成这些现象的原因在于，在信息资源建设中，不少教育信息资源是由一些软件企业制作和运营的，这些企业的制作人员虽技术能力较高，但缺乏一线的教学实践经验，对信息资源的教育性和教学性缺少考虑，新的教学理念、设计和模式没有融会贯通于信息资源建设中。拥有丰富的优质教育信息资源是实现教育信息资源共享必不可少的前提，因此，如何获取有效的、优质的教育信息资源便成为社区教育信息化进一步发展的瓶颈。如何让社区教育信息生态系统真正达到平衡状态，已经成为社区教育研究者和实践者必须给予重视的问题。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　<strong style="box-sizing: border-box; font-weight: 700">　(三)系统内部各要素之间互动不足</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　从系统生态理论的互动观来看，只有通过各系统要素之间的良性互动才能更好地构建和谐的信息生态系统。但是在社区教育信息资源共享过程中，存在着诸多互动不足的情况。一方面，政府在提供社区教育这一公共服务时，不应只完全承担建构者的任务，还应作为主导者、协调者，统筹规划好与社区教育信息资源相关的企业、非营利性事业单位、社会中介组织、协会等各类组织机构的关系。然而在具体运作过程中，社区教育的经费基本上由政府全部投入，完全由政府自上而下地硬性安排，缺少政府与社区教育信息资源相关的企业和非营利组织与居民之间的良性互动，无法有针对性地满足现有社区教育的实际需求。另一方面，信息资源共享互动不足的一个瓶颈是在社区网络教育中，虽然视频课的主讲老师专业性强、知识面广、教学水平比较高，但是课堂上无法与居民进行交流互动，无法知道居民学习的效果，这也是社区网络教育的短板所在，如能在该问题上得以突破，无疑将取得事半功倍的效果。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　<strong style="box-sizing: border-box; font-weight: 700">　(四)缺乏信息资源公共服务意识</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　生态系统的人本观强调信息生态系统中一定要重视人的作用。作为一项公共服务产品的社区教育信息共享系统中的真正主体就是&ldquo;社区居民&rdquo;。但是，不管是政府还是社区居民本身都缺乏信息公共服务意识。一方面，政府在推进社区教育信息资源共享的过程中，往往强调技术的作用，而忽视了人本身在信息系统中的重要作用。政府没有将自己的角色定位于服务者的角色，没有将社区居民作为真正的参与者，从居民的需求出发，为社区居民沟通和交流而提供教育信息服务。这种服务意识的缺乏就导致政府越来越难以及时满足社区居民多样化、个性化的公共教育服务需求。另一方面，信息的提供者、信息技术和信息网络最终的服务对象都是社区居民，如果社区居民只片面享受而缺乏公共服务意识，不积极参与其中，整个信息生态系统就缺少了存在的意义。沈光辉和蔡亮光2012年对福州市居民的抽样调查发现，居民中对社区教育不了解的占到了78.7％，只有12.6％的居民了解和8.7％的居民听说过社区教育[6]。可见，社区居民对社区教育普遍缺乏了解，更缺少对教育信息的公共服务意识。据笔者2015年对长春市某社区200位居民的抽样调查也发现，意识到社区教育信息服务并愿意参与社区教育服务的只有17.8％，有82.2％的居民没有社区教育信息服务意识。因此，如何提升政府和社区居民的公共服务意识，使居民通过社区教育信息资源共享系统真正获得唐山教育信息网的机会，成为整个社区教育信息系统建设的一个重要问题。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　<strong style="box-sizing: border-box; font-weight: 700">三、实现社区教育信息资源共享的基本途径</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　社区教育信息资源系统作为一个整体，需要多元参与、联合共建，才能真正达到良性运行，实现社区居民对社区教育信息资源的真正共有、共享。因此，在社区教育信息资源共享的过程中，政府按照&ldquo;以人为本、服务居民&rdquo;的原则，通过制定相关政策、购买社区教育信息公共服务，用市场的理念来引导和管理为社区教育信息资源服务的企业和社会组织，使之有效地参与社区教育信息公共服务；基层社区加强自治、积极引导社区居民参与社区教育信息资源的共享；社会组织依靠政府支持充分发挥专业优势开发社区教育优质信息资源。这样，通过政府牵头建、相关企业与社会组织配合建、社区居民参与建的方式就能联合共建一个协调、互动的社区教育信息服务优质生态系统。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　<strong style="box-sizing: border-box; font-weight: 700">　(一)开发优质社区教育共享信息资源</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　社区教育信息资源共享，最根本的就是有信息资源得以共享，而共享的具体内容则是优质信息资源。因此，如何能够开发优质的共享信息资源也就成了整个信息生态系统的重中之重。我们应采取多种途径来开发优质信息资源。首先，要建构一个教育信息资源库，针对所有的教育信息资源进行整合，优质的信息资源将被保留，无用的、过时的信息资源将被淘汰，重复的信息将被重新整理，这样才能开发出更有效的优质共享信息资源为社区居民所用，教育信息资源的利用率和有效率也将大大提升。其次，要通过深入调查，根据社区居民的具体需求，扩展和丰富社区教育的各项内容。笔者认为，可以定期按照分层抽样的方法选取不同类别的居民进行抽样调查，了解社区居民不同阶段对信息资源的需求，掌握获取信息资源的技术以及获取信息资源的效果，以便于可以更好、更真实地了解社区居民的实际需求，更有针对性地提供一些优质的共享信息资源。最后，可以以多种形式选取优质的共享信息资源。比如随着微博和微信的流行，特别是微课、慕课和视频公开课的广泛流行，它们具有指向明确、各种有效信息资源有机结合、使用方便等特点，弥补了传统课程单一的局限，有利于满足居民多样化的需求。社区教育信息资源系统的开发者应当重视社区教育的微课、慕课和视频公开课的建设，力争有计划、有步骤地培训，选择优质微课、慕课以及视频公开课等优质信息资源，为满足社区居民多样化学习服务。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　<strong style="box-sizing: border-box; font-weight: 700">　(二)构建以政府、相关企业和社会组织相互协调的资源共享模式</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　要想建立一个和谐的教育信息生态系统，就必须构建一个以政府为主导，教育组织等社会组织为主要载体，企业作为技术支持的一个多元共建的资源共享模式。政府作为社区教育这个公共服务产品的主要出资方和系统推动者，需要制定相应的政策、规范、制度，以保障社区居民能够得到公平的教育信息资源，同时监督企业和社会组织提供有效的资源和系统的良性运行。政府以购买服务的方式要求企业提供数字化学习的必要设备，教育信息资源的具体内容，数字化学习网络平台所需的相关技术，数字化音频、视频的传播以及相关资源的整合等服务。社会组织尤其是社区学院或教育中心等教育组织成为社区教育信息资源共享系统的主要载体。在信息资源共享过程中，社区教育组织能够深入到居民当中，切实地调查居民的多样化的教育需求以及居民的学习水平，并能够将获取的信息反映给政府和外包企业，以便于政府和企业能够根据居民的需求和现有的学习水平，制定相应的教育内容和调整相关的技术。教育组织通过培训专业教师和志愿者，能够将海量的繁杂信息进行筛选，并保留优质信息资源以满足社区居民的需求。同时，能够有针对性地对社区居民进行辅导与培训，帮助社区居民能够顺利获得数字化学习的基本技能。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　<strong style="box-sizing: border-box; font-weight: 700">　(三)建立区域内社区间的信息共享联动机制</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　由于一定区域范围内相邻社区居民的需求具有相似性、相近性，因此建立以市辖区为单位的社区间的信息多元共享联动机制，使得社区之间能够进行资源共享。区域联动机制的基本原则是要具有整体性、联动性和协作性[7]。因此，笔者认为在城市中应以市辖区为一个基本组织单位，在市辖区、街道、社区纵向网络联动的同时，增强市辖区内社区与社区之间的横向联动。建立由政府相关部门参与的，由市辖区、街道、居委会相互协调，然后通过多种渠道将教师、志愿者、技术、网络、信息等资源整合到社区教育信息资源系统中。在同一个市辖区内可以建立专司社区教育的门户网站和学习平台，主要根据本辖区内社区居民的教育需求集中建立优质的信息资源，并提供互动学习的平台和社区论坛。辖区内不同社区的居民统一编制终身学习账号，社区居民可以进入自己的学习账号进行学习并上传分享自己的教育信息资源。同时，市辖区内的所有社区居民共享整个辖区的所有社区教育场地、教育设施和各种教育培训。通过这种社区间的信息共享联动、互通有无，整合了社区间的教育设施和教育资源，使社区居民能够得到更多、更优的教育服务。这样就避免了以往不同社区居民虽有相似的学习需求，但是却重复建设社区教育场地和教育设施，反而导致大量社区教育场地和设施的闲置和浪费。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　<strong style="box-sizing: border-box; font-weight: 700">(四)提升政府和居民的信息公共服务意识</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　新公共服务理论的代表者丹哈特夫妇指出，公民既是公共服务的享有者，也是公共服务的提供者，所以我们要重视提升政府和社区居民的公共服务意识。政府要定位于服务者的角色，把为社会、为居民服务作为政府存在、运行和发展的基本宗旨。在社区信息教育中，我们必须以社区居民需求为主，引入居民参与机制，有针对性地提供高质量的教育信息服务。这样，方能实现社区教育从以&ldquo;政府推动、任务驱动&rdquo;为主到以社区居民&ldquo;需求推动，居民主动&rdquo;为主的方式转换。一方面政府可以通过采取多种形式，广泛宣传社区教育在社区建设中的先导性和基础性地位，提升社区居民对社区教育的认识度和参与度。通过开展群众性的公益活动宣传社区教育，使社区教育逐渐深入人心，让居民认识到唐山教育信息网其实是人生活的基本需要。在竞争日益激烈的今天，为了能够更好地适应社会环境，就必须不断地学习新的知识。当社区居民对唐山教育信息网产生需求时，就会积极参与到社区教育当中来。另一方面，在实施社区教育信息资源共享的过程中，可以针对一些优质资源课程，配备高质量的教材并设计互动环节，产生互动学习的氛围，吸引社区居民的学习兴趣，增进他们对社区教育的认同感，促使他们具备愿意共享社区内外一切教育信息资源的公共服务意识。使得居民不仅能够学习各种知识，同时也能够将自己的特长、技能、知识在社区间进行有效的信息传递和信息共享。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　<strong style="box-sizing: border-box; font-weight: 700">　四、推动社区教育信息资源共享的保障措施</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<strong style="box-sizing: border-box; font-weight: 700">　　(一)完善社区教育信息资源共享政策</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　目前，我国还没有一个系统的有关社区教育信息资源共享的政策。因此，为了推动我国社区教育信息资源共享的进程，就必须不断完善政策制度内容。首先，政府应该将社区信息教育经费列入地方财政经常性开支，针对一些学校和社会教育信息资源开放的机构制定相应的补偿措施。其次，政府应完善社区教育信息资源共享的管理制度，落实工作职责，确定考核评估指标，实行分级管理，责任联动，提高社区信息资源教育的发展水平。最后，建立典型激励制度和宣传教育制度，在社区教育信息资源共享中树立典型，通过宣传先进典型案例，发挥典型的导向作用，不断推动社区教育信息资源共享工程。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　<strong style="box-sizing: border-box; font-weight: 700">(二)多渠道引进社区信息教育经费</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　在社区教育信息系统中要引入&ldquo;政府牵头、市场和社会组织共同参与&rdquo;的机制，进一步加大社区教育经费的投入。首先，加大社区教育经费的投入力度，各地应按照2010年《社区教育示范区评估标准(试行)》的规定的，在常住人口每年人均不低于2元标准设立社区教育专项经费的基础上，区财政根据财力状况，逐步加大对社区教育信息资源系统建设的支持力度。其次，多元化筹措经费，可借鉴美国社区教育资金来源多元化的成功经验，采取单位赞助、社会各界捐助和社区创收等方法，多渠道筹措社区教育经费，形成完善的社区信息教育经费投入体系。最后，政府应整合分散的经费投入，使之变成集中的经费统一支配，有效地减少重复和浪费。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　<strong style="box-sizing: border-box; font-weight: 700">　(三)建设多元化社区教育信息队伍</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　政府要加快构建一个结构合理、素质优良、富有活力的信息系统队伍，从各个环节来保障社区教育信息资源系统的良性运行。首先要建设一支符合要求的管理队伍、技术服务队伍、联络员队伍和教师队伍等，使之能够正常管理、协调整个社区教育信息系统的运行。其次要针对这些成员进行培训，提高他们的服务意识和沟通能力，提升他们的专业知识和技能，加强创新能力。最后要在这些人员的组织和带动下，进一步提高社区居民的学习能力，帮助居民形成积极的生活态度和良好的道德品质，增强居民的社区教育公共服务意识和共享意识。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　<strong style="box-sizing: border-box; font-weight: 700">(四)培育各种社区教育信息组织</strong></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　社区教育作为一个公共物品，在政府主导作用下，要培育各种社区教育组织来实施微观层次的教育系统运行。因此，社会组织作为和政府、企业并列的第三部门，在社区教育中的作用正日益凸显。政府可以制定相关的政策，加大对社会组织的扶持力度，通过购买服务、税收减免、项目委托等方式，吸引社会资本所具有的闲置资金、人才等有形资源，利用社会资本所具有的技术、管理等无形资源。同时，培育居民自治的学习共同体，增强学习的归属感和学习意愿，调动居民参与的积极性，共同建设文化社区，构建文明、和谐的学习型社会。</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	　　<span style="box-sizing: border-box; font-family: 仿宋"><strong style="box-sizing: border-box; font-weight: 700">参考文献：</strong></span></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<span style="box-sizing: border-box; font-family: 仿宋">　　[1]赖茂生，杨秀丹，胡晓峰，等.信息资源开发利用基本理论研究[J].情报理论与实践，2004(3)：229-235.</span></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<span style="box-sizing: border-box; font-family: 仿宋">　　[2]乌家培.信息资源与信息经济学[J].情报理论与实践，1996(4)：4-6，44.</span></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<span style="box-sizing: border-box; font-family: 仿宋">　　[3]靖继鹏.信息生态理论研究发展前瞻[J].图书情报工作，2009(4)：5-7.</span></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<span style="box-sizing: border-box; font-family: 仿宋">　　[4]张琪，李娟.数字化学习社区：信息时代社区教育发展的方向[M].北京：首都师范大学出版社，2013：23-25.</span></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<span style="box-sizing: border-box; font-family: 仿宋">　　[5]黄萍萍.依托社区学院实现教育信息资源共享的研究[D].金华：浙江师范大学，2010.</span></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<span style="box-sizing: border-box; font-family: 仿宋">　　[6]沈光辉，蔡亮光.社区教育：从任务驱动到需求推动的转变&mdash;&mdash;福州市居民社区教育认知度和学习需求调查研究分析报告[J].现代远距离教育，2012(1)：22-27.</span></p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	&nbsp;</p>
+<p style="box-sizing: border-box; line-height: 2; widows: 2; text-transform: none; background-color: rgb(255,255,255); font-style: normal; text-indent: 0px; margin: 0px 0px 10px; font-family: å¾®è½¯é›…é»‘; white-space: normal; orphans: 2; letter-spacing: normal; color: rgb(51,51,51); font-size: 16px; font-weight: 400; word-spacing: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+	<span style="box-sizing: border-box; font-family: 仿宋">摘自《中国社区教育网》</span></p>
+
+                                    <br>    <br>
+                                                                    </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=490537718885" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

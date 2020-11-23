@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "382032510445";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="382032510445">
+    <input id="classallid" type="hidden" value="382032510445">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19">                <a href="zcll.html" class="current"><span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点信息</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <a href="zcll.html">政策理论</a> &gt;&gt; <span class="darkyellow">政策法规</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    教育部办公厅关于印发《社区教育示范区评估标准（试行）》的通知 </h1>
+                                <div class="time">
+                                      浏览次数：<em>1718</em> 发布时间：<span>2013年04月25日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">各省、自治区、直辖市教育厅（教委），各计划单列市教育局，新疆生产建设兵团教育局：<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　为深入发展社区教育，不断提高社区教育质量，建立和完善覆盖全社会的终身学习服务体系，满足人民群众日益增长的多样化学习需求，为建设全民学习、终身学习的学习型社会奠定基础，我部制定了《社区教育示范区评估标准（试行）》。现将该试行标准印发给你们，请结合各地实际做好示范区工作。试行过程中的情况和问题，请及时反馈给教育部职业教育与成人教育司。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan; tab-stops: center 207.65pt" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　教育部办公厅 <span lang="EN-US"><span style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　二<span lang="EN-US">○</span>一<span lang="EN-US">○</span>年<st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="10" month="8" year="2011">八月十日</st1:chsdate><span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　附件：<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-outline-level: 2" class="MsoNormal" align="left"><a name="2"></a><strong><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">社区教育示范区评估标准（试行）<span lang="EN-US"><o:p></o:p></span></span></strong></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　为推动社区教育深入发展，加快构建唐山教育信息网体系和建设学习型社会，从我国社区教育的实际出发，在总结以往社区教育评估经验的基础上，制订本标准。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">1.</span>区（县、市）党委、政府指导思想明确、认识有高度，定期制定社区教育发展规划和实施计划，并纳入本区经济社会发展和教育发展规划（计划）之中，加以认真落实。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">2.</span>社区教育的管理体制、运行制度健全，并能不断地改革和创新。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">3.</span>已建成区（县、市）、街道（乡镇）、居（村）三级社区教育机构，并能有效地开展多种形式的教育活动。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">4.</span>积极推进唐山教育信息网信息网络的建设，社区数字化学习取得明显成效，并能运用现代信息技术加强社区教育的管理，以信息化带动学习型社区建设。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">5.</span>设置符合未成年人身心健康发展需求的活动内容，配备专门场地和具备教师资格的专人为社区内未成年人提供公益性服务，保障未成年人安全。不得开办赢利为目的的各种形式的收费培训班。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">6.</span>社区教育资源开发和服务程度较高。社区内教育培训机构教育资源共享度高；社区内非教育机构教育资源得到较好地开发和利用；社区重视无形教育资源的总结、提炼和利用；社区积极建设学习资源服务圈。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">7.</span>已建立一支相对稳定、素质较高、结构合理、专兼职相结合的社区教育管理者队伍和辅导员（师资）队伍；能定期开展岗前的转岗性培训和在岗的提高性培训。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">8.</span>保障社区教育经费的投入。区（县、市）财政按常住人口每年人均不低于<span lang="EN-US">2</span>元标准设立社区教育专项培训经费，并落实到位；建立多渠道筹措经费的机制。经济发达地区，在此基础上进一步增加社区教育经费的投入。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">9.</span>区内各类社区教育协调发展。全年接受社区教育服务的社区成员占全体成员的比例，东部地区达<span lang="EN-US">50%</span>以上，西部地区达<span lang="EN-US">30%</span>以上。城市社区，登记在册的下岗待业失业人员和进城务工人员的培训率分别达到<span lang="EN-US">70%</span>以上和<span lang="EN-US">50%</span>以上。农村社区，农民实用技术培训率达<span lang="EN-US">30%</span>以上，农村劳动力外出转移培训率达到<span lang="EN-US">50%,</span>社区教育机构有专门服务未成年人的场所和主题教育活动，未成年人参与社区教育活动的比例不低于<span lang="EN-US">50%</span>。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">10.</span>注重社区教育机构能力建设，积极开发具有社区教育特点的课程资源，力求满足不同类型不同层次的社区成员多样化的学习需求。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">11.</span>各类学习型组织创建力度大，进展快，创建率较高。学习型党政机关创建率达<span lang="EN-US">80%</span>；学习型社区创建率，东部地区达<span lang="EN-US">70%</span>，中西部地区达<span lang="EN-US">50%</span>。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">12.</span>社区成员对社区教育的认知和评价有较大幅度的提高，其中知晓度、认同度达<span lang="EN-US">80%</span>以上；对接受社区教育服务的满意率达<span lang="EN-US">70%</span>以上。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">13.</span>社区成员终身学习理念和社区归属感有明显增强；社区成员精神生活质量和环境生活质量有了较大改善；社区和谐稳定，文明程度较高。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">14.</span>社区教育示范区评价指标<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US"> <o:p></o:p></span></span></p>
+<table style="MARGIN: auto auto auto -6.75pt; WIDTH: 434.8pt; mso-cellspacing: 1.5pt" border="0" cellpadding="0" width="580" class="MsoNormalTable">
+    <tbody>
+        <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0.75pt; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0.75pt; WIDTH: 94.75pt; PADDING-RIGHT: 0.75pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0.75pt; mso-border-alt: solid #DDDDDD .75pt" valign="top" width="126">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">一级指标<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US"><br>
+            </span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">二级指标<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">三级指标<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分值<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 1">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0.75pt; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0.75pt; WIDTH: 94.75pt; PADDING-RIGHT: 0.75pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0.75pt; mso-border-alt: solid #DDDDDD .75pt" valign="top" rowspan="5" width="126">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">1</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">领导与管理（<span lang="EN-US">16</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">1.1</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">认知理念<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">1.1.1</span></st1:chsdate><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">区（县、市）、街道（乡镇）领导对社区教育内涵，及其开展的指导思想、宗旨、原则有清晰的认识。（<span lang="EN-US">2</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">2</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 2">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">1.2</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">发展规划<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">1.2.1</span></st1:chsdate><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">区（县、市）、街道（乡镇）均制定社区教育发展规划和实施计划，并列入本地经济和社会发展规划、社区建设规划和教育事业规划之中，并加以认真落实。（<span lang="EN-US">2</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">2</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 3">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">1.3</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">管理体制<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">★<st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899">1.3.1</st1:chsdate></span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">区（县、市）、街道（乡镇）建立由党政领导牵头的社区教育委员会或领导小组，其办公室设在教育部门，并有专人负责。（<span lang="EN-US">2</span>分）<span lang="EN-US"> <br>
+            1.3.2</span>实行党政统筹领导、教育部门主管、有关部门共同参与的社区教育管理体制。（<span lang="EN-US">2</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">4</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 4">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">1.4</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">制度建设<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">★<st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899">1.4.1</st1:chsdate></span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">建立并实施社区各项规章制度，包括责任目标制度、会议制度、资源共享制度、机构和队伍建设制度、经费投入制度、评估检查制度、激励制度等，并纳入政府教育督导评估范围。（<span lang="EN-US">4</span>分）<span lang="EN-US"> <br>
+            1.4.2</span>注重档案建设，形成规范齐全的档案资料。（<span lang="EN-US">2</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">6</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 5">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">1.5</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">宣传动员<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　<span lang="EN-US">1.5.1</span></span></st1:chsdate><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">通过多渠道，采取多形式向社区成员宣传社区教育和唐山教育信息网思想。（<span lang="EN-US">2</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">2</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 6">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0.75pt; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0.75pt; WIDTH: 94.75pt; PADDING-RIGHT: 0.75pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0.75pt; mso-border-alt: solid #DDDDDD .75pt" valign="top" rowspan="4" width="126">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">2</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">条件与保障（<span lang="EN-US">24</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">2.1</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">基地与网络建设<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">★<st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899">2.1.1</st1:chsdate></span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">已建成区（县、市）、街道（乡镇）、居（村）三级社区教育系统，区（县）建立社区学院或社区教育中心，街道（乡镇）建立社区学校、市民学校或未成年人活动站，居（村）建立社区教育机构、市民学校分校或儿童活动乐园。（<span lang="EN-US">5</span>分）<span lang="EN-US"> <br>
+            2.1.2</span>积极推进唐山教育信息网网络建设，建有网络学习平台，社区数字化学习取得明显效果。（<span lang="EN-US">2</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">7</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 7">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">2.2</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">资源开发和服务<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">2.2.1</span></st1:chsdate><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">社区内普通中小学、幼儿园、中等职业学校、成人教育培训机构、高等学校等积极向社区开放，为社区教育服务。（<span lang="EN-US">2</span>分）<span lang="EN-US"> <br>
+            2.2.2</span>社区非教育机构教育资源得到较好地开发，为社区教育服务。（<span lang="EN-US">1</span>分）<span lang="EN-US"> <br>
+            2.2.3</span>社区重视无形教育资源的总结，提炼，作为社区教育宝贵资源。（<span lang="EN-US">1</span>分）<span lang="EN-US"> <br>
+            2.2.4</span>社区积极创造条件，建设学习资源服务圈。（<span lang="EN-US">1</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">5</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 8">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">2.3</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">经费保障<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">★<st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899">2.3.1</st1:chsdate></span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">区（县、市）财政一般按常住人口每年人均不低于<span lang="EN-US">2</span>元的标准设立社区教育专项培训经费，并落实到位。经济发达地区，在此基础上进一步增加社区教育的经费投入；（<span lang="EN-US">3</span>分）<span lang="EN-US"> <br>
+            2.3.2</span>建立多渠道筹措经费的机制。（<span lang="EN-US">1</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">4</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 9">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">2.4</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">队伍建设<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">2.4.1</span></st1:chsdate><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">已建立一支素质较高，懂得社区教育，专兼职结合的社区教育管理队伍，街道（乡镇）有<span lang="EN-US">1</span>名专职管理人员；（<span lang="EN-US">3</span>分）<span lang="EN-US"> <br>
+            ★2.4.2</span>有一支相对稳定、适应社区教育需要的、专职、兼职和志愿者结合的社区教育辅导员（师资）队伍，街道（乡镇）建立社区教育辅导员小组；（<span lang="EN-US">3</span>分）<span lang="EN-US"> <br>
+            2.4.3</span>制定社区教育工作者队伍建设规划，开展社区专职教育人员转岗前的转岗培训和在岗的提高性培训，培训率达<span lang="EN-US">90%</span>以上。（<span lang="EN-US">2</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">8</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 10">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0.75pt; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0.75pt; WIDTH: 94.75pt; PADDING-RIGHT: 0.75pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0.75pt; mso-border-alt: solid #DDDDDD .75pt" rowspan="2" width="126">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">3</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">教育培训与学习活动（<span lang="EN-US">20</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">3.1</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">教育培训活动<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">3.1.1</span></st1:chsdate><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">东部地区，全年接受社区教育的社区成员达全体成员的<span lang="EN-US">50%</span>以上；中西部地区达<span lang="EN-US">30%</span>以上。（<span lang="EN-US">2</span>分）<span lang="EN-US"> <br>
+            3.1.2</span>城市社区，登记在册的下岗待业失业人员培训率达<span lang="EN-US">70%</span>以上；或农村社区，农民实用技术培训率达<span lang="EN-US">30%</span>以上。（<span lang="EN-US">2</span>分）<span lang="EN-US"> <br>
+            3.1.3</span>城市社区，登记在册的进城务工人员培训率达<span lang="EN-US">50%</span>以上；或农村社区，农村劳动力外出转移培训率达<span lang="EN-US">50%</span>。（<span lang="EN-US">2</span>分）<span lang="EN-US"> <br>
+            3.1.4</span>注重对社区各类人员心理疏导和调适的教育培训（<span lang="EN-US">2</span>分）<span lang="EN-US"> <br>
+            3.1.5</span>注重向社区家长进行科学育儿和家庭教育的培训辅导。（<span lang="EN-US">2</span>分）<span lang="EN-US"> <br>
+            3.1.6</span>注重向社区内儿童开展各种活动（<span lang="EN-US">2</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">12</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 11">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">3.2</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">学习型组织的创建<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">3.2.1</span></st1:chsdate><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">各类学习型组织创建力度大、进展快、创建率较高；（<span lang="EN-US">3</span>分）<span lang="EN-US"> <br>
+            3.2.2</span>学习型党政机关创建率达<span lang="EN-US">80%</span>左右；（<span lang="EN-US">2</span>分）<span lang="EN-US"> <br>
+            3.2.3</span>学习型社区创建率，东部地区达<span lang="EN-US">70%</span>，中西部地区达<span lang="EN-US">50%</span>。（<span lang="EN-US">3</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">8</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 12">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0.75pt; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0.75pt; WIDTH: 94.75pt; PADDING-RIGHT: 0.75pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0.75pt; mso-border-alt: solid #DDDDDD .75pt" rowspan="3" width="126">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">4</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">社区教育成效（<span lang="EN-US">20</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">4.1</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">社区成员的认知和评价<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">★<st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899">4.1.1</st1:chsdate></span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">社区成员对社区教育的知晓率、认同率达<span lang="EN-US">80%</span>以上；（<span lang="EN-US">5</span>分）<span lang="EN-US"> <br>
+            ★4.1.2</span>社区成员对接受社区教育服务的满意率达<span lang="EN-US">70%</span>以上。（<span lang="EN-US">5</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">10</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 13">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">4.2</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">社区成员综合素质的提高<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　<span lang="EN-US">4.2.1</span></span></st1:chsdate><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">社区成员的社区归属感、遵守社会公德自觉性、扶贫帮困、参加公益活动等公民素质有较大的提高。（<span lang="EN-US">2</span>分）<span lang="EN-US"> <br>
+            4.2.2</span>社区成员终身学习观念有明显增强，求知欲有明显提升。（<span lang="EN-US">2</span>分）<span lang="EN-US"> <br>
+            4.2.3</span>社区成员的知识和技能含量明显提高。（<span lang="EN-US">1</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">5</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 14">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">4.3</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">社区发展和成员生活质量的提升<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">4.3.1</span></st1:chsdate><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">推进了<span lang="EN-US">&ldquo;</span>文明社区<span lang="EN-US">&rdquo;</span>、<span lang="EN-US">&ldquo;</span>安全社区<span lang="EN-US">&rdquo;</span>、<span lang="EN-US">&ldquo;</span>健康社区<span lang="EN-US">&rdquo;</span>、<span lang="EN-US">&ldquo;</span>生态社区<span lang="EN-US">&rdquo;</span>、<span lang="EN-US">&ldquo;</span>数字社区<span lang="EN-US">&rdquo;</span>等各类创建工作。社区文明程度有较大提高，获省（市、自治区）级及以上<span lang="EN-US">&ldquo;</span>文明社区<span lang="EN-US">&rdquo;</span>称号。（<span lang="EN-US">2</span>分）<span lang="EN-US"> <br>
+            4.3.2</span>社区和谐稳定，各类案件发生率下降；（<span lang="EN-US">1</span>分）<span lang="EN-US"> <br>
+            4.3.3</span>社区成员的精神生活质量和环境生活质量有了改善。（<span lang="EN-US">2</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">5</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 15">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0.75pt; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0.75pt; WIDTH: 94.75pt; PADDING-RIGHT: 0.75pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0.75pt; mso-border-alt: solid #DDDDDD .75pt" valign="top" rowspan="2" width="126">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">5</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">特色与 创新（<span lang="EN-US">20</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">5.1</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">特色<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">★<st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899">5.1.1</st1:chsdate></span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">注重社区教育课程和活动的研发，已形成具有社区特色的课程及活动资源。（<span lang="EN-US">5</span>分）<span lang="EN-US"> <br>
+            5.1.2</span>注重社区教育特色建设，已打造出有关项目、载体、平台等方面特色品牌。（<span lang="EN-US">5</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">10</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 16; mso-yfti-lastrow: yes">
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 99.2pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="132">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">5.2</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">创新<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 199.75pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="266">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">5.2.1</span></st1:chsdate><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">注重社区教育问题研究和实验探索，已产出具有创新价值的实验研究成果，指导社区教育新发展。（<span lang="EN-US">5</span>分）<span lang="EN-US"> <br>
+            ★5.2.2</span>注重社区教育的管理体制、运行机制、教育教学、督导评估等方面改革创新，成效较为显著。（<span lang="EN-US">5</span>分）<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: #dddddd 1pt solid; BORDER-LEFT: #dddddd 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 7.5pt; WIDTH: 33.6pt; PADDING-RIGHT: 7.5pt; BORDER-TOP: #dddddd 1pt solid; BORDER-RIGHT: #dddddd 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid #DDDDDD .75pt" width="45">
+            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 16.5pt; MARGIN: 3.75pt 0cm; WORD-BREAK: break-all; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">10</span><span style="FONT-FAMILY: 宋体; COLOR: #666666; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">分<span lang="EN-US"><o:p></o:p></span></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　（注：因模板限制表式稍有改动）　<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　说明：<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">1. </span>本评价指标体系，由一级指标<span lang="EN-US">4</span>个，二级指标<span lang="EN-US">15</span>个，三级指标<span lang="EN-US">37</span>个组成，其中有<span lang="EN-US">★</span>号的三级指标为核心指标，共<span lang="EN-US">9</span>个。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">2 </span>本评估指标总分为<span lang="EN-US">100</span>分。若评估分值满<span lang="EN-US">90</span>分，且核心指标优秀，则获得示范区的备选资格。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: left; LINE-HEIGHT: 18pt; MARGIN: 0cm 0cm 0pt; BACKGROUND: #fafafa; mso-pagination: widow-orphan" class="MsoNormal" align="left"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">3. &ldquo;</span>全年接受服务的社区成员达全体成员的<span lang="EN-US">50%</span>以上<span lang="EN-US">&rdquo;</span>（<st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899"><span lang="EN-US">3.1.1</span></st1:chsdate>指标），这是《国标》规定的时间范畴内的基本要求。这里讲的<span lang="EN-US">&ldquo;</span>服务<span lang="EN-US">&rdquo;</span>，是指本社区所提供的社区教育服务，不包括社区成员未利用社区上述服务，而进行的自我活动和自主学习。<span lang="EN-US"> <o:p></o:p></span></span></p>
+<p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-FAMILY: 宋体; LETTER-SPACING: 0.4pt; FONT-SIZE: 12pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US">4. &ldquo;</span>社区成员接受服务的满意率达到<span lang="EN-US">70%</span>以上<span lang="EN-US">&rdquo;</span>（<st1:chsdate w:st="on" isrocdate="False" islunardate="False" day="30" month="12" year="1899"><span lang="EN-US">4.1.2</span></st1:chsdate>指标），这是《国标》规定的一项基本指标。这里讲的<span lang="EN-US">&ldquo;70%</span>以上<span lang="EN-US">&rdquo;</span>，是指<span lang="EN-US">&ldquo;</span>接受服务<span lang="EN-US">&rdquo;</span>的社区成员的百分比。<sup><span style="COLOR: #3366cc" lang="EN-US">[1]</span></sup></span></p>
+                                    <br>    <br>
+                                                                    </div>
+                                                                <div class="relevantinformation">
+                                    <h2>
+                                        【相关信息】</h2>
+                                    <ul class="newslist">
+                                                                                <li><span>10-18</span><a href="391242260744.html">教育部办公厅关于推荐全国社区教育示范区的通知（2010年9月）</a></li>
+                                                                                <li><span>10-20</span><a href="980671159794.html">教育部关于确定第二批全国社区教育示范区的通知（2010年11月）</a></li>
+                                                                                <li><span>12-19</span><a href="397775994099.html">教育部关于推进社区教育工作的若干意见</a></li>
+                                                                                <li><span>09-18</span><a href="491304766525.html">教育部办公厅关于举办2014年全民终身学习活动周的通知</a></li>
+                                                                                <li><span>10-15</span><a href="695890241565.html">教育部等七部门关于推进学习型城市建设的意见</a></li>
+                                                                            </ul>
+                                </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=653198331422" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

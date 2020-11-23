@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "250846114252";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="250846114252">
+    <input id="classallid" type="hidden" value="250846114252">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zcll.html">
+                    <span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点新闻</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <span class="darkyellow">通知公告</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    关于举办唐山市社区居民书画、摄影、手工制作、歌舞、曲艺作品展评活动的通知</h1>
+                                <div class="time">
+                                      浏览次数：<em>1601</em> 发布时间：<span>2013年06月05日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" class="MsoNormal"><strong><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">各县（市）区社区教育分院：<span lang="EN-US"><o:p></o:p></span></span></strong></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 15pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 1.0" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US"><span style="mso-spacerun: yes">&nbsp; </span></span><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">为丰富社区文化生活，推动我市社区教育深入发展，迎接环渤海社区教育协作组织第八届研讨会在我市召开，经研究决定，唐山社区教育学院举办&ldquo;发展社区教育，建设美丽唐山&rdquo;为主题的书画、摄影、手工制作、歌曲演唱作品展评活动。具体事项如下：<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 31.45pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.09" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">一、活动主题：发展社区教育，建设美丽唐山<span lang="EN-US"><o:p></o:p></span></span></strong></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 30.1pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">二、活动对象：在唐山社区教育网注册的我市社区居民<span lang="EN-US"><o:p></o:p></span></span></strong></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 30.1pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">三、活动要求<span lang="EN-US"><o:p></o:p></span></span></strong></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 22.45pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 1.49" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">（一）书画展评作品要求：<span lang="EN-US"><o:p></o:p></span></span></strong></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 31.5pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.1" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US">1</span><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">、作品范围：由本人原创的书法或绘画作品，需装裱。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 30pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US">2</span><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">、作品尺寸：书法作品不超过六尺（<span lang="EN-US">180</span>&times;<st1:chmetcnv w:st="on" unitname="cm" sourcevalue="97" hasspace="False" negative="False" numbertype="1" tcsc="0"><span lang="EN-US">97cm</span></st1:chmetcnv><span lang="EN-US">)</span>的横、竖式条幅，美术作品横竖不超过<st1:chmetcnv w:st="on" unitname="米" sourcevalue="1" hasspace="False" negative="False" numbertype="1" tcsc="0"><span lang="EN-US">1</span>米</st1:chmetcnv>。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="TEXT-INDENT: 28.8pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 1.92" class="MsoNormal"><span style="FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US">3</span><span style="FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">、参考书写内容：中国梦<span lang="EN-US">/</span>正能量<span lang="EN-US">/</span>美丽中国<span lang="EN-US">/</span>美丽唐山，和谐家园<span lang="EN-US">/</span>你我齐心携手<span lang="EN-US">,</span>共创和谐社区<span lang="EN-US">/</span>热心公益，互助友爱<span lang="EN-US">/ </span>邻里和谐春烂漫，社区美满岁辉煌<span lang="EN-US">/</span>终身学习，铸就精彩人生<span lang="EN-US">/</span></span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 14pt">祝唐山市<span lang="EN-US">2013</span>年全民终身学习活动周圆满成功<span lang="EN-US">/</span>推动全民学习<span lang="EN-US"> ,</span>创建学习型城市<span lang="EN-US">/</span>大力发展社区教育<span lang="EN-US"> ,</span>构建唐山教育信息网体系<span lang="EN-US">/</span><span style="COLOR: #2a2a2a">人人皆学时时能学 处处可学</span><span lang="EN-US">/</span>人人终身学习<span lang="EN-US">,</span>创建学习型城市<span lang="EN-US">/</span>学习使人生更精彩<span lang="EN-US">,<span style="mso-spacerun: yes">&nbsp; </span></span>学习让组织增活力<span lang="EN-US">/</span>学习让生活更美好<span lang="EN-US">,</span>生活因学习而快乐<span lang="EN-US">/</span>推动唐山教育信息网<span lang="EN-US">,</span>提升全民素质<span lang="EN-US">/</span><span style="COLOR: #2a2a2a">学习改变命运<span lang="EN-US"> ,</span>知识造就人生</span></span><span style="FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 14pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">。</span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 14pt" lang="EN-US"><o:p></o:p></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 22.45pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 1.49" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">（二）摄影展评作品要求<span lang="EN-US"><o:p></o:p></span></span></strong></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 29.85pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 1.99" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US">1</span><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">、作品题材：应为最近一年内本人原创作品，以&ldquo;发展社区教育，建设美丽唐山&rdquo;为主题。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 29.85pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 1.99" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US">2</span><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">、作品要求：彩色、黑白均可，禁止使用电脑制作而改变原始面貌作品。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 29.85pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 1.99" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US">3</span><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">、作品尺寸：展评作品需提供原始照片文件，同时制作大小范围在<span lang="EN-US">50-100</span>厘米范围内写真喷绘，以便展出。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 22.45pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 1.49" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">（三）手工制作展评作品要求：</span></strong><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 31.5pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.1" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US">1</span><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">、展评作品形式不限，可个人制作展评，也可集体制作展评。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 31.5pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.1" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US">2</span><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">、展评作品必须为作者的原创作品，作品思想内涵积极向上，构思巧妙，富有创造性、新颖性，体现冀东地方特色。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 31.5pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.1" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US">3</span><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">、展评作品不受工艺材料、工艺类别限制，凡属手工艺制品且具有一定观赏性均可报名参加。如十字绣、串珠、剪纸、丝网花、手工编织等。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 24pt; MARGIN: 0cm 0cm 0pt" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">（四）歌舞、曲艺节目展评要求：<span lang="EN-US"><o:p></o:p></span></span></strong></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 30pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US">1</span><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">、歌舞（包括合唱、重唱、独唱、舞蹈等）、曲艺（包括快板、三句半、京东大鼓等）展评选手自选展评节目。歌唱节目限唱一首歌，语种不限，唱法不限；歌舞内容健康、积极向上。曲艺节目可以是经典曲目或表现社区教育、社区新风貌的自创节目，选手自行或由县（市）区分院组织录成视频影像，各县（市）区分院上报视频资料参评。视频资料反映的歌舞、曲艺节目演出时间应为<st1:chsdate w:st="on" year="2012" month="10" day="1" islunardate="False" isrocdate="False"><span lang="EN-US">2012</span>年<span lang="EN-US">10</span>月<span lang="EN-US">1</span>日</st1:chsdate>以后，此日期以前的节目不予参评。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 30pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US">2</span><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">、歌舞、曲艺节目要求能够反映&ldquo;发展社区教育，建设美丽唐山&rdquo;的活动主题，具有较高的艺术水准和较强的艺术表现力和感染力，或具有较强的地方特色和地域风格。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 31.45pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.09" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">四、活动组织<span lang="EN-US"><o:p></o:p></span></span></strong></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 31.5pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.1" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">本次活动分为两个阶段。第一阶段，各县（市）区社区教育分院组织上述各类作品初评，每个县（市）区分院评出本县（市）区各类作品一、二、三等奖，初评阶段于<st1:chsdate w:st="on" year="2013" month="6" day="25" islunardate="False" isrocdate="False"><span lang="EN-US">6</span>月<span lang="EN-US">25</span>日</st1:chsdate>之前结束。第二阶段，<st1:chsdate w:st="on" year="2013" month="6" day="26" islunardate="False" isrocdate="False"><span lang="EN-US">6</span>月<span lang="EN-US">26</span>日</st1:chsdate>，各县（市）区分院将本县（市）区各类作品前三名上报学院活动指导处。<span lang="EN-US">7</span>月初，学院组织全市大型社区居民书画、摄影、手工制作、歌舞、曲艺作品展评，评出各类奖项。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 31.5pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.1" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">各县（市）区分院要精心组织，拟定活动实施方案，广泛发动各街道（乡镇）、社区（村）居民参加本次活动，并严肃认真组织评选，确保推荐作品的质量和原创性，保质保量按时完成任务。对于剽窃他人作品者，一经发现，取消展评和获奖资格，进行严肃处理。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 29.8pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 1.98" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">五、奖项设置<span lang="EN-US"><o:p></o:p></span></span></strong></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 31.5pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 2.1" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">书法、绘画、摄影、手工制作作品分设一等奖<span lang="EN-US">1</span>名、二等奖<span lang="EN-US">3</span>名、三等奖<span lang="EN-US">5</span>名和优秀奖<span lang="EN-US">10</span>名，歌舞、曲艺作为同类节目评奖，共设一等奖<span lang="EN-US">1</span>名、二等奖<span lang="EN-US">3</span>名、三等奖<span lang="EN-US">5</span>名和优秀奖<span lang="EN-US">10</span>名，对所有获奖人员颁发荣誉证书，并给予一定的物质奖励。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 29.7pt; MARGIN: 0cm 0cm 0pt; mso-char-indent-count: 1.98" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; FONT-SIZE: 15pt; mso-font-kerning: 0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">参加书画、摄影、手工制作展评的作品，经作者同意，将作为唐山社区教育学院展品收藏，并优先推荐参加更高级别的展评。</span><span style="LINE-HEIGHT: 150%; BACKGROUND: white; FONT-SIZE: 15pt; mso-font-kerning: 0pt" lang="EN-US"><o:p></o:p></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 24pt; MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 12pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 24pt; MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 12pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 14pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">唐山市社区教育指导中心<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 150%; TEXT-INDENT: 24pt; MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 14pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; BACKGROUND: white; COLOR: black; FONT-SIZE: 14pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">二<span lang="EN-US">0</span>一三年五月<span lang="EN-US"><o:p></o:p></span></span></p>
+                                    <br>    <br>
+                                                                    </div>
+                                                                <div class="relevantinformation">
+                                    <h2>
+                                        【相关信息】</h2>
+                                    <ul class="newslist">
+                                                                                <li><span>04-11</span><a href="799530087275.html">关于举办唐山市迎世园“拓天伟业杯”老年广场舞交流活动的通知</a></li>
+                                                                            </ul>
+                                </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=940892330306" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

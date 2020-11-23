@@ -1,0 +1,45 @@
+/* SpaceBuilder ClubDomains Cascading Style Sheets. Copyright (c) 2008, Tunynet Inc. All rights reserved. version: 3.1 */
+
+/* Layout
+----------------------------------*/
+#tn-content { padding: 10px 0; }
+.tn-footer-bg { border-color: #cce0ec; border-style: solid; border-width: 1px 0 0; }
+
+/* Header
+----------------------------------*/
+.spb-top-menubar { background: #f5f5f5; border: solid #ddd 1px; border-width: 0 0 1px; }
+.spb-top-menubar .tn-wrapper-inner,
+.spb-branding-area { width: 950px; margin: 0 auto; }
+.spb-top-menubar .tn-search-box { border: solid #ddd 1px; }
+.spb-top-menubar .tn-search-box .tn-search-input { width: 80px; border-width: 0; padding: 1px 0 1px 2px; height: 16px; }
+.spb-top-menubar .tn-search-box .tn-search-button { background: #f5f5f5; border-left: solid #ddd 1px }
+.spb-top-menubar .tn-search-box .tn-search-button button { height: 18px; }
+
+/* Navigation */
+.spb-nav1-area, .spb-nav2-area { width: 950px; margin: 0 auto; }
+.spb-nav1-area { border-color: #0065a2; border-style: solid; border-width: 0 0 1px; }
+.spb-nav1 { padding: 0 10px; }
+.spb-nav1 .spb-nav-item { margin-right: 5px; position: relative; z-index: 11; }
+.spb-nav1 .spb-nav-item a { color: #0065A2; background: #e6eff5; }
+.spb-nav1 .spb-nav-item a:hover { text-decoration: none; background: #c8e2ea; }
+.spb-nav1 .tn-selected { margin-bottom: -1px; }
+.spb-nav1 .tn-selected a { background: #fff; color: #0065A2; border-color: #0065a2; border-style: solid; border-width: 1px 1px 0;  }
+.spb-nav1 .tn-selected a:hover { background: #fff; text-decoration: underline; }
+
+.spb-nav1 .spb-nav-item ul { background: #fff; border: solid #0065a2 1px; }
+.spb-nav1 .spb-nav-item li a { background: #fff; }
+.spb-nav1 .spb-separator { background: #cce0ec; }
+
+.spb-nav2-area { border-color: #cce0ec; border-style: solid; border-width: 0 0 1px; }
+.spb-nav2-area .tn-wrapper-inner { padding: 5px 0 0; }
+.spb-nav2 { padding: 0 10px; }
+.spb-nav2 .spb-nav-item { margin-right: 5px; position: relative; top: 1px; }
+.spb-nav2 .spb-nav-item a { font-weight: normal; }
+.spb-nav2 .tn-selected a { background: #fff; color: #0065A2; border-color: #cce0ec; border-style: solid; border-width: 1px 1px 0;  }
+.spb-nav2 .tn-selected a:hover { background: #fff; text-decoration: underline; }
+
+/* Header bottom */
+.spb-header-bottom { width: 950px; margin: 0 auto; padding: 10px 0 0; }
+.spb-header-bottom .tn-shortcut { float: right; }
+.spb-header-bottom .tn-text-note { padding: 0 20px; }
+.spb-header-bottom .tn-text-heading { display: inline; font-size: 116.67%; }

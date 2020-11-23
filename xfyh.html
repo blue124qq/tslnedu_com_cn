@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>唐山教育网</title>
+<link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script>
+            var nerc = "http://60.2.218.190";
+            var space = "http://space.tslnedu.com.cn";
+            var learning = "http://learn.tslnedu.com.cn";
+            var Predix = ":ts";
+    </script>
+  <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+</head>
+
+<body onload="getInitString();"><form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+<div class="mainindexbg1">
+  <div class="main">
+    <div class="header zoom">
+      <div class="fl welcome">欢迎登录唐山教育网！</div>
+      <div class="fr login" id="login_top_bg">
+            
+             </div>
+    </div>
+    <p><img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+    <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html"><span>新闻快递</span></a>
+                                            <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html"><span>学院简介</span></a>
+                                            <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html"><span>市民学堂</span></a>
+                                            <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html"><span>培训项目</span></a>
+                                            <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html"><span>社区家园</span></a>
+                                            <img src="templets/tssq/images/navlistline.jpg" width="2" height="19">            <a href="" class="current"><span>学分银行</span></a>                                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zcll.html"><span>政策理论</span></a>
+                                            <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html"><span>走进唐山</span></a>
+                                        </div>
+    <div class="clrm5"></div>
+    <div class="blueborder">
+      <div class="titlebg01">
+        <p class="currentlocal darkblue">您现在的位置： <a href="index.html">首页</a> &gt;&gt; <span class="darkyellow">学分银行</span></p>
+      </div>
+      <div class="pd10">
+      <p class="lht22 ft14 tid2">“学分银行”是一种模拟或是借鉴银行的功能特点，帮助学生存储学分并将其兑换为相应学历/非学历证书的一种管理模式。它突破传统的专业限制和学习时段限制，使学生能够自由选择学习内容、学习时间和学习地点，将学生完成学业的时间从固定学习制变为弹性学习制，同时将学历教育、技能培训以及其他教育形式结合起来，实现不同类型学习成果的互认与衔接，是推动终身学习发展的重要手段。</p>
+     <p class="t-c pd10"><img src="templets/tssq/images/bank.jpg" width="593" height="437"><br>
+       <strong>服务机制</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="clrm5"></div>
+  <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+</div></form>
+</body>
+</html>

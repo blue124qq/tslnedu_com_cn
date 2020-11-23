@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+			<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+			<title>唐山教育网</title>
+			<script language="javascript">
+	
+				function MouseOver(id)
+				{
+					document.getElementById('ul_'+id).style.display='block';
+					document.getElementById("text"+id).className="t2";
+				}
+				function MouseOut(id)
+				{
+					document.getElementById('ul_'+id).style.display='none';
+					document.getElementById("text"+id).className="t";
+				}
+//				  function changeImg(obImg,sNewURL)
+//				{
+//				     if(sNewURL!="") obImg.src=sNewURL;
+//				}
+			</script>
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+     
+    </script>
+		  <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+            <div class="mainindexbg1">
+              <div class="main">
+                <div class="header zoom">
+                  <div class="fl welcome">欢迎登录唐山教育网！</div>
+                    <div class="fr login" id="login_top_bg">
+                </div>
+                </div>
+                <p><img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+                <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zcll.html">
+                    <span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+                <div class="clrm5"></div>
+                <div class="blueborder">
+                  <div class="titlebg01"></div>
+                  <p class="t-c"><img src="templets/tssq/images/wzdhname.gif" width="136" height="28"></p>
+                  <div class="wangzhanDH">
+                    <ul>
+                      <li>
+                        <div class="name" id="pt01" onmouseover="javascript:MouseOver(1)" onmouseout="javascript:MouseOut(1)"><span id="text1" class="t">新闻快递</span>
+                          <div id="ul_1" class="pop blueborder" style="top:0;">
+                            <p class="tid2">关注国内外社区教育动态 ，服务全市社区教育四级网络，及时发布社区教育工作开展推进的相关信息，介绍推广社区教育典型工作经验。 </p>
+                          </div>
+                        </div>
+                        <div class="ct blue01">
+                          <div class="ctt"><span>新闻快递列表</span> </div>
+                          <div class="ctt"><span>新闻快递信息页</span> </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="name" id="pt02" onmouseover="javascript:MouseOver(2)" onmouseout="javascript:MouseOut(2)"><span id="text2" class="t">学院简介</span>
+                          <div id="ul_2" class="pop blueborder" style="top: 62px;">
+                            <p class="tid2">介绍学院概况，及时更新全市社区教育四级体制建设、完善的基本情况，展示全市社区教育的主要成果。</p>
+                          </div>
+                        </div>
+                        <div class="ct blue01">
+                          <div class="ctt">学院简介</div>
+                          <div class="ctt">学院职能</div>
+                          <div class="ctt">下设分院</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="name" id="pt03" onmouseover="javascript:MouseOver(3)" onmouseout="javascript:MouseOut(3)"><span id="text3" class="t">市民学堂</span>
+                          <div id="ul_3" class="pop blueborder" style="top: 124px;">
+                            <p class="tid2">是社区居民在线自主选择课程学习的栏目，提供生活技艺、文化涵养、文体休闲、医疗保健等类别的课程资源，社区居民可以通过关键字搜索及选择课程类别等方式找到所需的课程进行在线学习，学习的记录保存到用户空间。</p>
+                          </div>
+                        </div>
+                        <div class="ct blue01">
+                          <div class="ctt">市民学堂</div>
+                          <div class="ctt">课程信息</div>
+                          <div class="ctt">搜索结果</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="name" id="pt04" onmouseover="javascript:MouseOver(4)" onmouseout="javascript:MouseOut(4)"><span id="text4" class="t">培训项目</span>
+                          <div id="ul_4" class="pop blueborder" style="top: 186px;">
+                            <p class="tid2">发布唐山社区教育线下开展培训项目的动态信息，及发布线上培训项目公告，并进行线上项目培训，参与培训的学员由教务管理人员对学员进行授权，被授权的学员即可以登录学习平台学习项目下的课程，系统记录学员的学习的次数及时长。</p>
+                          </div>
+                        </div>
+                        <div class="ct blue01">
+                          <div class="ctt">培训项目</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="name" id="pt05" onmouseover="javascript:MouseOver(5)" onmouseout="javascript:MouseOut(5)"><span id="text5" class="t">社区家园</span>
+                          <div id="ul_5" class="pop blueborder" style="top: 248px;">
+                            <p class="tid2">包括学习型社区/街道空间、学习小组、居民个人空间，社区/街道管理人员、社区居民在社区家园内通过活动组织、学习交流、分享、留言等建立双方的联系，促进社区/街道的发布及提高社区居民的学习兴趣。</p>
+                          </div>
+                        </div>
+                        <div class="ct blue01">
+                          <div class="ctt">社区家园</div>
+                          <div class="ctt">社区活动</div>
+                          <div class="ctt">学习型社区/街道</div>
+                          <div class="ctt">学习小组</div>
+                          <div class="ctt">志愿者</div>
+                          <div class="ctt">论坛</div>
+                          <div class="ctt">个人空间</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="name" id="pt06" onmouseover="javascript:MouseOver(6)" onmouseout="javascript:MouseOut(6)"><span id="text6" class="t">学分银行</span>
+                          <div id="ul_6" class="pop blueborder" style="top: 310px;">
+                            <p class="tid2">建设“学分银行”，建设不同类型学习成果的认证、评估、累积和转换的管理制度，是世界教育领域一种新的发展趋势，是在终身学习理念指导下对教育体系制度和培养模式新的超越和发展，将在终身学习体系构建的进程中越来越显示其重要作用。</p>
+                          </div>
+                        </div>
+                        <div class="ct blue01">
+                          <div class="ctt">学分银行</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="name" id="pt07" onmouseover="javascript:MouseOver(7)" onmouseout="javascript:MouseOut(7)"><span id="text7" class="t">政策理论</span>
+                          <div id="ul_7" class="pop blueborder" style="top: 372px;">
+                            <p class="tid2">提供全国社区教育系统、唐山市政府、唐山市社区教育领导小组发布的相关政策、法规、标准、通知，满足社区教育发展及实践过程中决策咨询要求,介绍社区教育理论研究成果，总结社区教育办学创新经验,推动社区教育热点、难点问题的探讨。</p>
+                          </div>
+                        </div>
+                        <div class="ct blue01">
+                          <div class="ctt">政策文件</div>
+                          <div class="ctt">理论研究</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="name" id="pt08" onmouseover="javascript:MouseOver(8)" onmouseout="javascript:MouseOut(8)"><span id="text8" class="t">走进唐山</span>
+                          <div id="ul_8" class="pop blueborder" style="top: 434px;">
+                            <p class="tid2">通过《唐山概况》《唐山旅游》《唐山人文》三个子栏目，　让世界了解唐山，让唐山走向世界。挖掘唐山精彩，铸造唐山辉煌。</p>
+                          </div>
+                        </div>
+                        <div class="ct blue01">
+                          <div class="ctt">走进唐山</div>
+                          <div class="ctt">唐山人文</div>
+                          <div class="ctt">唐山旅游</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="clrm5"></div>
+              <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+            </div></form>
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* SpaceBuilder Themes common Cascading style sheets. Copyright (c) 2010, Nerc. All rights reserved. version: 3.0 */
+
+/* Header
+----------------------------------*/
+#tn-header { position: relative; z-index: 10; }
+
+/* Top menubar */
+.spb-user-menu { float: right; padding: 3px 0 0 0; }
+.spb-user-menu li { float: right; padding: 0 0 0 10px; }
+.spb-user-menu li ul { padding: 5px 1px; _width: 120px; }
+.spb-user-menu li li { float: none; padding: 5px 10px; white-space: nowrap; }
+.spb-user-menu li li.spb-separator { padding: 0; height: 0; margin: 3px 0px; line-height: 0; font-size: 0; _width: 100%; }
+.spb-top-menubar .tn-msg-bubble { top: 15px; }
+
+/* Logo */
+#spb-logo { float: left; }
+#spb-logo a { float: left; line-height: 50em; height: 36px; width: 200px; overflow: hidden; _cursor: pointer; }
+
+/* Search box */
+.spb-branding-area .spb-search-box { width: 350px; *width: 280px; *overflow: hidden; float: right; }
+.spb-branding-area .tn-search-box,
+.spb-branding-area .tn-search-button,
+.spb-branding-area .tn-search-input,
+.spb-branding-area .tn-menu-button { float: right; }
+.spb-branding-area .tn-button .tn-first-child { *width: 65px; *overflow: hidden; }
+
+/* Navigation */
+.spb-nav1 .spb-nav-item {  float: left; }
+.spb-nav1 .spb-nav-item a {  float: left; padding-left: 10px; }
+.spb-nav1 .spb-nav-item span {  float: left;  padding-right: 10px; line-height: 2.14; font-weight: bold; font-size: 116.7%; cursor: pointer; }
+.spb-nav2 .spb-nav-item { float: left; position: relative; z-index: 11; padding: 0 10px; }
+.spb-nav2 li.sfHover { z-index: 12; }
+.spb-nav2 .spb-nav-item a { float: left; white-space: nowrap; line-height: 2.33em; }
+.spb-nav2 .tn-selected { font-weight: bold; }
+.spb-nav2 .spb-nav-submenu { position: absolute; z-index: 13; top: 100%; left: 0; padding: 0.66em 0; }
+.spb-nav2 .spb-nav-submenu li,
+.spb-nav2 .spb-nav-submenu a { float: none; font-weight: normal; }
+.spb-nav2 .spb-nav-submenu .spb-nav-submenu { left: 100%; top: -0.74em; }
+.spb-nav2 li .tn-icon { top: 50%; margin-top: -8px; }
+.spb-nav2 li li .tn-icon { right: 0px; background-position: -32px 0; _margin-top: -12px; }
+.spb-nav2 .spb-nav-submenu { _width: 150px; }
+.spb-nav2 .spb-nav-submenu li { _height: 1.5em; _line-height: 1.5em; zoom:1; }
+
+/* Header bottom */
+.spb-header-bottom { padding: 10px 0 0; }
+.spb-header-bottom .tn-shortcut { float: right; }
+.tn-pagename .tn-text-note { padding: 0 0 0 10px; }
+.spb-header-bottom .tn-text-heading { display: inline; font-size: 116.67%; }
+
+/* Home Page
+----------------------------------*/
+.spb-layout-2-3-3 .spb-column-left .spb-pic-list li, 
+.spb-layout-3-3-2 .spb-column-right .spb-pic-list li, 
+.spb-layout-3-5-4 .spb-column-left .spb-pic-list li, 
+.spb-layout-4-5-3 .spb-column-right .spb-pic-list li {  padding: 0 0 10px 19px; }
+.spb-layout-1-1-1 .spb-column-left .spb-pic-list li, 
+.spb-layout-1-1-1 .spb-column-center .spb-pic-list li, 
+.spb-layout-1-1-1 .spb-column-right .spb-pic-list li, 
+.spb-layout-1-2 .spb-column-left .spb-pic-list li, 
+.spb-layout-2-1 .spb-column-right .spb-pic-list li, 
+.spb-layout-4-5-3 .spb-column-left .spb-pic-list li, 
+.spb-layout-3-5-4 .spb-column-right .spb-pic-list li {  padding: 0 0 10px 15px; }
+.spb-layout-2-3-3 .spb-column-center .spb-pic-list li, 
+.spb-layout-2-3-3 .spb-column-right .spb-pic-list li, 
+.spb-layout-3-3-2 .spb-column-left .spb-pic-list li, 
+.spb-layout-3-3-2 .spb-column-center .spb-pic-list li {  padding: 0 0 10px 5px; }
+.spb-layout-3-5-4 .spb-column-center .spb-pic-list li, 
+.spb-layout-4-5-3 .spb-column-center .spb-pic-list li { padding: 0 0 10px 13px; }
+.spb-layout-1-2 .spb-column-right .spb-pic-list li, 
+.spb-layout-2-1 .spb-column-left .spb-pic-list li {  padding: 0 0 10px 10px; }
+.spb-layout-2-3-3 .spb-column-left .spb-share-hot-video li, 
+.spb-layout-3-3-2 .spb-column-right .spb-share-hot-video li, 
+.spb-layout-3-5-4 .spb-column-left .spb-share-hot-video li, 
+.spb-layout-4-5-3 .spb-column-right .spb-share-hot-video li { padding: 0 0 5px 44px; }
+.spb-layout-2-3-3 .spb-column-center .spb-share-hot-video li, 
+.spb-layout-2-3-3 .spb-column-right .spb-share-hot-video li, 
+.spb-layout-3-3-2 .spb-column-left .spb-share-hot-video li, 
+.spb-layout-3-3-2 .spb-column-center .spb-share-hot-video li {padding: 0 0 5px 29px; }
+.spb-layout-3-5-4 .spb-column-center .spb-share-hot-video li, 
+.spb-layout-4-5-3 .spb-column-center .spb-share-hot-video li { padding: 0 0 5px 42px; }
+.spb-layout-1-2 .spb-column-right .spb-share-hot-video li, 
+.spb-layout-2-1 .spb-column-left .spb-share-hot-video li { padding: 0 0 5px 25px; }
+
+/* Simple Pages
+----------------------------------*/
+.spb-simple-page .spb-user-menu { padding: 15px 0 0; }
+.spb-simple-page #spb-logo { margin: 0; }
+.spb-simple-page .spb-login-panel .tn-box-content { padding: 20px 0 20px 5px; }
+.spb-simple-page .spb-login-panel .tn-form-label { width: 55px;  }
+.spb-simple-page .spb-reg-now { padding: 15px 0 0; text-align: center; }
+
+/* Page Content */
+.spb-members-doing .tn-list-item-area-main { overflow: hidden; zoom:1; }
+
+/* News */
+.spb-show-news .tn-detail-text { width: 588px; }
+
+/* Forums */
+.spb-post-content .tn-detail-text { width: 767px; }

@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "382032510445";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="382032510445">
+    <input id="classallid" type="hidden" value="382032510445">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19">                <a href="zcll.html" class="current"><span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点信息</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <a href="zcll.html">政策理论</a> &gt;&gt; <span class="darkyellow">政策法规</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    教育部关于推进社区教育工作的若干意见</h1>
+                                <div class="time">
+                                      浏览次数：<em>2364</em> 发布时间：<span>2012年12月19日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-line-height-alt: 15.0pt" class="MsoNormal" align="center"><strong style="mso-bidi-font-weight: normal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 16pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt"><span lang="EN-US"><o:p></o:p></span></span></strong></p>
+<p style="TEXT-ALIGN: center; LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan" class="MsoNormal" align="center"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US"><o:p></o:p></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">各省、自治区、直辖市教育厅（教委），新疆生产建设兵团教育局，各计划单列市教育局： 　　<span lang="EN-US"><o:p></o:p></span></span></strong></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span></span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">为全面贯彻落实党的十六大精神，落实《中共中央国务院关于进一步加强人才工作的决定》和国务院批转教育部《<span lang="EN-US">2003</span>－<span lang="EN-US">2007</span>年教育振兴行动计划》提出的积极推进社区教育，加快构建唐山教育信息网体系，促进学习型社会的形成的任务，进一步推进全国社区教育工作，现提出如下意见。　</span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt"></span><strong><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt; mso-bidi-font-size: 12.0pt">一、站在全面建设小康社会，构建唐山教育信息网体系和建设学习型社会的高度上，充分认识开展社区教育工作的重要意义，增强积极推进社区教育工作的责任感和紧迫感 </span></strong><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span></span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">近年来，我国社区教育实验工作范围不断扩大，内容不断拓展，工作取得了显著进展。自<span lang="EN-US">1999</span>年国务院批转的教育部《面向<span lang="EN-US">21</span>世纪教育振兴行动计划》提出<span lang="EN-US">&ldquo;</span>开展社区教育实验工作，逐步建立和完善唐山教育信息网体系，努力提高全民素质<span lang="EN-US">&rdquo;</span>的要求以来，教育部积极推动社区教育实验工作。<span lang="EN-US">2001</span>年<span lang="EN-US">11</span>月，我部召开了全国社区教育实验工作经验交流会议，明确了我国社区教育实验工作的目标任务和政策措施，并确定了<span lang="EN-US">28</span>个全国社区教育实验区。<span lang="EN-US">2003</span>年，全国社区教育实验区进一步扩大到<span lang="EN-US">61</span>个，基本覆盖了各省（自治区、直辖市）和计划单列市。许多省级、市级教育行政部门，也分别确定了一批省级和市级社区教育实验区。各地认真贯彻全国社区教育实验工作经验交流会议精神，采取积极措施推动社区教育实验工作。目前，各实验区初步建立了社区教育管理体制和运行机制；社区教育资源得到了有效整合，社区教育培训网络初步形成；创建了一大批学习型家庭、学习型企业等学习型组织；各类社区教育培训活动广泛深入开展，社区居民参与学习的比率有了很大的提高，较好地满足了社区居民不断增长的多样化的学习需求，为提高居民综合素质和社区建设水平做出了重要贡献。实践证明，社区教育的产生和发展，适应了我国发展先进生产力对提高社会全体成员整体素质的迫切要求，适应了我国发展先进文化，建设有中国特色的社会主义文化的迫切要求，适应了我国全面建设小康社会进程中人民群众对提高自身素质、提高生活质量的迫切要求，促进了社区的稳定与发展，拓宽了教育服务社会的渠道和内容，有力地推动了构建唐山教育信息网体系、建设学习型社会的进程。　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　<span lang="EN-US"><span style="mso-spacerun: yes">&nbsp; </span></span>党的十六大提出了构建唐山教育信息网体系，形成全民学习、终身学习的学习型社会的目标，《中共中央国务院关于进一步加强人才工作的决定》和国务院批转教育部《<span lang="EN-US">2003</span>－<span lang="EN-US">2007</span>年教育振兴行动计划》，对发展社区教育，促进人的全面发展，提出了更高的要求。目前，社区教育实验工作虽然有了很大发展，但距离建设学习型社会的要求还有相当大的差距。各地教育行政部门要把进一步推进社区教育工作，作为全面建设小康社会，形成全民学习、终身学习的学习型社会的重要举措，提高认识，增强搞好社区教育工作的责任感和紧迫感，加大工作力度，努力把全国社区教育工作推进到一个新的发展阶段。　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><strong><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt; mso-bidi-font-size: 12.0pt">二、进一步明确推进社区教育工作的指导思想、原则和目标 </span></strong><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">1</span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">．社区教育工作的指导思想是： 　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span></span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">进一步推进社区教育工作，要以党的十六大精神、<span lang="EN-US">&ldquo;</span>三个代表<span lang="EN-US">&rdquo;</span>重要思想和科学发展观为指导，立足社区、依靠社区、服务社区。要逐步建立起适应社区建设和居民学习需求的社区教育管理体制、运行机制和和教育培训模式，促进社区居民整体素质和生活质量的提高，促进区域经济和社会的发展；要把社区教育作为社区建设的重要内容和基础性工作，贯穿在社区建设的各项工作中；要通过社区教育，进一步构建和完善唐山教育信息网体系，形成终身学习的公共资源平台，使学习型社会建设工作落到实处。　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">2</span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">．开展社区教育工作的原则是： 　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="TEXT-ALIGN: center; LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal" align="center"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span></span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">要紧密围绕社区建设的总体目标，与社区建设的各方面工作沟通和衔接，组织和实施社区教育培训活动，形成合力和有机整体；要加强社区各类教育文化资源的统筹，充分利用、拓展和开发社区现有教育资源，推动各类教育资源面向社区居民开展教育培训活动，加强社区学校和学习型组织的建设；要树立大教育、大培训观念，面向社区居民开展内容丰富、灵活多样的教育培训活动，提供全员、全程、全面的教育服务，努力满足社区建设和社区居民的需求；要实行分类指导，分阶段实施，积极而扎实地推进社区教育的广泛深入开展，并把发展社区教育作为创建学习型城区、学习型城市和学习型社会的重要途径和措施。　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">3</span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">．推进我国社区教育工作的目标是： 　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; TEXT-INDENT: 18pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-char-indent-count: 2.0; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">进一步扩大社区教育实验范围。到<span lang="EN-US">2007</span>年，全国社区教育实验区要扩展到各省（自治区、直辖市），各省级、市级实验区的范围进一步扩大，并形成一批具有较高发展水平的省市级的社区教育实验区和普遍开展社区教育的城市；创建一批全国社区教育示范区，为学习型城市建设奠定扎实的基础；在经济教育较发达的东部地区，社区教育延伸到农村地区并取得初步经验。中部和西部地区在条件较好的农村地区开展社区教育实验。　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">到<span lang="EN-US">2007</span>年，全国社区教育实验区要达到较高的发展水平，对全国社区教育工作发挥骨干和示范作用。在经济较发达的东部地区，全国社区教育实验区的教育资源基本上都要向社区居民开放，面向社区居民广泛开展各种形式的教育培训活动，使社区居民年培训率逐步达到<span lang="EN-US">80%</span>以上，基本形成具有地方特色的社区教育管理体制和运行机制，基本具备社区教育机构、人员和经费等保障条件；在中西部地区，全国社区教育实验区教育资源<span lang="EN-US">60%</span>以上都要向社区居民开放，有重点地开展教育培训活动，使社区居民年培训率逐步达到<span lang="EN-US">50%</span>以上，初步形成具有地方特色的社区教育管理体制和运行机制，具备一定的社区教育机构、人员和经费等保障条件。　　各省（自治区、直辖市）都要制定社区教育发展规划，加强唐山教育信息网的规划和协调，优化整合各种教育培训资源，形成较为完备的推进社区教育工作的政策措施和对社区教育工作的督评估制度，初步形成面向社区居民终身学习的资源平台。　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><strong><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt; mso-bidi-font-size: 12.0pt">三、推进社区教育工作的主要任务</span></strong><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt"> 　　 　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">1</span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">．大力开展多层次、多内容、多形式的教育培训活动。 　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; TEXT-INDENT: 9pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-char-indent-count: 1.0; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">　开展教育培训，是社区教育的基本工作。要始终重点抓好量大面广、受到社区居民普遍欢迎的各类短期培训活动，努力满足在职人员的岗位培训、下岗失业人员再就业培训、老年人群社会文化活动、弱势人群提高生存技能培训、外来人群适应城区社会生活培训等各类人群的学习需求，积极抓好社区内的婴幼儿教育、青少年学生的校外素质教育，加强未成年人的德育工作。要紧紧围绕社区建设的中心工作和社区居民的教育培训需求，确定相关的培训课程和教学内容，加强培训课程和教材的建设工作，拓展和丰富教育培训内容，增强培训的针对性和有效性，积极创新培训形式，逐步提高社区居民的教育培训率，力争每年提高五个百分点以上，逐步实现有学习能力和学习要求的社区居民<span lang="EN-US">&ldquo;</span>人人皆学<span lang="EN-US">&rdquo;</span>的目标。 　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">2</span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">．进一步开展创建<span lang="EN-US">&ldquo;</span>学习型组织<span lang="EN-US">&rdquo;</span>的活动。 　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; TEXT-INDENT: 18pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-char-indent-count: 2.0; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">要把创建<span lang="EN-US">&ldquo;</span>学习型组织<span lang="EN-US">&rdquo;</span>作为现阶段推进社区教育工作的重要内容来抓。要根据社区内不同类型组织的实际情况，制订相应的学习型组织基本要求和标准，积极创建学习型企业、学习型单位、学习型街道、学习型居委会、学习型楼组、学习型家庭等学习型组织，积极开展评估促进工作，使学习型组织占社区内各类组织的比例逐年提高，<span lang="EN-US">2007</span>年达到三分之一以上。 　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">3</span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">．充分利用、拓展和开发各类教育资源，形成社区教育培训网络。 　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span></span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">要充分利用社区内现有各类教育资源，横向联合，纵向沟通，实现教育资源共享，使现有教育资源发挥更大的作用。各类学校、教育培训机构和各种文化体育设施都要有组织、有计划地向社区开放，积极开展多种形式的社区教育培训活动，特别是要依托社区内普通中小学和各类职业学校、成人学校面向居民开展教育培训服务，使其成为开展社区教育的重要力量；要在整合、利用现有教育资源基础上，形成以区（县）社区教育学院或社区教育中心为龙头，以街道（乡镇）社区教育学校为骨干，以居委会（村）社区教育教学点等为基础的社区教育网络，满足社区居民多样化的教育需求；要积极创造条件，充分运用播放教学光盘、收视卫星电视教育节目、计算机网络教学等现代远程教育手段，使有条件的街道（乡镇）都能够开展现代远程教育，构筑起社区居民全民学习、终身学习的平台。　　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><strong><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt; mso-bidi-font-size: 12.0pt">四、采取切实可行措施，保障社区教育工作顺利进行</span></strong><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt"> 　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">1</span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">．加强对社区教育工作的领导，逐步完善社区教育管理体制和运行机制。 　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; TEXT-INDENT: 18pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-char-indent-count: 2.0; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">各地要把社区教育作为社区建设的重要内容纳入地方经济社会发展规划，建立有相关部门负责人参加的社区教育工作领导机构，明确各有关部门的职责和分工，形成<span lang="EN-US">&ldquo;</span>党政统筹领导，教育部门主管，有关部门配合，社会积极支持、社区自主活动、群众广泛参与<span lang="EN-US">&rdquo;</span>的管理体制和运行机制，并落实相应的管理机构、人员和经费，推动本地区社区教育健康持续发展。社区教育工作领导机构的办公室设在教育行政部门。各地教育行政部门要把开展社区教育作为推进社区建设、构建唐山教育信息网体系、形成学习型社会的重要内容和措施，纳入地方教育发展计划，纳入教育检查评估范畴，采取得力措施，不断推进社区教育工作。　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt" lang="EN-US">2</span><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">．加强社区教育队伍建设。 　　<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="LINE-HEIGHT: 15pt; TEXT-INDENT: 18pt; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-char-indent-count: 2.0; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto" class="MsoNormal"><span style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt">各地教育行政部门要加强社区教育队伍的建设，建立一支以专职人员为骨干，兼职人员和志愿者为主体的适应社区教育需要的管理队伍和师资队伍。专职人员主要在现有的教育行政管理人员和教师队伍中统筹安排解决，街道要有专人分管社区教育工作。兼职人员要根据社区教育的实际需要确定。要充分发挥社区内教师、专家、各行各业的工作人员、在校大中专学生的积极性，建立表彰激励机制，使之成为开展社区教育活动的重要力量。　　<span lang="EN-US"><o:p></o:p></span></span></p>
+                                    <br>    <br>
+                                                                    </div>
+                                                                <div class="relevantinformation">
+                                    <h2>
+                                        【相关信息】</h2>
+                                    <ul class="newslist">
+                                                                                <li><span>10-18</span><a href="391242260744.html">教育部办公厅关于推荐全国社区教育示范区的通知（2010年9月）</a></li>
+                                                                                <li><span>10-20</span><a href="980671159794.html">教育部关于确定第二批全国社区教育示范区的通知（2010年11月）</a></li>
+                                                                                <li><span>04-25</span><a href="653198331422.html">教育部办公厅关于印发《社区教育示范区评估标准（试行）》的通知 </a></li>
+                                                                                <li><span>09-18</span><a href="491304766525.html">教育部办公厅关于举办2014年全民终身学习活动周的通知</a></li>
+                                                                                <li><span>10-15</span><a href="695890241565.html">教育部等七部门关于推进学习型城市建设的意见</a></li>
+                                                                            </ul>
+                                </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=397775994099" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

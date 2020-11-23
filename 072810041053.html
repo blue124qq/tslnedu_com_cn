@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "167681906525";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="167681906525">
+    <input id="classallid" type="hidden" value="167681906525">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19">                <a href="zcll.html" class="current"><span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点信息</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <a href="zcll.html">政策理论</a> &gt;&gt; <span class="darkyellow">理论研究</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    我国社区数字化学习的实践与思考(之二）</h1>
+                                <div class="time">
+                                      浏览次数：<em>661</em> 发布时间：<span>2014年10月24日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>（四）存在问题探析</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>　　1、统筹协调不够健全</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">　　近年来，各个先行区对社区教育信息化建设都制定了相应的规划，但规划主要局限在社区教育或一般教育范畴，社区数字化学习发展的政策环境和体制机制尚不健全，运作基本以教育内循环为主，与地区的信息化发展还不匹配，与国家信息化发展的距离更远。因此，社区教育信息化主要以社区教育领域自己建设、自己使用为主。从网络平台建设来看，全国还缺乏一个全面系统的考虑，省、市、区（县）、街道（镇）等各自建设平台的情况都有，而且各级平台各自独立、功能重复、衔接不畅、管理分散，对信息互通、资源共享带来不便。从资源建设来看，自己购买或自己制作的情况比较普遍，有的地方建设的资源不能供其它地区使用，有的部门拥有资源但不能向公众开放，等等，造成很多重复投资，效能不高。还有，全国目前还没有形成统一的平台和资源标准，也没有专门的部门来管理，未来社区教育在信息化管理上会遇到很多问题，这点我们必须充分意识到。</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>　　2、发展程度不够平衡</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">　　从已评出的全国数字化学习先行区的分布来看，先行区主要集中在东部地区、部分经济发达地区，有约60%的地区还没有先行区，显示出不平衡性。如果再深入分析，社区教育信息化水平也存在很大差异。以网络平台为例，只有约30%的先行区网络平台具有较强的学习功能和拓展功能，技术上也达到了一定水平。而大部分先行区的技术水平还比较弱，网络平台水准普遍不高，有的先行区主要依靠购买专业公司现成的网络平台来构建网络支撑，但适用性不强。从认识水平看，各地对社区数字化学习作用的认识差异很大。有的地方就认为，数字化学习在社区难以实施，他们对社区数字化学习信心不足、关注不够。目前，全国也缺乏相应的交流机制和平台，相互之间信息不通，交流不畅，加剧了这种不平衡，严重影响了社区数字化学习的进一步发展。</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>　　3、推进举措不够完善</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">　　先行区在&ldquo;先行、先试&rdquo;过程中，也遇到了社区数字化学习可持续性问题，突出表现在，当工作推进到一定阶段后，学习人数出现明显疲软、学习氛围难以持续。问题在于，一是对于市民学习需求还不够全面了解，比如数字化学习资源如何吸引市民、数字化学习支持服务如何贴近市民等等，而更多是采取&ldquo;统一式&rdquo;的方式要求市民学习，造成工作上的盲目性；二是推进方式缺乏创新性，对数字化学习氛围如何感染市民、激励方式如何调动市民等问题缺乏思考与研究，所以推进工作比较简单化、机械化，影响了市民数字化学习的积极性；三是为市民提供服务缺乏便利性，学习平台和资源设计缺乏针对性和人性化，资源更新速度缓慢等，给市民参与数字化学习造成很多障碍，严重影响了学习效果。</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>三、对社区数字化学习发展的启示</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>　　（一）进一步完善推进机制</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>　　1、坚持协调发展</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">　　推进数字化学习先行区建设，是在我国社区教育发展水平达到一定程度、市民学习需求不断增长的情况下提出的。同时，从先行区的分析也可见，数字化学习在社区教育发展较快地区成效明显，但在其它地区相对薄弱。这就告诉我们，数字化学习并不能一蹴而就，需要与社区教育协调发展。我国2000年起开展社区教育实验工作，当时教育信息化已经迅速发展，但社区教育并没有立即提出加快信息化建设的要求。随着社区教育实验工作的推进，2004年，教育部在《教育部关于推进社区教育工作的若干意见》中提出了构筑起社区居民全民学习、终身学习的平台的要求。2008年，我国评出了首批34个社区教育示范区，形成了一大批实验区，社区教育进入了一个新的发展阶段。2009年专委会提出推进数字化学习先行区建设，旨在进一步创新学习方式，这是社区教育深化发展的必然要求。如今，全国已经形成90个社区教育示范区和一大批全国级、省（市）级的实验区，我国社区教育发展又站上了新的高度。在此背景下，社区教育一方面需要全面推进，同时也要向纵深发展，关键是社区教育如何进一步满足人们不断增长的学习需求。&ldquo;信息技术应用到教育过程中,引起了教育环境、教育资源、教育方式都向数字化方向发展。&rdquo;[8] 因此，社区数字化学习需要进一步提升水平和能级，既立足社区教育发展、又要促进社区教育发展，以适应社区教育新的变化和新的要求，在新形势下实现与社区教育协调发展。</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>　　2、改进推进方式</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">　　5年的实践表明，以数字化学习先行区为抓手，是推进社区数字化学习的有效途径和方法。在&ldquo;以评促建、以评促改&rdquo;方略的引领下，推进工作取得了积极的成效。专委会作为一个全国性的社区教育民间组织，在推进工作中发挥了积极作用，但从促进持续发展的角度出发，还需要政府部门的积极支持。《规划纲要（2010－2020年）》指出，要&ldquo;把教育信息化纳入国家信息化发展整体战略&rdquo;，首届国际学习型城市大会把推广应用现代学习技术作为学习型城市的六大支柱之一。因此，&ldquo;依托信息技术的数字化学习，在推进学习型社会建设的进程中发挥重要作用。&rdquo;[9] 各级政府要进一步发挥统筹协调作用，形成有效机制，创造良好的政策环境。专委会要继续发挥作用，一方面积极扩大先行区的范围，注重先行区&ldquo;先行、先试&rdquo;的经验总结，发挥先行区的引领作用；同时，进一步提升先行区的水平，加强数字化学习&ldquo;先进区&rdquo;或&ldquo;示范区&rdquo;建设工作，形成有效推进机制和激励机制。为进一步形成推进合力，还要加强各方协同。2011年，教育部教育管理信息中心和中国成人教育协会联合开展了&ldquo;全国城乡社区数字化学习示范基地&rdquo;和&ldquo;实验基地&rdquo;工作，2012年又推出了&ldquo;全国城乡社区数字化培训专业证书项目&rdquo;（简称CCDT项目），这些项目与先行区工作可以相互支撑、相得益彰，有利于社区数字化学习的深入发展。</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>　　（二）进一步优化平台支撑</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>　　1、提升平台功能</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">　　从对先行区网络平台分析来看，先行区初步建成了社区数字化学习平台但功能并不完善，而全国更多的地区尚未建立学习平台。因此，目前推进社区数字化学习的基础依然不够牢固，影响了工作的全面推进，迫切需要通过更加完善的管理和先进的技术来提升功能。社区数字化学习平台建设一般在政府规划指导下进行，学习平台需要根据服务人群及应用规模有所区别，如省（直辖市）一级，地（市）一级和区（县）一级等，从优化平台应用角度来看，需要加强统一规划和指导，区（县）以下不宜建设独立的平台，而各级平台之间应考虑互联、互通，防止平台&ldquo;单立&rdquo;。运用云计算（Cloud Computing）技术，可充分整合教育资源，有效解决资源的充分应用问题，是解决传统数字化学习平台不足的重要手段，值得尝试应用。&ldquo;在云计算模式中各学校之间的信息共享变得更加密切，可以构建一个共同的信息共享空间，进一步有效整合教学资源。&rdquo;[10] 随着手机、pad等移动设备的发展，支持各种移动终端学习的平台不断涌现，成为学习服务方式的新潮流。移动学习平台（Mobile learning platform）是一种为移动终端设计的学习服务程序，它能提供随时随地学习的平台服务，应用上比传统的数字化学习平台更加便利。总之，社区数字化学习的发展需要学习平台的不断提升。</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>　　2、拓展学习资源</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">　　在先行区的推进过程中，各地通过购买、自建等方式，为学习者提供了大量的学习资源。但总体来看，资源形式、内容比较传统、单一，难以满足市民个性化、多样化的学习需求，影响了社区数字化学习的效果。有研究者提出，由教育部、财政部批准立项建立的国家数字化学习资源中心，汇聚各方资源，促进资源共享，但目前也面临学习者多元化学习需求的挑战。[11] 加强资源建设的基础是以需求为导向，适应现代人的学习和生活方式。应该说，不同人群对数字化学习资源的内容、形式、长度等都有一定偏向，更多人希望学习能够随时随地，时间上更加碎片化。因此，数字化学习资源应能体现各种人群的不同学习需求。在新媒体发展日新月异的当下，数字化学习的活力在于新型资源的不断拓展。比如，微课资源的推出，从根本上改变了人们传统的学习方式，更好地满足了学习者个性化学习、选择性学习的要求，尤其是随着移动设备的普及，基于微课的移动学习、远程学习、在线学习、泛在学习将会越来越普及。慕课（MOOCs）是新近涌现出来的一种在线课程开发模式，它是个人组织发布的、散布于互联网上的开放课程，被誉为&ldquo;未来教育&rdquo;的曙光。微课和慕课的涌现，为我们推进社区数字化学习提供了新的视野和新的方法，形成了新的发展动力。随着互联网、物联网的迅速发展，我们可能通过有效的整合，共享更多的学习资源。</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>　　（三）进一步创新学习方式</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>　　1、新振互动学习</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">　　先行区在推进过程中形成了一些好的学习方式，但学习方式依然比较简单，缺乏活力，影响了社区数字化学习的持续性。关键在于，如何创设吸引市民的学习方式，让市民充分享受数字化学习过程的乐趣。新振互动学习，关键是在互动方式上的创新。网上互动可以利用&ldquo;虚拟学习社区&rdquo;进行，即&ldquo;具有共同兴趣及学习目的人们组成的学习团体在Internet 上构建的虚拟学习环境。&rdquo;[12] 在互动载体的运用上，不仅可以通过网络平台，也可运用微信、QQ、手机客户端等工具；不仅使用电脑，也可使用智能手机、pad等。在互动形式上，可以开展网上互动学习交流，也可以开展网上自主学习与网下互动学习结合的办法，实现网上虚拟学习与社区实体化学习的互补。在互动内容上，可以是封闭的课程内容，也可以是开放的生活知识；可以是网上学习资源，也可以是实体化学习课程。在互动对象上，可以是学习者与学习者之间的互动，也可以是学习者与助学者、学习者与资源的互动。不难看出，互动学习的支撑是网络通讯工具的应用技术，前提是，要不断提高学习者对新的网络通讯工具的应用能力。</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>　　2、推广移动学习</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">　　移动学习（Mobile Learning）作为一种新型学习方式，呈现出便捷、高效的优势，正在成为社区数字化学习新的选择。移动学习是一种在移动学习平台支持下，依靠移动终端在任何时间、任何地点开展学习的方法，被认为是未来学习不可缺少的一种学习模式。移动学习源于数字化学习，更是数字化学习的扩展，其学习环境是移动的、随时随地的，实现的技术基础是移动互连技术。近年来，我国移动学习环境和资源建设进展迅速，研究和开发能力不断提高，为开展移动学习提供了有力支撑，也为新时期开展社区数字化学习增添了活力。在先行区的推进过程中，移动学习尚处于尝试、探索阶段。因此，在社区教育中选择移动学习，需要实行逐步推进的策略：一方面，比起互联网技术，移动设备的普及、移动网络的覆盖都有待进一步完善，社区市民的移动学习技术和习惯也有待进一步培养和提高：同时，移动学习需要与传统的数字化学习配合，不断完善基于网络和移动环境的学习资源，实行网络和移动统一的注册、学习、交流、统计、查询等管理方法，创造更加成熟的学习条件，从而有效推进移动学习。</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px"><strong>　　3、尝试体验学习</strong></span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">　　体验学习(Experiential learning)是指人们在实践活动过程中，通过反复观察、实践、练习，认识到某些知识、掌握某些技能、养成某些习惯，乃至形成某些情感、态度、观念的过程。体验学习的思想源于杜威（John&middot;Dewey）的&ldquo;经验学习&rdquo;，他认为，学校应该强调学生的探究活动，探究的过程就是经验发生的过程。[13] 社区数字化学习中的体验学习，是一种基于网络的网上、网下实践学习过程。在体验学习中，学习者既是学习者、也是组织者，体现了学习者的主动性和参与性。一种是基于网络的网上体验学习模式，网络不再是一个简单的学习平台，也是发布平台、展示平台、活动平台等，学习者可以进行网上学习，也可以主动发布自己的作品、学习心得，组织各种讨论等；还有就是基于网络的网下体验学习模式，在这种模式中，既有健全的网络学习平台，也设立网下体验工作室、实验室等，学习者在参加网上学习的基础上，可参加网下各项体验，网下体验的内容还可以在网上展示、演绎。教育部社区教育研究培训中心推出的i实验室项目，是一个体验学习的数字平台，已经在全国各地建立了多个网上学习平台和网下体验工作室，近年来，组织了摄影、书法等体验学习活动，取得了很好的效果，积累了体验学习的初步经验。体验学习，就是让学习者体验着&ldquo;动手动脑&rdquo;、&ldquo;线上线下&rdquo;的乐趣，给社区数字化学习带来了新的活力。<br>
+	&nbsp;<br>
+	【参考文献】</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">[1] [美] 尼葛洛庞蒂. 数字化生存（Being Digital）[M]. 胡泳等译. 海口：海南出版社，1997：269.</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">[2] 李克东．数字化学习(上)&mdash;&mdash;信息技术与课程整合的核心[J]．电化教育研究，2001（8）：46-49．</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">[3] 叶忠海．关注数字化学习社区建设&mdash;&mdash;唐山教育信息网专家各抒己见[J]．成才与就业，2010（21）：28-30．</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">[4] 宋亦芳．全国数字化学习先行区推进现状与问题分析[J]．成才与就业，2013（11）：37-38．</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">[5] 陈乃林．推进社区数字化学习惠民工程的实践与思考 [J]．江苏广播电视大学学报，2012（3）：22-26．</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">[6] 何克抗．我国数字化学习资源建设的现状及其对策[J]．电化教育研究，2009（10）：5-9．</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">[7] 施志毅，任为民．数字化学习与公共支持服务[J]．天津电大学报，2010（4）：1-5．</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">[8] 李克东,谢幼如．构筑数字化教育社区的理论与实践研究&mdash;&mdash;教育技术研究的新领域[J]．电化教育研究，2003（3）：3-6．</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">[9] 宋志生．浅析数字化学习型社区建设的社会环境及宏观政策[J]．广西广播电视大学学报，2011（3）：11-14．</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">[10] 杨洋.基于云计算的网络课程资源库建设［J］.电脑开发与应用，2013（1）: 25-28.</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">[11] 戴建平．国家数字化学习资源中心发展战略研究的SWOT 分析[J]．中国远程教育，2012（1）：24-31．</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">[12] 甘永成，祝智庭．虚拟学习社区知识建构和集体智慧发展的学习框架[J]．中国电化教育，2005（1）：27-32．</span></p>
+<p>
+	<span class="font14 fontST color2 content" id="ContentBody" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); padding-bottom: 0px; padding-top: 0px; font: 14px/24px 宋体; padding-left: 30px; display: block; letter-spacing: normal; padding-right: 30px; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">[13] 叶澜. 新编教育学教程 [M]. 上海：华东师范大学出版社，2002：164.</span></p>
+<p>
+	<br style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(0,0,0); font: medium arial; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	&nbsp;</p>
+
+                                    <br>    <br>
+                                                                    </div>
+                                                                <div class="relevantinformation">
+                                    <h2>
+                                        【相关信息】</h2>
+                                    <ul class="newslist">
+                                                                                <li><span>11-06</span><a href="931969442585.html">我国社区教育的现实状况</a></li>
+                                                                                <li><span>10-09</span><a href="686883045325.html">我国社区数字化学习的实践与思考</a></li>
+                                                                                <li><span>10-24</span><a href="783357820931.html">我国社区数字化学习的实践与思考(之一）</a></li>
+                                                                                <li><span>05-24</span><a href="198068959179.html">我国社区音乐教育研究综述</a></li>
+                                                                                <li><span>11-07</span><a href="718691653426.html">我国社区教育研究40年(1978—2017)状况与反思</a></li>
+                                                                            </ul>
+                                </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=072810041053" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

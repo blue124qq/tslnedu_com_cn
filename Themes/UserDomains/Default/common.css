@@ -1,0 +1,82 @@
+/* SpaceBuilder User Domains Themes common Cascading style sheets. Copyright (c) 2011, Tunynet Inc. All rights reserved. version: 3.2 */
+
+/* Header
+----------------------------------*/
+.spb-user-menu { float: right; padding: 0 10px; }
+.spb-user-menu li { float: right; padding: 5px 0 5px 10px; }
+.spb-user-menu li ul { padding: 5px 1px; top: 25px; _width: 120px;  }
+.spb-user-menu li li { float: none; *width: 100%; padding: 5px 0; white-space: nowrap; }
+.spb-user-menu li li a { padding: 0 10px; }
+.spb-user-menu li li.spb-separator { padding: 0; height: 0; margin: 3px 0px; line-height: 0; font-size: 0; }
+.spb-branding-area .spb-profile-card { padding: 15px 20px; }
+
+/* Navigation */
+.spb-nav1-area .tn-shortcut { float: right; }
+.spb-nav1 .spb-nav-item { margin-right: 2px; }
+.spb-nav1 .spb-nav-item, 
+.spb-nav2 .spb-nav-item { float: left; }
+.spb-nav1 .spb-nav-item a, 
+.spb-nav2 .spb-nav-item a { float: left; font-weight: bold; white-space: nowrap; padding: 0 0 0 10px; }
+.spb-nav1 .spb-nav-item span,
+.spb-nav2 .spb-nav-item span { float: left;  line-height: 2em; padding: 0 10px 0 0; }
+.spb-nav1 .spb-nav-item a:hover span,
+.spb-nav2 .spb-nav-item a:hover span { cursor: pointer; }
+
+.spb-nav1 .spb-nav-item a.sf-with-ul { padding: 0; }
+.spb-nav1 .spb-nav-item a.sf-with-ul:hover { text-decoration: none; }
+.spb-nav1 .spb-nav-item a.sf-with-ul span { padding: 0; width: 16px; }
+.spb-nav1 .spb-nav-item a.sf-with-ul span.tn-icon { right: 0; top: 4px; }
+.spb-nav1 .spb-nav-item ul { left: 0; top: 100%; *width: 120px; }
+.spb-nav1 .spb-nav-item li { zoom:1; *width: 120px; overflow: hidden; *float: left; }
+.spb-nav1 .spb-nav-item li a { float: none; padding: 5px 10px; line-height: 1em; overflow: hidden; }
+.spb-nav1 .spb-separator { height: 1px; font-size: 0; overflow: hidden; _display: none; }
+
+/* Personal Centre 
+----------------------------------*/
+
+/* Miniblog Form  */
+.spb-miniblog-publish .spb-foot { display: none; }
+.tn-active .spb-miniblog-form .spb-foot { display: block; }
+.tn-active .spb-miniblog-form textarea { height: 4.5em; }
+
+/* Profile Not Open
+----------------------------------*/
+#spb-not-open-page .spb-branding-area .spb-profile-avatar { display: none; }
+.spb-not-open-tip .spb-icon-lock { width: 32px; height: 32px; display: block; float: left; margin: 0 10px 20px 0; background-position: 0 -240px; }
+.spb-not-open-tip .tn-helper-flowfix { margin-bottom: 10px; }
+
+/* Profile */
+.spb-prifile .tn-avatar-big { margin: 0 auto 10px; }
+.spb-prifile .tn-side-menu { padding: 0 24px; }
+
+/* User detail information */
+.spb-user-detail .tn-box-content { padding: 20px; }
+.spb-user-detail .tn-info-part .tn-text-heading { padding: 20px 20px 10px; }
+.spb-user-detail .tn-info-part dl { padding: 5px 0; }
+.spb-user-detail .tn-info-part dt { width: 20%; padding-right: 2%; float: left; text-align: right; }
+.spb-user-detail .tn-info-part dd { width: 75%; float: left; }
+
+/* Activities */
+.spb-new-activities .tn-simple-comments .tn-textarea { * overflow: hidden; zoom:1; }
+
+/* Home
+----------------------------------*/
+.spb-user-panel .tn-avatar-big { margin: 0 auto 10px; }
+.spb-user-panel .tn-side-menu { padding: 0 24px; }
+#spb-home .spb-new-activities .tn-simple-comments { width: auto; }
+
+/* Blog */
+.spb-blog-post .tn-detail-text { width: 668px; overflow: hidden; }
+.spb-blog-post .tn-comment-info { margin: 0 26px 0 56px; }
+
+/* Search box */
+.tn-grid-3-13 .tn-grid-9-4 .watermark_container { float: left; }
+.tn-grid-3-13 .tn-grid-9-4 .tn-search-input,
+.tn-template-r-230 .spb-search-box .tn-search-input { width: 174px; }
+.tn-template-r-170 .spb-search-box .tn-search-input { width: 114px; }
+#tn-content .spb-search-box .tn-search-box { position: relative; }
+#tn-content .spb-search-box label.error { position: absolute; left: -7px; top: 5px; }
+
+/* Footer
+----------------------------------*/
+#tn-footer { margin: 0 auto; width: 950px; }

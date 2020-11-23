@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>搜索帖子 - 唐山教育网</title>
+
+<meta name="GENERATOR" content="SpaceBuilder v3.2">
+<link rel="stylesheet" href="Themes/Shared/Styles/tn.core_src.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Themes/Shared/Styles/tn.theme_src.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Themes/Shared/Styles/tn.widgets_src.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Themes/Shared/Styles/common.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Themes/Channels/Default/common.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Themes/Channels/Default/appearances/default/style.css" type="text/css" media="screen">
+
+    <script src="Utility/jquery/jquery.min-1.4.2.js" type="text/javascript"></script>
+    <script src="Utility/jquery/plugin/jquery.cookie.js" type="text/javascript"></script>
+    <script src="Utility/jquery/ui.core.min-1.8.12.js" type="text/javascript"></script>
+    <script src="Utility/jquery/ui.widget.min-1.8.12.js" type="text/javascript"></script>
+    <script src="Utility/tunynet_web_ui/global.js" type="text/javascript"></script>
+    <script src="Utility/jquery/plugin/jquery.nyroModal-1.6.2.min.js" type="text/javascript"></script>
+    <script src="Utility/jquery/ui.tabs.min-1.8.12.js" type="text/javascript"></script>
+    <script src="Utility/jquery/plugin/jquery.superfish-1.4.8.js" type="text/javascript"></script>
+    <script src="Utility/jquery/plugin/jquery.spb.menuButton.js" type="text/javascript"></script>
+    <script src="Utility/jquery/plugin/jquery.watermarkinput.js" type="text/javascript"></script>
+    <script src="Utility/jquery/plugin/jquery.validate-1.7.js" type="text/javascript"></script>
+    
+    <script src="Utility/jquery/plugin/jquery.spb.CollapsibleBox.js" type="text/javascript"></script>    
+    
+  <style type="text/css">
+<!--
+#spb-logo a {
+background: url(Images/logo.png) no-repeat;
+_background: none;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop, src='Images/logo.png');
+}
+-->
+</style>
+</head>
+
+
+<body id="Forum-SearchForum" class="tn-page-bg spb-forum-page">
+    <div id="tn-doc" class="tn-doc-bg">
+     
+ <div class="bg_ts_topnav"><div class="nav"><span class="left">欢迎登录唐山教育网!</span>
+ <a href="index.html">首页</a>丨
+ <a href="xwkd.html">新闻快递</a>丨
+ <a href="xyjj.html">学院简介</a>丨
+ <a href="smxt.html">市民学堂</a>丨
+ <a href="pxxm.html">培训项目</a>丨
+ <a href="index1.html">社区家园</a>丨
+ <a href="xfyh.html">学分银行</a>丨
+ <a href="zcll.html">政策理论</a>丨
+ <a href="zjts.html">走进唐山 </a>
+ </div></div>
+
+	    <div id="tn-header" class="tn-header-bg">
+		  <div class="tn-wrapper">
+            <script src="Utility/jquery/plugin/jquery.bgiframe.min.js" type="text/javascript"></script>
+<script src="Utility/jquery/plugin/jquery.form.min-2.7.3.js" type="text/javascript"></script>
+<script src="Utility/jquery/plugin/jquery.blockUI-2.3.3.js" type="text/javascript"></script>
+<script src="Utility/jquery/plugin/jquery.spb.menuButton.js" type="text/javascript"></script>
+<script src="Utility/jquery/plugin/jquery.artDialog.min-3.0.5.js" type="text/javascript"></script>
+
+
+<div class="spb-top-menubar">
+    <div class="tn-wrapper-inner tn-helper-clearfix">
+        <div class="spb-user-menu">
+            
+            <ul id="AnonymousPanel" class="sf-menu sf-js-enabled sf-shadow">
+                <li><a href="Home.html" target="_blank">
+                    帮助</a></li>
+                
+                <li><a href="javascript:;">
+                    登录</a></li>
+            </ul>
+            
+        </div>
+    </div>
+</div>
+<div class="spb-branding-area">
+    <div class="tn-wrapper-inner tn-helper-clearfix">
+        <div id="spb-logo">
+            <a href="index1.html">
+                唐山教育网</a></div>
+        <div class="spb-search-box tn-helper-clearfix">
+            <div class="tn-search-box tn-widget-content tn-border-light">
+                <form method="post" id="globalFullTextSearchForm">
+                
+                <span class="tn-search-button tn-bg-light">
+                    <button type="submit" id="GolbalSearchButton">
+                        搜索</button>
+                </span>
+                <input name="keyword" id="globalFullTextSearchKeyword" class="tn-search-input tn-border-light tn-border-lr" type="text">
+                <span class="tn-menu-button tn-button-text-icon tn-button-lite tn-button"><span class="tn-first-child"><span class="tn-icon tn-icon-triangle-down"></span><button class="tn-button-text" id="fullTextSearchTypes" menu="#fullTextSearchTypeControl" type="button" url="/Forum.aspx/Search">论坛</button></span></span>
+                
+                <div id="fullTextSearchTypeControl" class="tn-menu-button-position tn-menu tn-helper-reset tn-widget-content">
+                    <ul>
+                        
+                        <li class="tn-menu-item"><a class="tn-menu-text" href="javascript:;" url="/Member.aspx/Search">
+                            会员</a></li>
+                        
+                    </ul>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="spb-nav1-area">
+    <div class="tn-wrapper-inner">
+        <ul class="spb-nav1 tn-helper-reset tn-helper-clearfix">
+            <li class="spb-nav-item spb-nav-home"><a href="index1.html"><span>家园首页</span></a></li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('ul.sf-menu').superfish();
+        $('#loginInModalButton').dialog({
+                id: 'loginDialog',
+                title: '登录',
+                width: 300             
+            });
+
+        $("#fullTextSearchTypes").menuButton();
+        $("#fullTextSearchTypeControl").find("li.tn-menu-item").click(function() {
+            var $a = $(this).find("a.tn-menu-text");
+            $("#fullTextSearchTypes").attr("url", $a.attr("url")).text($a.text());
+            $("#fullTextSearchTypeControl").hide();
+        });
+
+        $("#globalFullTextSearchForm").submit(function() {
+            $('#globalFullTextSearchForm').attr("action", $("#fullTextSearchTypes").attr("url"));
+        });
+       if(0 > 0)
+        newMessageHint('新消息');
+    });
+</script>
+
+
+    
+<div class="spb-nav2-area">
+    <div class="tn-wrapper-inner">
+        <ul class="spb-nav2 tn-helper-reset tn-helper-clearfix sf-menu sf-js-enabled sf-shadow">
+            <li class="spb-nav-item">
+                <a href="Forum.html"><span>
+                    论坛首页</span></a></li>
+
+            
+            <li class="spb-nav-item"><a href="javascript:;"><span>
+                我的论坛</span></a></li>
+            
+        </ul>
+    </div>
+</div>
+<div class="spb-header-bottom">
+    <div class="tn-wrapper-inner tn-helper-clearfix">
+        <div class="tn-shortcut">
+            
+            <span class="tn-action"><a href="Control_ShowForumNavigation.html" class="tn-action-text nyroModal">
+                论坛导航</a></span>
+        </div>
+        <div class="tn-pagename"><h1 class="tn-helper-reset tn-text-heading">搜索帖子</h1></div>
+    </div>
+</div>
+
+		  </div>
+        </div>
+        <div id="tn-content" class="tn-content-bg tn-doc2">
+          
+          
+          
+            <div class="tn-wrapper tn-template-r-230 tn-helper-clearfix">
+               <div class="tn-main">
+                   <div class="tn-block">
+                       
+  <script src="Utility/jquery/plugin/jquery.spb.CollapsibleBox.js" type="text/javascript"></script>
+  
+  <div class="tn-box tn-widget tn-widget-content tn-corner-all" id="FourmPostResult">
+    <div class="tn-box-content tn-widget-content tn-corner-all">
+        <div class="spb-search-results-box">
+            <form action="/Forum.aspx/Search" id="searchFourms" method="post">
+            <div class="tn-collapsible tn-collapsible-closed">
+                <div class="tn-collapsible-header tn-helper-right tn-switch-left">
+                    <h4 class="tn-helper-reset">
+                        <a href="javascript:;;">更多操作</a></h4>
+                    <span class="tn-icon tn-switch tn-icon-collapse-close"></span>
+                </div>
+                <div class="tn-form tn-form-single">
+                    <input type="text" value="" id="Keyword" name="Keyword" class="tn-textbox tn-border-gray" style="width: 475px; height:23px;">
+                    <span class="tn-button-primary tn-button-large tn-button"><span class="tn-first-child"><button class="tn-button-text" onclick="if($(this).parents('form:first').valid()) {$(this).hide().next('button:last').show();}" type="submit">搜索</button><button class="tn-button-text" id="_ForHide" onclick="" style="display:none;" type="button">处理中..</button></span></span> 
+                </div>
+                
+                <div class="tn-blank10">
+                </div>
+                <div id="showMoreCondition" style="display:none;" class="tn-collapsible-content">
+                    <div class="tn-form tn-label-right">
+                        <div class="tn-form-row">
+                          <label>日期限制：</label>
+                          <span>
+                          <select id="DateScopes" name="DateScopes" class="tn-dropdownlist">
+                            <option value="1">一天</option>
+                            <option value="3">三天</option>
+                            <option value="7">一周</option>
+                            <option value="14">两周</option>
+                            <option value="30">一个月</option>
+                            <option value="90">三个月</option>
+                            <option value="180">半年</option>
+                            <option value="365">一年</option>
+                          </select>
+                          </span>
+                        </div>
+                        <div class="tn-form-row">
+                           <label>所属版块：</label>
+                           <select class="tn-dropdownlist" id="SectionID" name="SectionID"><option value="">请选择</option></select> 
+                        </div>
+                        <div class="tn-form-row">
+                            <label>标签：</label>
+                            <input type="text" value="期中" name="tagName" id="tagName" class="tn-textbox tn-input-long tn-border-gray">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+        
+        <div class="tn-list-header">
+            
+  <div class="spb-error-transfer">
+      <h3>
+         很抱歉，没有找到符合您搜索条件的结果！</h3>
+ 
+        <p>
+            搜索提示：</p>
+        <p>
+            请确保搜索文字拼写正确。</p>
+        <p>
+            请尝试使用其他关键词或使用近义词。</p>
+        <p>
+            请尝试使用含义更为宽泛的关键词。</p>
+        <p>
+            请确保查询条件尽可能精确。</p>
+   
+</div>
+
+        </div>
+          
+    </div>
+</div>
+  <script type="text/javascript">
+      $(document).ready(function () {
+          $(".tn-collapsible").collapsibleBox();
+            
+             $("#showMoreCondition").show().parent().attr("class","tn-collapsible tn-collapsible-opened");
+            
+
+          $("#DateScopes").val("90");
+      });
+  </script> 
+
+                   </div>
+               </div>
+               <div class="tn-block">
+                 
+
+
+<div class="tn-box tn-widget tn-widget-content tn-corner-all spb-tags-block">
+  <div class="tn-box-header tn-widget-header tn-corner-top tn-border-bottom">
+    <h3 class="tn-helper-reset"> 标签</h3>
+  </div>
+  <div class="tn-box-content tn-widget-content tn-corner-bottom">
+    <p class="tn-tags-hot">
+      
+      <span><a href="javascript:;"> 初一</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 钓鱼台</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 凤凰园校区</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 辅导班</a> <em class="tn-text-note">(3)</em></span>
+      
+      <span><a href="javascript:;"> 高二</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 高考辅导</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 高一</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 国庆</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 教育</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 就业</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 开业</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 课外辅导</a> <em class="tn-text-note">(5)</em></span>
+      
+      <span><a href="javascript:;"> 绿锦园</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 慢性病</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 免费试听</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 面条</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 培训</a> <em class="tn-text-note">(5)</em></span>
+      
+      <span><a href="javascript:;"> 苹果</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 期末</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 期中</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 期中考试</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 秋季课程</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 社区教育</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 十八大</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 世博校区</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 示范班</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 暑假</a> <em class="tn-text-note">(5)</em></span>
+      
+      <span><a href="javascript:;"> 暑假补习</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 暑期</a> <em class="tn-text-note">(6)</em></span>
+      
+      <span><a href="javascript:;"> 暑期辅导</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 暑期辅导班</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 暑期一对一</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 暑期游学</a> <em class="tn-text-note">(1)</em></span>
+      
+      <span><a href="javascript:;"> 数学</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 唐山</a> <em class="tn-text-note">(4)</em></span>
+      
+      <span><a href="javascript:;"> 唐山家教</a> <em class="tn-text-note">(7)</em></span>
+      
+      <span><a href="javascript:;"> 唐山课外辅导</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 唐山学大教育</a> <em class="tn-text-note">(9)</em></span>
+      
+      <span><a href="javascript:;"> 唐山一对一</a> <em class="tn-text-note">(4)</em></span>
+      
+      <span><a href="javascript:;"> 同步培优班</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 新初一</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 新高一</a> <em class="tn-text-note">(4)</em></span>
+      
+      <span><a href="javascript:;"> 学大教育</a> <em class="tn-text-note">(20)</em></span>
+      
+      <span><a href="javascript:;"> 一对一</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 一对一辅导</a> <em class="tn-text-note">(10)</em></span>
+      
+      <span><a href="javascript:;"> 艺考</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 瑜伽</a> <em class="tn-text-note">(3)</em></span>
+      
+      <span><a href="javascript:;"> 预科班</a> <em class="tn-text-note">(4)</em></span>
+      
+      <span><a href="javascript:;"> 中考</a> <em class="tn-text-note">(2)</em></span>
+      
+      <span><a href="javascript:;"> 中考辅导</a> <em class="tn-text-note">(2)</em></span>
+      
+    </p>
+    <p class="tn-more"><a href="javascript:;"> 查看标签地图</a></p>
+  </div>
+</div>
+<div class="tn-blank10"> </div>
+
+               </div>
+		   </div>
+          
+        </div>
+        <div class="tn-footer-bg" id="tn-footer">
+          <div class="tn-wrapper">
+            
+
+<div class="tn-footer-navigation">
+  
+  <div class="spb-footer-nav">
+    
+  </div>
+</div>
+
+<div style="text-align:center;">
+
+      
+      <p class="tn-text-note tn-secondary-text">唐山社区教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+
+<p class="tn-text-note tn-secondary-text">主管：唐山市教育局  主办：唐山社区教育学院</p>
+
+<p class="tn-text-note tn-secondary-text">承办：唐山市广播电视大学现代化远程教育中心</p>
+
+<p class="tn-text-note tn-secondary-text">地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+
+<p class="tn-text-note tn-secondary-text">技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> 
+
+</div>
+
+          </div>
+        </div>
+    </div>
+</body>
+</html>

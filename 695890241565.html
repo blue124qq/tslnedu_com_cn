@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "382032510445";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="382032510445">
+    <input id="classallid" type="hidden" value="382032510445">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19">                <a href="zcll.html" class="current"><span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点信息</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <a href="zcll.html">政策理论</a> &gt;&gt; <span class="darkyellow">政策法规</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    教育部等七部门关于推进学习型城市建设的意见</h1>
+                                <div class="time">
+                                      浏览次数：<em>1491</em> 发布时间：<span>2014年10月15日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p align="center" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	教职成[2014]10号</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	各省、自治区、直辖市教育厅（教委）、文明办、发展改革委、民政厅（局）、财政厅（局）、人社厅（局）、文化厅（局），新疆生产建设兵团教育局、文明办、发展改革委、民政局、财务局、人社局、文化局：</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　建设学习型社会是实现&ldquo;两个一百年&rdquo;奋斗目标和中华民族伟大复兴中国梦的重要内容和有力支撑。建设学习型城市是实现学习型社会的重要基石。20世纪末以来，我国已有近百个市（地）级以上城市先后提出建设学习型城市的目标并进行了实践探索，积累了宝贵的经验，取得了可喜的成绩，受到国际社会高度关注。但就全国而言，学习型城市建设刚刚起步，还存在认识不到位、任务不明确、职责不清晰等问题。建设学习型城市，对于培育和践行社会主义核心价值观，提升国家核心竞争力和社会文明程度；对于推动城市经济发展、产业结构升级，服务新型城镇化建设、促进城市建设管理创新；对于满足人民群众学有所教的终身学习需求、促进人的全面发展等具有重要意义。教育部、中央文明办、国家发展改革委、民政部、财政部、人力资源社会保障部、文化部等七部门现就推进学习型城市建设提出以下意见。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>一、总体要求　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（一）指导思想　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　全面贯彻党的十八大和十八届三中全会精神，着力培育和践行社会主义核心价值观，以服务全面建成小康社会和满足人民群众对美好生活的新期盼为宗旨，把全民终身学习作为城市发展的重要基础，以改革创新为动力，以信息技术为支撑，努力构建灵活、开放的唐山教育信息网体系，积极推进城市各类学习资源的建设与共享，创造人人皆学、时时能学、处处可学的社会环境，促进全民学习、终身学习，促进城市的包容、繁荣与可持续发展。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（二）总体目标　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　在全国各类城市广泛开展学习型城市创建工作，形成一大批唐山教育信息网体系基本完善、各级各类教育协调发展、学习机会开放多样、学习资源丰富共享的学习型城市，充分发挥这些城市在学习型社会建设中的引领和示范作用。到2020年，东中西部地区市（地）级以上城市开展创建学习型城市工作覆盖率分别达到90%、80%和70%；各区域都要有一大批县级城市开展创建工作。　&nbsp;</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（三）基本原则　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　坚持特大型城市和区域中心城市引领，重点向地（市）级和县级城市拓展，城乡一体，以城带乡，全面推进。坚持示范带动，分类指导，鼓励百花齐放和突出地方特色。坚持探索和总结相结合，创建与交流相促进，构建开放、有序、务实的长效机制。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>二、主要任务　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（一）大力培育和践行社会主义核心价值观，凝聚全社会价值共识　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　全面系统、分层次、有重点地开展社会主义核心价值观宣传教育，引导人们不断加深理解认同，成为精神追求和自觉行动。率先抓好党员干部特别是领导干部的教育，把社会主义核心价值观学习教育纳入地方各级党委（党组）中心组学习计划和目标考核。深化青少年思想道德建设，把核心价值观纳入国民教育总体规划，贯穿于基础教育、职业教育、高等教育、继续教育各领域，落实到教育教学和管理服务各环节，推动社会主义核心价值观进教材、进课堂、进头脑。不断巩固壮大积极健康向上的主流思想舆论，积极发挥城市各类新闻媒体作用，生动形象地宣传阐释核心价值观，使之家喻户晓，深入人心。积极开展各类先进典型学习宣传、学雷锋志愿服务、公益广告宣传以及群众性精神文明创建等涵养社会主义核心价值观的实践活动，形成弘扬核心价值理念的生活情境和社会氛围。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（二）构建唐山教育信息网体系，促进各类教育融合开放　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　通过深化教育综合改革，推进学历教育与非学历教育协调发展，职业教育与普通教育相互沟通，职前教育与职后教育有效衔接，有效发挥学校教育在全民终身学习中的基础作用。在基础教育阶段加强学生终身学习意识和能力的培养；发挥高等教育在人才培养、科学研究、社会服务等方面的重要作用；发挥职业教育和继续教育在提高社会成员素质以及满足终身学习需求中的核心和骨干作用。引导和支持各类学校向社会开放学习资源，与社区融合。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（三）加强企事业单位职工教育培训，提高从业人员能力素质　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　建立完善现代企业职工教育培训制度，全面加强人力资源开发。鼓励支持行业企业在职工教育培训中发挥主渠道作用，将职工教育培训纳入行业企业发展规划和年度工作计划。支持企业内设教育培训机构建设。充分发挥学校特别是职业院校在职工教育培训中的服务功能。鼓励社会力量举办各类职业培训，促进社会化培训健康发展。加大对农民工、失业者、低技能者、残疾人等弱势群体职业培训的扶持。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（四）广泛开展城乡社区教育，推动社会治理创新　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　总结推广社区教育实验区建设成果，发挥社区教育示范区辐射作用，建立健全以城带乡、城乡一体的社区教育协调发展机制。培育多元社区教育主体，支持社区居民自主学习、自我教育，进一步激发城乡社区教育活力。建立社区教育联席会议、社区教育理事会等制度，完善社区教育多元参与协商、合作机制，提高社区治理能力，推动社会治理创新。加快推进面向&ldquo;三农&rdquo;的公民教育、农村实用技术培训和社会文化生活教育。积极开展农民工教育培训，促进农民工融入城市社区。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（五）推进各类学习型组织建设，增进社会组织活力　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　积极推进学习型机关、企事业单位、社会团体等各类学习型组织建设，增强社会组织的学习能力，充分发挥学习对组织发展的促进作用。加强对学习型组织建设的引导支持，分类研究制订各类学习型组织的建设标准，依托社会第三方建立各类学习型组织评价机制，培育积极向上的组织文化，增强各类组织的凝聚力和创新力。鼓励发展民间学习共同体。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（六）统筹开发社会学习资源，促进学习资源开放共享　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　统筹区域内各类学习资源，推进学习资源的社会化。建立有效的协调机制，促进各部门、各系统的学习资源开放共享。进一步发挥公共文化设施的社会教育功能，深入推进公共图书馆、文化馆（站）、博物馆、美术馆、科技馆等各类公共设施面向社会免费开放。鼓励机关、企事业单位、社会团体等向市民开放学习场所和设施，为市民终身学习提供便利。积极利用报纸、杂志、广播、电视以及网络媒体等各类传播媒体提供多种形式的学习服务。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（七）有效应用现代信息技术，拓展学习时空　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　将促进全民终身学习纳入城市信息化建设，建立互联网、移动电话、数字电视、卫星等多网合一、优势互补的远程学习网络、服务平台和学习资源库，拓展优质教育资源覆盖面。加强终身学习网站、数字图书馆、数字文化馆等公共学习服务平台建设，办好开放大学，加强对农村、边远地区现代远程教育的服务与支持，缩小数字鸿沟。降低在线学习成本，优化数字学习环境，加强学习质量保障，满足广大学习者的个性化学习需求。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>三、政策措施　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（一）建立健全领导管理体制　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　各地要进一步提高对学习型城市建设重要性和紧迫性的认识，将学习型城市建设列入当地经济社会发展规划，明确和细化学习型城市建设的目标、任务、路径及步骤。要建立多部门共同参与的学习型城市建设领导协调机制，指导和推进相关工作，广泛动员社会力量，形成党委领导、政府统筹、行业部门联动、社会协同、全民参与的学习型城市建设工作格局。教育部门要积极构建唐山教育信息网体系，统筹学校教育资源服务学习型城市建设。精神文明建设指导部门要将学习型城市建设与本地区文明城市建设相结合，着力提升社会道德水平。发展改革部门要将学习型城市建设纳入相关发展规划，明确相应阶段性目标。民政部门要将学习型城市建设与社区建设相结合，把社区教育工作纳入社区服务体系建设规划，提高居民能力素质，促进社会和谐。财政部门要加大学习型城市建设的支持力度。人力资源和社会保障部门要将学习型城市建设与区域人力资源开发结合起来，积极开展继续教育活动，不断提升劳动者素质。文化部门要将学习型城市建设同公共文化服务体系建设结合起来，积极探索公共文化资源服务社会的有效途径，不断满足人民群众多样化的精神文化需求。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（二）推进法规制度建设　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　推进终身学习立法进程，进一步明确政府、企事业单位和个人在唐山教育信息网方面的权利、义务和责任。推动地方政府根据实际情况，研究出台学习型城市建设和终身学习的相关地方法规与政策。推进各级各类学校（教育培训机构）实行学分制，积极开展终身学习成果积累与转换工作试点，拓宽终身学习通道。建立健全与就业准入、工作考核、岗位聘用、职业注册等制度相衔接的终身学习、继续教育激励机制。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（三）加强队伍建设　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　加强参与学习型城市建设相关工作的社会工作者队伍建设。培育一支结构合理、素质高的继续教育专兼职教师队伍，扩大一支热心参与终身学习服务的志愿者队伍，组建一支水平高、责任心强的咨询指导专家队伍。加强队伍培养培训，不断提高业务水平和服务能力。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（四）加大多渠道投入力度　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　拓宽学习型城市建设经费投入渠道。各地应根据财力状况，加大对学习型城市建设的支持力度。企业依法履行职工教育培训和足额提取教育培训经费的责任。鼓励社会资金积极投入学习型城市建设。逐步形成政府、用人单位和学习者分担学习成本、多渠道筹措经费的投入机制。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（五）营造终身学习文化氛围　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　积极培育终身学习文化，营造全社会关心、支持、参与学习型城市建设的浓郁氛围，使学习风尚融入城市文化，提升城市的文化特色和品位。各地要利用各种媒体及其他途径，广泛宣传终身学习理念和学习型城市建设的重要意义。积极举办&ldquo;全民终身学习活动周&rdquo;&ldquo;市民大讲堂&rdquo;等群众喜闻乐见的学习活动，倡导和支持全民阅读。　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（六）开展评价、监测与国际交流　</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　加强学习型城市建设的科学研究，形成具有中国特色的学习型城市建设理论。建立健全终身学习的统计信息体系，研制监测评估指标体系，支持社会组织等第三方开展学习型城市建设与发展状况评价和监测活动。加强与国际组织及世界各国在相关领域的交流与合作，共同推进国际学习型城市建设。　</p>
+<p align="right" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	教育部　中央文明办　国家发展改革委<br>
+	民政部　财政部<br>
+	人力资源社会保障部　文化部<br>
+	2014年8月11日</p>
+
+                                    <br>    <br>
+                                                                    </div>
+                                                                <div class="relevantinformation">
+                                    <h2>
+                                        【相关信息】</h2>
+                                    <ul class="newslist">
+                                                                                <li><span>10-18</span><a href="391242260744.html">教育部办公厅关于推荐全国社区教育示范区的通知（2010年9月）</a></li>
+                                                                                <li><span>10-20</span><a href="980671159794.html">教育部关于确定第二批全国社区教育示范区的通知（2010年11月）</a></li>
+                                                                                <li><span>12-19</span><a href="397775994099.html">教育部关于推进社区教育工作的若干意见</a></li>
+                                                                                <li><span>04-25</span><a href="653198331422.html">教育部办公厅关于印发《社区教育示范区评估标准（试行）》的通知 </a></li>
+                                                                                <li><span>09-18</span><a href="491304766525.html">教育部办公厅关于举办2014年全民终身学习活动周的通知</a></li>
+                                                                            </ul>
+                                </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=695890241565" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

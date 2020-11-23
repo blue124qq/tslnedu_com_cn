@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>唐山教育网</title>
+<link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.js"></script><script>
+            var nerc = "http://60.2.218.190";
+            var space = "http://space.tslnedu.com.cn";
+            var learning = "http://learn.tslnedu.com.cn";
+            var Predix = ":ts";
+    </script>
+  <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+  </head>
+
+<body>   <form id="form1" onkeydown="javascript:if(event.keyCode==13){ checkloginurl();}"> 
+<div class="mainindexbg1">
+  <div class="main">
+    <div class="header zoom">
+       <input type="hidden" id="rebackurl" value="http://space.tslnedu.com.cn/Club.aspx/ShowStreetStyle?eventID=46">   <div class="fl welcome">欢迎登录唐山教育网！</div>
+      
+    </div>
+    <p><img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+    <div class="topnav zoom">
+                <a class="current" href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="xwkd.html"><span>新闻快递</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="xyjj.html"><span>学院简介</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="smxt.html"><span>市民学堂</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="pxxm.html"><span>培训项目</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="index1.html"><span>社区家园</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="xfyh.html"><span>学分银行</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="zcll.html"><span>政策理论</span></a>
+                                <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"><a href="zjts.html"><span>走进唐山</span></a>
+                            </div>
+    <div class="dl_zaixianXX">
+    <p><img src="templets/tssq/images/denglu_t.jpg" width="563" height="101"></p>
+    <div class="dlblock">
+      <div class="inputrec">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="50">用户名：</td>
+            <td><input id="arrcity" name="arrcity" type="text" class="input"></td>
+          </tr>
+          <tr>
+            <td height="40">密　码：</td>
+            <td><input id="ctl03_txtAccountPassword" name="ctl03_txtAccountPassword" type="password" class="input"></td>
+          </tr>
+          <tr>
+            <td>验证码：</td>
+            <td><input type="text" id="verifycode" name="verifycode" class="input2" size="2">
+                <script type="text/javascript" language="JavaScript">
+                    var numkey = Math.random();
+                    numkey = Math.round(numkey * 10000);
+                    document.write("<img src=\"../comm/Image.aspx?k=" + numkey + "\" id=\"thisCode\" width=\"70\" onClick=\"this.src+=Math.random()\" alt=\"图片看不清？点击重新得到验证码\" style=\"cursor:pointer;\" height=\"23\" hspace=\"4\"");
+                    
+                </script></td>
+          </tr>
+          <tr><td colspan="2"> <div id="login_top_bg" style="color:White"></div></td></tr>
+        </table>
+      </div>
+      <input name="" type="button" id="btnLogin" style="cursor:hand" alt="登录" onclick="checkloginurl();" class="dlbutton">
+          <!--<a class="dlbutton" href="#">登录</a> --></div>
+         <div class="denglu_b">还不是唐山教育网用户？ <br>
+        现在<span class="darkyellow"><a href="javascript:;">免费注册</a></span>成为社区教育网用户，尽享学习乐趣。 </div>
+ 
+  </div>
+  </div>
+  <div class="clrm5"></div>
+  <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+</div></form>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "167681906525";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="167681906525">
+    <input id="classallid" type="hidden" value="167681906525">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19">                <a href="zcll.html" class="current"><span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点信息</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <a href="zcll.html">政策理论</a> &gt;&gt; <span class="darkyellow">理论研究</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    我国社区数字化学习的实践与思考(之一）</h1>
+                                <div class="time">
+                                      浏览次数：<em>578</em> 发布时间：<span>2014年10月24日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p align="center" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	── 基于全国数字化学习先行区推进5年的回顾</p>
+<p align="center" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	宋亦芳</p>
+<p align="center" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	（上海开放大学长宁分校，上海市长宁区社区学院 上海200336）</p>
+<p align="left" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	【摘&nbsp; 要】 自2009年起，在教育部职成教司的指导下，中国成人教育协会社区教育专业委员会启动了推进全国数字化学习先行区工作。在推进过程中，专委会通过明确推进目标、完善建设标准和加强过程指导等环节，广泛推进社区数字化学习，先后推出了61个全国数字化学习先行区。5年的推进工作，夯实了工作基础、完善了支撑体系、拓展了学习人群，同时也存在统筹协调不够健全、发展程度不够平衡、推进措施不够完善等种种不足。先行区的推进过程，反映了我国社区数字化学习的基本现状，也为我们提供了有益的启示，社区数字化学习需要进一步完善推进机制、优化平台支撑、创新学习方式。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	【关键词】 我国社区数字化学习；实践；思考；先行区</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	【作者简介】 宋亦芳，男，广东蕉岭人，上海开放大学长宁分校副校长、上海市长宁区社区学院副院长,教授，上海唐山教育信息网研究院兼职研究员、中国成人教育协会社区教育专业委员会数字化学习先行区评估组成员，主要研究方向为成人教育管理、社区教育管理、教育技术管理。（200336）</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	【基金项目】 2013年度上海市哲学社会科学规划教育学专项课题暨上海市教育科学研究重点项目&ldquo;社区数字化学习支持服务体系建设的实践研究&rdquo;（项目编号A1318）阶段性成果，主持人：宋亦芳。<br>
+	&nbsp;<br>
+	<strong>一、引言</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　数字化学习的兴起始于上世纪后期，是信息技术发展促进教育教学方法改革的产物。著名数字化大师尼葛洛庞蒂（Nicholas Negroponte）上世纪90年代就预言，未来人们的学习、工作、娱乐等在于信息化，他指出&ldquo;我们无法否定数字化时代的存在，也无法阻止数字化时代的前进&rdquo;。[1] 2000 年6 月，美国教育技术首席执行总裁论坛（The CEO Forum on Educational Technology）召开的以&ldquo;数字化学习的力量：整合数字化内容&rdquo;为主题的第三次年会上，首次提出了数字化学习的观念，把数字技术与课程教学内容的整合方式称为数字化学习。华南师范大学教授李克东认为，数字化学习是指学习者在数字化的学习环境中，利用数字化学习资源,以数字化方式进行学习的过程，它包含三个基本要素，即：数字化学习环境、数字化学习资源和数字化学习方式。[2]</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　社区数字化学习是数字化学习的下位概念，是指市民在社区中以数字化的方式进行自主学习、协作学习的一种学习过程。华东师范大学教授叶忠海指出，&ldquo;社区数字化学习，是以现实社区居民学习需求为导向，通过社区学习信息网络形态作为中介的一种学习方式。这种学习方式，具有社区人本主义取向&rdquo;。[3] 我国社区数字化学习的兴起，一是受信息技术发展尤其是教育信息化发展的推动，二是受世界唐山教育信息网和终身学习思想的影响。同时，随着社区教育的快速发展以及市民学习需求的不断增长，传统的学习方式已经显现出种种不足。社区数字化学习依托信息技术的优势，有效拓展了学习空间，为社区教育注入了新的活力。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　作为推动社区数字化学习的重要抓手，中国成人教育协会社区教育专业委员会（以下简称专委会）自2009年起，积极推进数字化学习先行区建设工作，即以各地区的区（县）为基础，形成有效推进机制，广泛推动社区数字化学习，进一步助力社区教育的深化发展，对推动我国社区教育内涵建设发挥了积极作用。数字化学习先行区，是指在社区教育工作中，以信息技术为支撑，积极开展市民学习方式探索，在取得初步成效的基础上，着力进行数字化学习先行、先试工作的地区。[4]</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>二、数字化学习先行区推进5年回顾</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（一）推进过程概略</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　1、先行区的提出</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　我国自2000年开展社区教育实验工作以来，社区教育得到了迅速发展。由于&ldquo;社区教育面广量大，需求多样复杂，单一的形式、渠道、载体，难以完全满足居民群众多样化、个性化的学习需求，必须多思路并进，多渠道并用，把实体教育和虚拟学习结合，把传统教育和网络教育结合。&rdquo;[5] 早在2004年，教育部在《关于推进社区教育工作的若干意见》（教职成[2004]16号）中就指出，要积极创造条件，构筑起社区居民全民学习、终身学习的平台。2009年2月，经教育部职成教司同意，专委会在天津召开了&ldquo;数字化学习社区建设标准座谈会&rdquo;，研究在社区教育中推进数字化学习的工作，并草拟了《数字化学习社区建设基本标准》。考虑到我国社区教育发展现状，专委会决定把数字化学习的立足点放在各地区的区（县）一级，并明确现阶段数字化学习社区建设以&ldquo;先行、先试&rdquo;为主，所以提出了推进&ldquo;全国数字化学习先行区&rdquo;的构想。当年，专委会开展了第一批全国数字化学习先行区的评选工作。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　2、明确推进目标</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　专委会在推进数字化学习先行区过程中，坚持贯彻党和政府的各项方针政策，坚持社区数字化学习与社区教育的实际相结合，提出了相应的推进目标。2009年5月，专委会下发了《关于推进全国数字化学习社区建设的意见》，附发了《数字化学习（先行区）建设基本标准》（试行）。《意见》指出，目前的工作重点，要在社区教育中，提倡运用多种形式开展数字化学习，使越来越多的社区居民享受到数字化学习的乐趣，经过一定实践的积累，再创建数字化学习社区。2011年4月，专委会制定的《全国&ldquo;十二五&rdquo;推进数字化学习社区建设规划》进一步明确，到2015年，全国建设100个数字化学习先行区，在大中城市和沿海发达地区，要加快数字化学习社区建设的步伐。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　3、完善建设标准</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　先行区标准一直引导了先行区建设的方向，专委会制定的先行区标准包括，指导思想和规范管理、基础设施、资源建设与应用、支持服务、建设成果5个方面。5年来，在先行区标准的引领下，评选工作着力体现先行区&ldquo;先行、先试&rdquo;的理念，突出先行区的基础性和引导性等特点，注重推进工作的激励性和导向性作用，从而不断扩大先行区的推动效果。为此，专委会每年都对先行区标准进行探讨和研究，并结合每年评审工作的实际对指标进行相应的调整，不断完善指标体系，使先行区标准更加符合我国社区教育信息化发展的实际，更加有利于推进社区数字化学习工作。同时，专委会围绕先行区标准努力改进评审方式，注意将标准的要求与各地的工作实际相结合，既审核申报材料，也考察网络平台；既开展集中评审，也加强实地考察；既有书面反馈，也注意直接沟通。从而，提高了先行区的评审效果，有效地推动了先行区的工作。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　4、加强过程指导</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　在先行区的推进过程中，专委会始终注重对工作的指导。一是着力工作推动：2009年4月，专委会在上海市徐汇区召开了&ldquo;全国数字化学习社区建设交流研讨会&rdquo;，开展了各地数字化学习推进工作交流，揭开了全国推进工作的序幕；2009年12月，专委会在上海市长宁区召开了&ldquo;全国数字化学习社区评估交流会&rdquo;，全面分析了我国社区数字化学习的现状，明确了先行区的定位问题；2010年12月，专委会在天津召开了&ldquo;全国数字化学习社区建设推进会&rdquo;，强调了数字化学习的持续发展等问题。二是开展业务培训：2012年7月，专委会在天津举行了&ldquo;全国数字化学习社区建设培训班&rdquo;，加强数字化学习知识培训，提高社区教育工作者的业务水平；2013年7月，专委会在浙江省慈溪市举行了&ldquo;全国数字化学习社区规范化建设培训班&rdquo;，结合先行区评审工作开展指导，进一步提升社区数字化学习推进工作。三是加强规范建设：2013年，专委会组织专家制定了《全国数字化学习社区建设指导手册》和《数字化学习建设标准》等规范文件，以提高先行区工作的规范性。四是引领更高目标：2010年，专委会组织上海、天津专家开展了《全国数字化学习先进区基本标准》的研究工作，并进行了广泛的讨论，试图在先行区的基础上推出一批数字化学习先进区，从而进一步提高社区数字化学习的水平。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（二）评审结果分析</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　1、结果统计</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　根据专委会历年公布的名单，在2009-2013年5年中，专委会共评出&ldquo;全国数字化学习先行区&rdquo;61个（表1）。</p>
+<p align="center" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　表1：全国数字化学习先行区统计表<br>
+	<img border="0" src="http://www.apclc.com/Upfiles/201492892961.jpg" width="590"></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	注：表中的区后面未标符号的为全国社区教育示范区，标&ldquo;☆&rdquo;的为全国社区教育实验区，标&ldquo;△&rdquo;的为非示范区或实验区。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　2、基本特征</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　从分布状况来看，先行区所在地区占全国31个省（直辖市，港、澳、台除外）的41.94%，这说明先行区经过5年的推进在全国已达到一定的覆盖率。而从分布的集中程度来看，先行区在长三角地区比较集中，江苏、上海和浙江三个地区占先行区比例为59.02%，其次是天津和四川占19.67%。由此可见，约16%的地区几乎占了先行区总数的80%。因此，先行区发展呈现出不平衡性。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　从推进效果来看，在2009－2013年的5年中，先行区数量分别为14、8、17、13、9个，呈现出比较稳步的增长状况；同时，每年都有新的地区加入先行区行列，即从2009年的4个地区到2013年的13个地区。因此，推进工作呈现逐渐扩大的态势，每年先行区数量和地区增长比较稳定。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　从相关程度来看，据统计，在61个先行区中，全国社区教育示范区和实验区共53个，占先行区的86.88%。其中，示范区41个，占67.21%；实验区12个，占19.67%。因此，数字化学习的发展与社区教育的发展水平成正相关。此外，全国现有社区教育示范区90个，但还有49个不是全国数字化学习先行区，占54.44%，这说明示范区在数字化学习方面仍然需要加强。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　（三）主要成效归纳</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　1、夯实了工作基础</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　在数字化学习先行区推进过程中，各地区在政府统筹领导下，形成了由教育部门主管、业务部门指导、多方参与的运行机制，所有先行区都把数字化学习纳入当地社区教育发展规划中，尤其是大部分地区将数字化学习作为 &ldquo;十二五&rdquo;教育发展规划的重要内容，体现了这些地区对数字化学习的高度重视。在工作落实上，各地区健全了管理机构，不断完善各项制度，加大专项经费投入，加强专业队伍建设，提高服务能力，奠定了社区数字化学习的重要前提。受先行区评选工作推动，各地数字化学习的基础建设加快步伐，网站、资源、数字教室等设施得到了很大改善。较为明显的是，各地加大投入进行数字化学习环境建设，学习平台和资源不断提升和完善。据对近3年评出的39个先行区分析，学习网站建于2009年以后的有36个，占92.31%。同时，很多已经获评先行区的地区，正在推出网站升级版或进行二期开发，力争进一步提升能级。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　与数字化学习先行区推进工作同步，数字化学习的各项研究、实验也在不断开展，有力地增强了工作的指导性和理论基础。一是专委会设立了全国性的联合课题和实验项目， 2013年专委会设立的《社区教育信息化建设对策研究》（中成协社教[2013]20号），由上海、北京、大连等地联合实施，从数字化学习支持服务体系、可持续发展、资源平台建设等角度开展研究。二是先行区的数字化学习项目进入教育科研立项，如由南京市鼓楼区承担的江苏省教育改革与发展战略性与政策性研究课题、教育科学&ldquo;十一五&rdquo;规划2010年重点课题《数字化学习社区建设标准、试点方案与支持政策研究》，对数字化学习社区建设标准进行了系统研究和论证；上海市长宁区承担的2010年度上海市教育科学研究规划项目《基于市民需求的社区数字化学习资源建设研究》，对数字化学习资源的需求、建设标准、建设方式等进行了深入研究，体现了社区数字化学习研究的较高水平。三是开展先行区工作研究，着力解决社区数字化学习的应用问题，如浙江省慈溪市由教育局牵头，在县域范围内开展了社区数字化学习系统平台开发与运行模式研究，相继建成了以慈溪市终身学习网为主体的系列数字化学习平台、慈溪市民学分银行，并形成了相应的运行体系。四是以协作的形式开展研讨，形成推动合力，如由上海市12个全国数字化学习先行区组成的&ldquo;上海市推进数字化学习社区建设协作组&rdquo;，在信息沟通、资源共享、平台对接等方面进行了有益的合作与交流，形成了社区数字化学习整体推进的局面。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　2、完善了支撑体系</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　数字化学习平台是社区数字化学习服务的基础，也是数字化学习先行区评选的必备条件。通过先行区5年的推进，全国初步形成了一些具有代表性的数字化学习平台。一是通过投入专项经费，建立独立的终身学习网络平台，在功能上实现注册、学习、交流、统计、管理、分析的一体化，这是目前先行区学习平台的主要形式，占先行区的80%；二是推行一体化数字学习平台，提高平台资源的整合程度，实现统一的平台管理方式。较为典型的有，天津市依托广播电视大学的优势，实现网络平台的一体化建设，较好地统合了各先行区的数字化学习环境和资源；上海市长宁区推出&ldquo;区街一体化&rdquo;数字学习平台，实现了区和街道数字化学习平台和资源的共享。三是搭载现有的信息技术网，主要是区域内的教育网络平台，整合各种教育资源开展数字化学习。如上海市杨浦区依托上海远程教育集团的网络平台，建设&ldquo;杨浦区学习型社会建设网&rdquo;；太原市小店区依托&ldquo;太原市终身学习网&rdquo;，建成了居民公共学习平台&ldquo;小店区终身学习网&rdquo;，等等。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　数字化学习资源是开展社区数字化学习的关键要素，&ldquo;随着教育信息化工程的整体推进，要求数字化学习资源的建设也要同步地向前发展。&rdquo;[6] 5年的先行区实践，学习资源得到了不断提升和发展，并在内容、形式、技术规范等方面逐渐趋于成熟。从满足需求的角度来看，推进先行区之初，学习资源主要是向专业公司购买，或借用广播电视大学、职业学校资源等，针对性不够强，经过5年的探索与研究，学习资源在内容、形式、时间长度上不断改进，建设途径上更加多元，较好地满足了不同人群对资源的个性化需求。从资源的建设模式来看，从以购买为主，到购买、自建、共建、共享等多种形式并举，激发了资源建设的活力，健全了资源建设的机制。从创新资源开发来看，先行区积极开展学习资源研究，在传承传统资源的基础上，着力引进先进技术，开发新型媒体和最新形式的资源，如积极开发微型课程、移动学习资源等，形成了学习资源与信息技术同步发展的格局。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　提供学习服务是推动社区数字化学习的必然要求，&ldquo;服务手段和模式的创新，不仅有利于促进人们思想观念的更新，也为服务者及时了解学习者的需求、提供主动服务、落实&lsquo;以人为本&rsquo;和现代教育思想提供了良好的条件。&rdquo;[7] 近年来，先行区着力加强人力和技术支持，基本形成了完善的服务体系。在技术服务方面，先行区依托社区学院建立了信息技术部门，每个街道配备了1名以上的专兼职技术人员，并在社区建立了一批志愿者队伍；在宣传引导方面，先行区通过网络、报刊、电视、广播等途径进行广泛宣传，或通过各项活动激发市民数字化学习热情，形成了完善的宣传体系和方法；在方式探索方面，先行区开展了自主学习、集中学习、互动学习和探索学习等多方面实践，积累了有益的经验并收获了理论成果；在创新载体方面，先行区通过各种学习沙龙、读书会、团队等形式，增强了数字化学习的活力；在学习展示方面，先行区充分利用学习平台的统计功能，设立学习排行榜，评选优秀学员，通过鼓励学习者&ldquo;用学习成果换取再学习机会&rdquo;的办法及开设虚拟&ldquo;网上展厅&rdquo;等方式，形成了有效的激励机制。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>　　3、拓展了学习人群</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　推进数字化学习先行区，促进了市民参与社区学习，参与人数也有了比较明显的提高。据对5年先行区的统计，实名注册人数总数为403万人，平均注册率为10.07 %（表2）。当然，社区实际参加数字化学习的人数并不局限于注册人数，实际参加数字化学习的人数与注册人数并非完全一致，但这从某一个侧面反映了数字化学习在社区教育中的作用。</p>
+<p align="center" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	表2：全国数字化学习先行区网上注册人数统计表<img border="0" src="http://www.apclc.com/Upfiles/201492810606.jpg" width="497"><span class="Apple-converted-space">&nbsp;</span><br>
+	注：表中户籍人口数和实名注册人数均为当年申报先行区时的数。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　从对社区教育实体化学习分析来看，近年来我国社区教育参与率有了很大提高。但鉴于目前社区教育办学条件的限制，参加实体化学习的人数相对有限，增速不会出现更大突破，这也是一个不争的事实。以社区教育发展较快的上海为例， 2010－2012年三年中，参加各类社区学校学习的人数基本稳定在300万（表3），而且学习对象比较固定，因此，在各类社区学校办学条件没有根本性改变的情况下，学习人数很难进一步拓展。而作为学习方式的根本变革，社区数字化学习是实现学习人数突破的重要方式。</p>
+<p align="center" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	表3： 2010－2012年上海市参加各类社区学校学习人数统计表<img border="0" src="http://www.apclc.com/Upfiles/201492866834.jpg" width="481"><span class="Apple-converted-space">&nbsp;</span><br>
+	注：开班数和学员数来源于上海市社区教育统计。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　数字化学习不仅有助于学习人数的提升，而且扩大了社区教育的受益面。近年来，作为一种新型媒体的学习方式，社区数字化学习也面向各类在职人员和青少年等群体，渗透到了机关、企业、家庭等领域，如&ldquo;网上楼宇课堂&rdquo;、&ldquo;网上职工书屋&rdquo;等，并且体现出数字化学习对这些群体的吸引力和适应性。</p>
+
+                                    <br>    <br>
+                                                                    </div>
+                                                                <div class="relevantinformation">
+                                    <h2>
+                                        【相关信息】</h2>
+                                    <ul class="newslist">
+                                                                                <li><span>11-06</span><a href="931969442585.html">我国社区教育的现实状况</a></li>
+                                                                                <li><span>10-09</span><a href="686883045325.html">我国社区数字化学习的实践与思考</a></li>
+                                                                                <li><span>10-24</span><a href="072810041053.html">我国社区数字化学习的实践与思考(之二）</a></li>
+                                                                                <li><span>05-24</span><a href="198068959179.html">我国社区音乐教育研究综述</a></li>
+                                                                                <li><span>11-07</span><a href="718691653426.html">我国社区教育研究40年(1978—2017)状况与反思</a></li>
+                                                                            </ul>
+                                </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=783357820931" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

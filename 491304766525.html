@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>唐山教育网</title>
+    <link href="templets/tssq/css/edu_ts.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="manage/read/jqueryPager/pagination.css" rel="stylesheet" type="text/css">
+
+    <script src="manage/read/jqueryPager/jquery.pagination.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="templets/tssq/js/news_detail_init.js"></script>
+
+    <script>
+        function doQuery() {
+            if (document.getElementById("keyword").value == "" || document.getElementById("keyword").value == "关键字") {
+                alert("请输入查询关键字！");
+                document.getElementById("keyword").focus();
+                return false;
+            }
+            var classObj = document.getElementById("OptionClass");
+            if (classObj.value != "0") {
+                document.getElementById('classid').value = classObj.options[classObj.selectedIndex].value;
+            } else {
+                document.getElementById('classid').value = "382032510445";
+            }
+            window.location = "/search.aspx?tag=news&catalog=" + document.getElementById("classid").value + "&key=" + document.getElementById("keyword").value;
+        }
+
+        function initNewsData(classitemid, itemname) {
+            window.location = "/search.aspx?tag=news&catalog=" + classitemid + "&key=" + document.getElementById("keyword").value;
+        }
+    </script>
+
+    <script>
+        var nerc = "http://60.2.218.190";
+        var space = "http://space.tslnedu.com.cn";
+        var learning = "http://learn.tslnedu.com.cn";
+        var Predix = ":ts";
+    </script>
+
+    <script type="text/javascript" src="templets/tssq/js/page_user_login.js"></script>
+
+</head>
+<body onload="getInitString();">    <form id="form1" onkeydown="javascript:if(event.keyCode==13){checkuserlogin();}">
+    <input id="classid" type="hidden" value="382032510445">
+    <input id="classallid" type="hidden" value="382032510445">
+    <div class="mainindexbg1">
+        <div class="main">
+            <div class="header zoom">
+                <div class="fl welcome">
+                    欢迎登录唐山教育网！</div>
+                <div class="fr login" id="login_top_bg">
+                </div>
+            </div>
+            <p>
+                <img src="templets/tssq/images/tslogo.jpg" width="1000" height="114" alt="logo"></p>
+            <div class="topnav zoom">
+                <a href="index.html"><span>首 页</span></a>                 <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xwkd.html">
+                    <span>新闻快递</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xyjj.html">
+                    <span>学院简介</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="smxt.html">
+                    <span>市民学堂</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="pxxm.html">
+                    <span>培训项目</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="index1.html">
+                    <span>社区家园</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="xfyh.html">
+                    <span>学分银行</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19">                <a href="zcll.html" class="current"><span>政策理论</span></a>                  <img src="templets/tssq/images/navlistline.jpg" width="2" height="19"> <a href="zjts.html">
+                    <span>走进唐山</span></a>              </div>
+            <div class="clrm5">
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                     <td width="256" valign="top">
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    信息检索</h2>
+                            </div>
+                            <div class="pd10style1">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="30">
+                                             <input id="keyword" type="text" onfocus="if(this.value=='关键字') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='关键字';this.style.color='#999999';}" value="关键字" class="smxt_searchinput">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="120">
+                                                        <select name="OptionClass" style="background: #0073BC; color: #FFF;">
+                                                            <option value="0">......全部分类......</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <img src="templets/tssq/images/smxt_search.jpg" onclick="doQuery();" alt="搜索" width="52" height="24">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        
+                        <div class="blueborder">
+                            <div class="titlebg01">
+                                <h2>
+                                    热点信息</h2>
+                            </div>
+                            <div class="pd10style2" id="ClickData">
+                                <ul class="newslist">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                        <a href="index2.html"><img src="templets/tssq/images/rightbanner01.jpg" width="256" height="64"></a></p>
+                        <div class="clrm5">
+                        </div>
+                        <p>
+                            <img src="templets/tssq/images/rightbanner04.jpg" width="256" height="64"></p>
+                    </td><td width="5">
+                    </td><td valign="top">
+                        <div class="newspaper">
+                            <div class="titlebg01">
+                                <p class="currentlocal darkblue">
+                                    您现在的位置： 首页 &gt;&gt; <a href="zcll.html">政策理论</a> &gt;&gt; <span class="darkyellow">政策法规</span></p>
+                            </div>
+                            <div class="content">
+                                <h1>
+                                    教育部办公厅关于举办2014年全民终身学习活动周的通知</h1>
+                                <div class="time">
+                                      浏览次数：<em>1543</em> 发布时间：<span>2014年09月18日</span></div>
+                                <div class="ct">
+                                <br>
+                                    <p align="center" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	教职成厅函[2014]23号</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	各省、自治区、直辖市教育厅（教委），各计划单列市教育局，新疆生产建设兵团教育局，有关单位：</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　为深入贯彻党的十八大和十八届三中全会精神，深入实施教育规划纲要，推进学习型社会建设，决定2014年继续举办全民终身学习活动周。现就有关事宜通知如下。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>一、2014年全民终身学习活动周的主题</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　全民终身学习&nbsp; 创造出彩人生</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	<strong>二、2014年活动周的组织及安排</strong></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　1.2014年活动周全国总开幕式定于10月17日在重庆市渝中区举行。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　2.各地要根据活动周的主题，结合本地实际，精心制订活动计划及实施方案，采取多种形式办好全民终身学习活动周。要加强对活动周工作的组织和指导，做好舆论宣传工作。要充分借助媒体广泛宣传终身学习的理念，努力为完善唐山教育信息网体系，建设学习型社会营造良好的舆论氛围。动员更多的城市、更多的部门、更多的民众参与到活动中来。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　3.活动周由我部职业教育与成人教育司、中国教科文全委会秘书处、中国成人教育协会及各参与城市共同主办。活动周工作小组办公室设在中国成人教育协会，具体工作由中国成人教育协会组织实施。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　4.各地活动周重要工作情况和工作总结请及时报送活动周工作小组办公室。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　5.举办活动周要严格遵守中央八项规定，认真贯彻党的群众路线教育活动的要求，活动内容贴近群众需求，组织活动坚持简朴节约，注重活动效果。</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　2014年全民终身学习活动周具体事宜请与活动周工作小组办公室联系。<br>
+	　<br>
+	　&nbsp; 联系人：中国成人教育协会秘书处&nbsp; 薛华领&nbsp;&nbsp;</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　地址：北京西城区德胜门外大街4号综合技术楼　　</p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　邮编：100120　　邮箱：<a href="mailto:xhlcaea@126.com" style="text-decoration: underline; color: rgb(128,0,128)">xhlcaea@126.com</a></p>
+<p style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	　　电话：010-58582578　传真：010-58581907</p>
+<p align="right" style="white-space: normal; word-spacing: 0px; text-transform: none; color: rgb(51,51,51); font: 14px/24px 宋体; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; -webkit-text-stroke-width: 0px">
+	教育部办公厅　<br>
+	2014年7月14日</p>
+
+                                    <br>    <br>
+                                                                    </div>
+                                                                <div class="relevantinformation">
+                                    <h2>
+                                        【相关信息】</h2>
+                                    <ul class="newslist">
+                                                                                <li><span>10-18</span><a href="391242260744.html">教育部办公厅关于推荐全国社区教育示范区的通知（2010年9月）</a></li>
+                                                                                <li><span>10-20</span><a href="980671159794.html">教育部关于确定第二批全国社区教育示范区的通知（2010年11月）</a></li>
+                                                                                <li><span>12-19</span><a href="397775994099.html">教育部关于推进社区教育工作的若干意见</a></li>
+                                                                                <li><span>04-25</span><a href="653198331422.html">教育部办公厅关于印发《社区教育示范区评估标准（试行）》的通知 </a></li>
+                                                                                <li><span>10-15</span><a href="695890241565.html">教育部等七部门关于推进学习型城市建设的意见</a></li>
+                                                                            </ul>
+                                </div>
+                                                            </div>
+                        </div>
+                    </td>
+                    
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="clrm5">
+        </div>
+        <div class="bottom">
+           
+            <p>
+                唐山教育网版权所有 <a href="javascript:;" target="_blank">冀ICP备：11021833号-2</a></p>
+            <p>
+                主办：唐山社区教育学院 承办：唐山广播电视大学</p>
+            <p>
+               地址：唐山市建设北路九十二号 邮编：063000 电话：0315-2059277</p>
+            <p>
+                技术支持：<a href="javascript:;" target="_blank">国家开放大学数字化学习资源中心</a></p> <p>
+                
+            </p>
+        </div>
+        <script type="text/javascript">
+            //获取访问人数
+            function getVistor() {
+                jQuery.get("/templets/tssq/vistorNum.aspx?id=" + unixtime(), null, function callback(data) { document.all.vistor.innerHTML = data; });
+            }
+            function unixtime() {
+                var dt = new Date();
+                var ux = Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDay(), dt.getHours(), dt.getMinutes(), dt.getSeconds()) / 1000;
+                return ux;
+            }
+            getVistor();
+</script>
+    </div></form>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form name="form1" method="post" action="../read_news_detail.aspx?id=491304766525" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MTY2ODcyMjlkZPYnSNfy+PkO2nmunvPOQXSY0bJ0">
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B534B557">
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>
